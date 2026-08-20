@@ -35,8 +35,10 @@ function layout(board, extras = []) {
   const nodes = [], edges = [];
   const edge = (from, to) => edges.push({ id: `e-${from}-${to}`, from, to });
 
-  board.sections.forEach((sec, i) => {
-    const sx = i * SEC_GAP;
+  let sx = 0; // накопичувальний x: секція з ширшими картками (напр. макети) розсуває наступні
+  board.sections.forEach((sec) => {
+    const itW = sec.itemW || IT_W, itH = sec.itemH || IT_H, itDy = sec.itemDy || IT_DY;
+    const colW = Math.max(SEC_W, itW + IT_INSET);
     nodes.push({
       id: `sec-${sec.id}`, type: 'text',
       x: sx, y: SEC_Y, width: SEC_W, height: SEC_H,
@@ -47,19 +49,34 @@ function layout(board, extras = []) {
     edge('root', `sec-${sec.id}`);
 
     sec.items.forEach((it, j) => {
-      const node = {
-        id: `it-${sec.id}-${j}`, type: 'text',
-        x: sx + IT_INSET, y: IT_Y0 + j * IT_DY, width: IT_W, height: IT_H,
-        style: 'body',
-        content: `<b>${it.glyph ? esc(it.glyph) + ' ' : ''}${esc(it.title)}</b><br>${small(it.note)}`,
+      const base = {
+        id: `it-${sec.id}-${j}`,
+        x: sx + IT_INSET, y: IT_Y0 + j * itDy,
+        width: it.width || itW, height: it.height || itH,
       };
+      // картинка = окрема нода під підписом; src віддає raw.githubusercontent, CORS там '*'
+      const node = it.image
+        ? { ...base, type: 'image', src: it.image, fileName: it.title }
+        : { ...base, type: 'text', style: 'body',
+            content: `<b>${it.glyph ? esc(it.glyph) + ' ' : ''}${esc(it.title)}</b><br>${small(it.note)}` };
       if (it.color) node.color = it.color;
       nodes.push(node);
       edge(`sec-${sec.id}`, `it-${sec.id}-${j}`);
+      if (it.image && it.note) { // підпис під картинкою окремою текстовою нодою
+        const cap = {
+          id: `cap-${sec.id}-${j}`, type: 'text', style: 'caption',
+          x: sx + IT_INSET, y: base.y + (it.height || itH) + 12,
+          width: it.width || itW, height: 110,
+          content: `<b>${esc(it.title)}</b><br>${small(it.note, 0.7)}`,
+        };
+        nodes.push(cap);
+        edge(`it-${sec.id}-${j}`, cap.id);
+      }
     });
+    sx += colW + (SEC_GAP - SEC_W);
   });
 
-  const centerX = ((board.sections.length - 1) * SEC_GAP + SEC_W) / 2;
+  const centerX = Math.max(...nodes.map((n) => n.x + n.width)) / 2;
   nodes.unshift({
     id: 'root', type: 'text',
     x: Math.round(centerX - 310), y: HEAD_Y, width: 620, height: 150,

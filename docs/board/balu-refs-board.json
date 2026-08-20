@@ -3,7 +3,7 @@
     {
       "id": "root",
       "type": "text",
-      "x": 1270,
+      "x": 1645,
       "y": -420,
       "width": 620,
       "height": 150,
@@ -24,41 +24,41 @@
     },
     {
       "id": "it-pes-0",
-      "type": "text",
       "x": 30,
       "y": 250,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Балу</b><br><span style=\"font-size:0.62em\">4 роки · 11.5 кг · чорний як ніч · безпорідний, тип бігового віппета · коротка шерсть</span>"
     },
     {
       "id": "it-pes-1",
-      "type": "text",
       "x": 30,
       "y": 470,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Клас персонажа</b><br><span style=\"font-size:0.62em\">Нічний Гонець — худий силуетний сайтхаунд</span>"
     },
     {
       "id": "it-pes-2",
-      "type": "text",
       "x": 30,
       "y": 690,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Наслідки профілю</b><br><span style=\"font-size:0.62em\">худий = норма (цільову вагу задає лікар) · бігун, не ходок · кліща на чорній шерсті не видно → огляд після лісу обовʼязковий · чутливий до холоду</span>"
     },
     {
       "id": "it-pes-3",
-      "type": "text",
       "x": 30,
       "y": 910,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Ваговий діапазон</b><br><span style=\"font-size:0.62em\">10–20 кг — саме так продаються протипаразитарні засоби. Апка показує діапазон, не дозування</span>"
     },
@@ -75,71 +75,71 @@
     },
     {
       "id": "it-platform-0",
-      "type": "text",
       "x": 490,
       "y": 250,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Swift + SwiftUI, iOS 17+</b><br><span style=\"font-size:0.62em\">17 бо VNGenerateForegroundInstanceMaskRequest. Обрано за надійність довгих нагадувань — обробка від кліщів раз на пів року не має права не спрацювати</span>"
     },
     {
       "id": "it-platform-1",
-      "type": "text",
       "x": 490,
       "y": 470,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>SwiftData</b><br><span style=\"font-size:0.62em\">даних мало, шлях до CloudKit-синку потім майже безкоштовний. Правила CloudKit застосовані з першого дня</span>"
     },
     {
       "id": "it-platform-2",
-      "type": "text",
       "x": 490,
       "y": 690,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Жодних сторонніх залежностей</b><br><span style=\"font-size:0.62em\">Vision · CoreImage · vImage · UserNotifications · EventKit — усе системне</span>"
     },
     {
       "id": "it-platform-3",
-      "type": "text",
       "x": 490,
       "y": 910,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Відкинуто: Flutter</b><br><span style=\"font-size:0.62em\">найкраща анімація, але Dart вчити з нуля, +5-10 МБ рушія, і фонові задачі все одно через плагіни</span>"
     },
     {
       "id": "it-platform-4",
-      "type": "text",
       "x": 490,
       "y": 1130,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Відкинуто: React Native</b><br><span style=\"font-size:0.62em\">швидше стартувати, але більше тертя з фоновими задачами й нотифікаціями</span>"
     },
     {
       "id": "it-platform-5",
-      "type": "text",
       "x": 490,
       "y": 1350,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Відкинуто: PWA</b><br><span style=\"font-size:0.62em\">нотифікації на iOS кволі, фонового GPS практично нема. Для апки про нагадування це вбивчо</span>"
     },
     {
       "id": "it-platform-6",
-      "type": "text",
       "x": 490,
       "y": 1570,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Провіженинг</b><br><span style=\"font-size:0.62em\">безкоштовний Apple ID — збірка на власний iPhone, перевстановлення раз на 7 днів. $99/рік лише для App Store</span>"
     },
@@ -156,71 +156,71 @@
     },
     {
       "id": "it-art-0",
-      "type": "text",
       "x": 950,
       "y": 250,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Референс: Diablo II</b><br><span style=\"font-size:0.62em\">орнаментальні рамки, золото по чорному, панелі переважно НЕРУХОМІ — тому підходить SwiftUI</span>"
     },
     {
       "id": "it-art-1",
-      "type": "text",
       "x": 950,
       "y": 470,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Референс: Gothic</b><br><span style=\"font-size:0.62em\">приглушена середньовічна похмурість, гідність замість милоти</span>"
     },
     {
       "id": "it-art-2",
-      "type": "text",
       "x": 950,
       "y": 690,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Референс: Hades</b><br><span style=\"font-size:0.62em\">контраст, червоне з золотом, жирна типографіка</span>"
     },
     {
       "id": "it-art-3",
-      "type": "text",
       "x": 950,
       "y": 910,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Референс: Terraria / роглайки</b><br><span style=\"font-size:0.62em\">чіткі спрайти, ретро-палітра — обраний технічний напрям</span>"
     },
     {
       "id": "it-art-4",
-      "type": "text",
       "x": 950,
       "y": 1130,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Чому піксель-арт</b><br><span style=\"font-size:0.62em\">найдешевший шлях до «люксу» без художника: прощає помилки, тримає єдиний стиль, ассети важать кілобайти. Спрайт 64×64 = 2-5 КБ</span>"
     },
     {
       "id": "it-art-5",
-      "type": "text",
       "x": 950,
       "y": 1350,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Анімацій майже нема</b><br><span style=\"font-size:0.62em\">єдине місце — «Обряд звершено» (коло мага). Статичні спрайти = нуль витрат щокадру</span>"
     },
     {
       "id": "it-art-6",
-      "type": "text",
       "x": 950,
       "y": 1570,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>AI не генерує піксель-арт</b><br><span style=\"font-size:0.62em\">малює «схоже на піксельне» з брудною сіткою й нерівними пікселями. На екрані iPhone видно одразу</span>"
     },
@@ -237,71 +237,71 @@
     },
     {
       "id": "it-assets-0",
-      "type": "text",
       "x": 1410,
       "y": 250,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Kenney.nl — рамки, іконки</b><br><span style=\"font-size:0.62em\">ліцензія CC0, автора згадувати не треба. kenney.nl/assets</span>"
     },
     {
       "id": "it-assets-1",
-      "type": "text",
       "x": 1410,
       "y": 470,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>itch.io — безкоштовні RPG-UI паки</b><br><span style=\"font-size:0.62em\">itch.io/game-assets/free/tag-user-interface</span>"
     },
     {
       "id": "it-assets-2",
-      "type": "text",
       "x": 1410,
       "y": 690,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Підключення через тему</b><br><span style=\"font-size:0.62em\">чром живе за абстракцією тем, не хардкодиться по місцях — щоб потім замінити на замовлений арт без правок екранів</span>"
     },
     {
       "id": "it-assets-3",
-      "type": "text",
       "x": 1410,
       "y": 910,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Пес — з фото</b><br><span style=\"font-size:0.62em\">єдина унікальна річ. Пікселізується з 5 знімків: стоїть / сидить / лежить / біжить / портрет</span>"
     },
     {
       "id": "it-assets-4",
-      "type": "text",
       "x": 1410,
       "y": 1130,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Aseprite — для доопрацювання</b><br><span style=\"font-size:0.62em\">aseprite.org · але в апці свій мінімальний редактор: сітка 64×64, тап, піпетка, undo</span>"
     },
     {
       "id": "it-assets-5",
-      "type": "text",
       "x": 1410,
       "y": 1350,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Lospec — палітри піксель-арту</b><br><span style=\"font-size:0.62em\">lospec.com/palette-list — референс для холодних тонів чорної шерсті</span>"
     },
     {
       "id": "it-assets-6",
-      "type": "text",
       "x": 1410,
       "y": 1570,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Vision: маска обʼєкта</b><br><span style=\"font-size:0.62em\">developer.apple.com/documentation/vision/vngenerateforegroundinstancemaskrequest</span>"
     },
@@ -318,71 +318,71 @@
     },
     {
       "id": "it-palette-0",
-      "type": "text",
       "x": 1870,
       "y": 250,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Тло / панель</b><br><span style=\"font-size:0.62em\">#0d0f14 · #15171f</span>"
     },
     {
       "id": "it-palette-1",
-      "type": "text",
       "x": 1870,
       "y": 470,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Рамки</b><br><span style=\"font-size:0.62em\">#3a3223 внутрішня · #6b5c3c зовнішня</span>"
     },
     {
       "id": "it-palette-2",
-      "type": "text",
       "x": 1870,
       "y": 690,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Золото (акцент)</b><br><span style=\"font-size:0.62em\">#d9a54a — рівень, активні елементи, око Балу</span>"
     },
     {
       "id": "it-palette-3",
-      "type": "text",
       "x": 1870,
       "y": 910,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Текст</b><br><span style=\"font-size:0.62em\">#c9b98f основний · #6d6349 приглушений</span>"
     },
     {
       "id": "it-palette-4",
-      "type": "text",
       "x": 1870,
       "y": 1130,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Небезпека</b><br><span style=\"font-size:0.62em\">#c9564a — прострочене й згаслі оберіги</span>"
     },
     {
       "id": "it-palette-5",
-      "type": "text",
       "x": 1870,
       "y": 1350,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Шерсть Балу</b><br><span style=\"font-size:0.62em\">#2b3040 тіло · #13151d найглибша тінь · #6b7a99 місячний обідок · #d9a54a око. ЧИСТИЙ ЧОРНИЙ НЕ ВИКОРИСТОВУЄТЬСЯ — інакше пес стає силуетною плямою</span>"
     },
     {
       "id": "it-palette-6",
-      "type": "text",
       "x": 1870,
       "y": 1570,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Статі</b><br><span style=\"font-size:0.62em\">Vitality зелена · Stamina фіолетова · Coat золотиста · Bond теракотова</span>"
     },
@@ -399,71 +399,71 @@
     },
     {
       "id": "it-screens-0",
-      "type": "text",
       "x": 2330,
       "y": 250,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Лігво — головний</b><br><span style=\"font-size:0.62em\">сцена з Балу у верхній третині: лежанка, миска, полиця зілля, вікно з місяцем. Рівень і XP над головою</span>"
     },
     {
       "id": "it-screens-1",
-      "type": "text",
       "x": 2330,
       "y": 470,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Дошка квестів під сценою</b><br><span style=\"font-size:0.62em\">три групи: Щоденні / Обряди / Походи. Один скрол, без перемикання табів — щоденний тап не має коштувати навігації</span>"
     },
     {
       "id": "it-screens-2",
-      "type": "text",
       "x": 2330,
       "y": 690,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Лист персонажа тапом по Балу</b><br><span style=\"font-size:0.62em\">статі, оберіги, блок «Звір»: вік, вага, порода, діапазон зілля, місця, походи</span>"
     },
     {
       "id": "it-screens-3",
-      "type": "text",
       "x": 2330,
       "y": 910,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Предмети лігва — декорації у v1</b><br><span style=\"font-size:0.62em\">тап по мисці й лежанці додамо потім, дії живуть на дошці</span>"
     },
     {
       "id": "it-screens-4",
-      "type": "text",
       "x": 2330,
       "y": 1130,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Таби</b><br><span style=\"font-size:0.62em\">Лігво · Місця · Хроніка · Трофеї</span>"
     },
     {
       "id": "it-screens-5",
-      "type": "text",
       "x": 2330,
       "y": 1350,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Відкинуто: лист як головний</b><br><span style=\"font-size:0.62em\">варіант A — персонаж у центрі, але щоденний тап опиняється внизу</span>"
     },
     {
       "id": "it-screens-6",
-      "type": "text",
       "x": 2330,
       "y": 1570,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Відкинуто: дошка як головний</b><br><span style=\"font-size:0.62em\">варіант C — найшвидший тап, але персонаж відступає. Взято його вміст, але не як головний екран</span>"
     },
@@ -480,73 +480,144 @@
     },
     {
       "id": "it-rules-0",
-      "type": "text",
       "x": 2790,
       "y": 250,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Ніщо не карає</b><br><span style=\"font-size:0.62em\">пропущене не забирає XP. Рівень математично не може впасти, бо журнал тільки зростає</span>"
     },
     {
       "id": "it-rules-1",
-      "type": "text",
       "x": 2790,
       "y": 470,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Просідає стат, ніколи не пес</b><br><span style=\"font-size:0.62em\">«Vitality 68», «оберіг згас». Ніяких «Балу сумує» і сумних мордочок</span>"
     },
     {
       "id": "it-rules-2",
-      "type": "text",
       "x": 2790,
       "y": 690,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Втримання не є метою</b><br><span style=\"font-size:0.62em\">не заборонене, але не пріоритет гейм-дизайну. Успіх = вакцинація не прострочена, а не DAU</span>"
     },
     {
       "id": "it-rules-3",
-      "type": "text",
       "x": 2790,
       "y": 910,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Дописування минулим числом обовʼязкове</b><br><span style=\"font-size:0.62em\">без нього дані розходяться з реальністю за два тижні й апці перестаєш вірити</span>"
     },
     {
       "id": "it-rules-4",
-      "type": "text",
       "x": 2790,
       "y": 1130,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Жодних медичних порад</b><br><span style=\"font-size:0.62em\">тільки графік і напис з упаковки. Ніяких дозувань і діагнозів</span>"
     },
     {
       "id": "it-rules-5",
-      "type": "text",
       "x": 2790,
       "y": 1350,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Відмова дозволу нічого не ламає</b><br><span style=\"font-size:0.62em\">нотифікації й календар — бонус, не носій правди</span>"
     },
     {
       "id": "it-rules-6",
-      "type": "text",
       "x": 2790,
       "y": 1570,
       "width": 340,
       "height": 190,
+      "type": "text",
       "style": "body",
       "content": "<b>Відкинуто: стріки й покарання</b><br><span style=\"font-size:0.62em\">модель Duolingo. З реальним псом дає фальшиву вину: Балу сит, а апка каже, що ти підвів його</span>"
+    },
+    {
+      "id": "sec-mockups",
+      "type": "text",
+      "x": 3220,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#B565A7",
+      "content": "<b>МАКЕТИ</b><br><span style=\"font-size:0.52em\">згенеровано й вибрано під час брейнштормінгу</span>"
+    },
+    {
+      "id": "it-mockups-0",
+      "x": 3250,
+      "y": 250,
+      "width": 660,
+      "height": 640,
+      "type": "image",
+      "src": "https://raw.githubusercontent.com/arrudenk/dogochi/main/docs/board/img/home-layout.png",
+      "fileName": "Три компонування головного екрана"
+    },
+    {
+      "id": "cap-mockups-0",
+      "type": "text",
+      "style": "caption",
+      "x": 3250,
+      "y": 902,
+      "width": 660,
+      "height": 110,
+      "content": "<b>Три компонування головного екрана</b><br><span style=\"font-size:0.7em\">A · Лист персонажа — персонаж у центрі, тап унизу. B · Лігво — сцена з предметами. C · Дошка квестів — найшвидший тап. ВИБРАНО: B як головний, вміст C під сценою</span>"
+    },
+    {
+      "id": "it-mockups-1",
+      "x": 3250,
+      "y": 1030,
+      "width": 660,
+      "height": 840,
+      "type": "image",
+      "src": "https://raw.githubusercontent.com/arrudenk/dogochi/main/docs/board/img/den-and-sheet.png",
+      "fileName": "Лігво + лист персонажа — ВИБРАНИЙ ВАРІАНТ"
+    },
+    {
+      "id": "cap-mockups-1",
+      "type": "text",
+      "style": "caption",
+      "x": 3250,
+      "y": 1882,
+      "width": 660,
+      "height": 110,
+      "content": "<b>Лігво + лист персонажа — ВИБРАНИЙ ВАРІАНТ</b><br><span style=\"font-size:0.7em\">Ліворуч: сцена у верхній третині, рівень і XP над головою Балу, дошка квестів трьома групами під нею. Праворуч: лист, що відкривається тапом по Балу</span>"
+    },
+    {
+      "id": "it-mockups-2",
+      "x": 3250,
+      "y": 1810,
+      "width": 660,
+      "height": 560,
+      "type": "image",
+      "src": "https://raw.githubusercontent.com/arrudenk/dogochi/main/docs/board/img/herald-and-heal.png",
+      "fileName": "Герольд і момент лікування"
+    },
+    {
+      "id": "cap-mockups-2",
+      "type": "text",
+      "style": "caption",
+      "x": 3250,
+      "y": 2382,
+      "width": 660,
+      "height": 110,
+      "content": "<b>Герольд і момент лікування</b><br><span style=\"font-size:0.7em\">Ліворуч: діалог при вході, три РІЗНІ рішення — тому наосліп не тапнеш. Праворуч: спектакль за дію, +4000 XP, УР. 128 → 154, «Щит змикається.»</span>"
     }
   ],
   "edges": [
@@ -814,6 +885,41 @@
       "id": "e-sec-rules-it-rules-6",
       "from": "sec-rules",
       "to": "it-rules-6"
+    },
+    {
+      "id": "e-root-sec-mockups",
+      "from": "root",
+      "to": "sec-mockups"
+    },
+    {
+      "id": "e-sec-mockups-it-mockups-0",
+      "from": "sec-mockups",
+      "to": "it-mockups-0"
+    },
+    {
+      "id": "e-it-mockups-0-cap-mockups-0",
+      "from": "it-mockups-0",
+      "to": "cap-mockups-0"
+    },
+    {
+      "id": "e-sec-mockups-it-mockups-1",
+      "from": "sec-mockups",
+      "to": "it-mockups-1"
+    },
+    {
+      "id": "e-it-mockups-1-cap-mockups-1",
+      "from": "it-mockups-1",
+      "to": "cap-mockups-1"
+    },
+    {
+      "id": "e-sec-mockups-it-mockups-2",
+      "from": "sec-mockups",
+      "to": "it-mockups-2"
+    },
+    {
+      "id": "e-it-mockups-2-cap-mockups-2",
+      "from": "it-mockups-2",
+      "to": "cap-mockups-2"
     }
   ]
 }
