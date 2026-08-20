@@ -4,15 +4,15 @@
       "id": "root",
       "type": "text",
       "x": 1500,
-      "y": -400,
+      "y": -420,
       "width": 620,
       "height": 150,
       "style": "heading",
       "color": "#BB2649",
-      "content": "<b>БАЛУ — v1</b><br><span style=\"font-size:0.5em\">тамагочі для реального пса · iOS · Swift</span><br><span style=\"font-size:0.4em\">docs/superpowers/specs/2026-08-20-balu-design.md</span>"
+      "content": "<b>БАЛУ — v1</b><br><span style=\"font-size:0.5em\">тамагочі для реального пса · iOS · Swift · docs/superpowers/specs/2026-08-20-balu-design.md</span>"
     },
     {
-      "id": "phase-f0",
+      "id": "sec-f0",
       "type": "text",
       "x": 0,
       "y": 0,
@@ -20,40 +20,40 @@
       "height": 130,
       "style": "heading",
       "color": "#DD4124",
-      "content": "<b>Ф0 · СПАЙК</b><br><span style=\"font-size:0.55em\">пікселізація Балу — код на викид</span><br><span style=\"font-size:0.5em\">0 / 3</span>"
+      "content": "<b>Ф0 · СПАЙК</b><br><span style=\"font-size:0.52em\">пікселізація Балу — код на викид</span><br><span style=\"font-size:0.48em\">0 / 3</span>"
     },
     {
-      "id": "task-0.1",
+      "id": "it-f0-0",
       "type": "text",
       "x": 30,
-      "y": 240,
+      "y": 250,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 0.1 · Фото Балу</b><br><span style=\"font-size:0.65em\">силует при денному світлі + портрет</span>"
+      "content": "<b>▢ 0.1 · Фото Балу</b><br><span style=\"font-size:0.62em\">силует при денному світлі + портрет</span>"
     },
     {
-      "id": "task-0.2",
+      "id": "it-f0-1",
       "type": "text",
       "x": 30,
-      "y": 440,
+      "y": 470,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 0.2 · Прототип конвеєра</b><br><span style=\"font-size:0.65em\">маска Vision → розтягування тонів у масці → медіана → зменшення → квантування → обідок</span>"
+      "content": "<b>▢ 0.2 · Прототип конвеєра</b><br><span style=\"font-size:0.62em\">маска Vision → розтягування тонів у масці → медіана → зменшення → квантування → обідок</span>"
     },
     {
-      "id": "task-0.3",
+      "id": "it-f0-2",
       "type": "text",
       "x": 30,
-      "y": 640,
+      "y": 690,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 0.3 · Вердикт</b><br><span style=\"font-size:0.65em\">план А (фото) чи план Б (архетипний спрайт)</span>"
+      "content": "<b>▢ 0.3 · Вердикт</b><br><span style=\"font-size:0.62em\">план А (фото) чи план Б (архетипний спрайт)</span>"
     },
     {
-      "id": "phase-f1",
+      "id": "sec-f1",
       "type": "text",
       "x": 460,
       "y": 0,
@@ -61,140 +61,140 @@
       "height": 130,
       "style": "heading",
       "color": "#0F4C81",
-      "content": "<b>Ф1 · ЯДРО</b><br><span style=\"font-size:0.55em\">BaluCore — чистий двигун, без UI і без бази</span><br><span style=\"font-size:0.5em\">0 / 13</span>"
+      "content": "<b>Ф1 · ЯДРО</b><br><span style=\"font-size:0.52em\">BaluCore — чистий двигун, без UI і без бази</span><br><span style=\"font-size:0.48em\">0 / 13</span>"
     },
     {
-      "id": "task-1.1",
+      "id": "it-f1-0",
       "type": "text",
       "x": 490,
-      "y": 240,
+      "y": 250,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 1.1 · Доменні типи</b><br><span style=\"font-size:0.65em\">Dog, CareRoutine, CareEvent, UnlockedAchievement, HeraldShown, Place</span>"
+      "content": "<b>▢ 1.1 · Доменні типи</b><br><span style=\"font-size:0.62em\">Dog, CareRoutine, CareEvent, UnlockedAchievement, HeraldShown, Place</span>"
     },
     {
-      "id": "task-1.2",
+      "id": "it-f1-1",
       "type": "text",
       "x": 490,
-      "y": 440,
+      "y": 470,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 1.2 · Оберіги</b><br><span style=\"font-size:0.65em\">вікно [дата, дата+тривалість]; НЕ накопичуються при ранньому прийомі</span>"
+      "content": "<b>▢ 1.2 · Оберіги</b><br><span style=\"font-size:0.62em\">вікно [дата, дата+тривалість]; НЕ накопичуються при ранньому прийомі</span>"
     },
     {
-      "id": "task-1.3",
+      "id": "it-f1-2",
       "type": "text",
       "x": 490,
-      "y": 640,
+      "y": 690,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 1.3 · Слотові добові</b><br><span style=\"font-size:0.65em\">N за добу, скидання вночі, борг НЕ переноситься</span>"
+      "content": "<b>▢ 1.3 · Слотові добові</b><br><span style=\"font-size:0.62em\">N за добу, скидання вночі, борг НЕ переноситься</span>"
     },
     {
-      "id": "task-1.4",
+      "id": "it-f1-3",
       "type": "text",
       "x": 490,
-      "y": 840,
+      "y": 910,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 1.4 · Обовʼязки</b><br><span style=\"font-size:0.65em\">раз на N місяців, прострочення накопичується</span>"
+      "content": "<b>▢ 1.4 · Обовʼязки</b><br><span style=\"font-size:0.62em\">раз на N місяців, прострочення накопичується</span>"
     },
     {
-      "id": "task-1.5",
+      "id": "it-f1-4",
       "type": "text",
       "x": 490,
-      "y": 1040,
+      "y": 1130,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 1.5 · Квоти</b><br><span style=\"font-size:0.65em\">лічильник за період, нуль покарання</span>"
+      "content": "<b>▢ 1.5 · Квоти</b><br><span style=\"font-size:0.62em\">лічильник за період, нуль покарання</span>"
     },
     {
-      "id": "task-1.6",
+      "id": "it-f1-5",
       "type": "text",
       "x": 490,
-      "y": 1240,
+      "y": 1350,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 1.6 · Породжені квести</b><br><span style=\"font-size:0.65em\">похід → огляд на кліщів, дійсний 24 год</span>"
+      "content": "<b>▢ 1.6 · Породжені квести</b><br><span style=\"font-size:0.62em\">похід → огляд на кліщів, дійсний 24 год</span>"
     },
     {
-      "id": "task-1.7",
+      "id": "it-f1-6",
       "type": "text",
       "x": 490,
-      "y": 1440,
+      "y": 1570,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 1.7 · Статі</b><br><span style=\"font-size:0.65em\">Vitality / Stamina / Coat / Bond на ковзних вікнах</span>"
+      "content": "<b>▢ 1.7 · Статі</b><br><span style=\"font-size:0.62em\">Vitality / Stamina / Coat / Bond на ковзних вікнах</span>"
     },
     {
-      "id": "task-1.8",
+      "id": "it-f1-7",
       "type": "text",
       "x": 490,
-      "y": 1640,
+      "y": 1790,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 1.8 · XP і рівень</b><br><span style=\"font-size:0.65em\">150 XP/рівень, довічна стеля 999, вага обернено до частоти</span>"
+      "content": "<b>▢ 1.8 · XP і рівень</b><br><span style=\"font-size:0.62em\">150 XP/рівень, довічна стеля 999, вага обернено до частоти</span>"
     },
     {
-      "id": "task-1.9",
+      "id": "it-f1-8",
       "type": "text",
       "x": 490,
-      "y": 1840,
+      "y": 2010,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 1.9 · Тест: стеля сходиться</b><br><span style=\"font-size:0.65em\">ідеальний рік ≈ 147 000 XP = рівень 999</span>"
+      "content": "<b>▢ 1.9 · Тест: стеля сходиться</b><br><span style=\"font-size:0.62em\">ідеальний рік ≈ 147 000 XP = рівень 999</span>"
     },
     {
-      "id": "task-1.10",
+      "id": "it-f1-9",
       "type": "text",
       "x": 490,
-      "y": 2040,
+      "y": 2230,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 1.10 · Тест: сенс вбудований</b><br><span style=\"font-size:0.65em\">тільки щоденні тапи цілий рік → рівень ≤ 427</span>"
+      "content": "<b>▢ 1.10 · Тест: сенс вбудований</b><br><span style=\"font-size:0.62em\">тільки щоденні тапи цілий рік → рівень ≤ 427</span>"
     },
     {
-      "id": "task-1.11",
+      "id": "it-f1-10",
       "type": "text",
       "x": 490,
-      "y": 2240,
+      "y": 2450,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 1.11 · Трофеї</b><br><span style=\"font-size:0.65em\">запити до журналу, працюють ретроспективно</span>"
+      "content": "<b>▢ 1.11 · Трофеї</b><br><span style=\"font-size:0.62em\">запити до журналу, працюють ретроспективно</span>"
     },
     {
-      "id": "task-1.12",
+      "id": "it-f1-11",
       "type": "text",
       "x": 490,
-      "y": 2440,
+      "y": 2670,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 1.12 · Черга герольда</b><br><span style=\"font-size:0.65em\">стадії, HeraldShown, один на відкриття, приоритет</span>"
+      "content": "<b>▢ 1.12 · Черга герольда</b><br><span style=\"font-size:0.62em\">стадії, HeraldShown, один на відкриття, приоритет</span>"
     },
     {
-      "id": "task-1.13",
+      "id": "it-f1-12",
       "type": "text",
       "x": 490,
-      "y": 2640,
+      "y": 2890,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 1.13 · Планувальник нотифікацій</b><br><span style=\"font-size:0.65em\">desiredNotifications(state, now) → набір для diff</span>"
+      "content": "<b>▢ 1.13 · Планувальник нотифікацій</b><br><span style=\"font-size:0.62em\">desiredNotifications(state, now) → набір для diff</span>"
     },
     {
-      "id": "phase-f2",
+      "id": "sec-f2",
       "type": "text",
       "x": 920,
       "y": 0,
@@ -202,50 +202,50 @@
       "height": 130,
       "style": "heading",
       "color": "#6667AB",
-      "content": "<b>Ф2 · СХОВИЩЕ</b><br><span style=\"font-size:0.55em\">BaluStore — SwiftData, готове до CloudKit</span><br><span style=\"font-size:0.5em\">0 / 4</span>"
+      "content": "<b>Ф2 · СХОВИЩЕ</b><br><span style=\"font-size:0.52em\">BaluStore — SwiftData, готове до CloudKit</span><br><span style=\"font-size:0.48em\">0 / 4</span>"
     },
     {
-      "id": "task-2.1",
+      "id": "it-f2-0",
       "type": "text",
       "x": 950,
-      "y": 240,
+      "y": 250,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 2.1 · SwiftData-моделі</b><br><span style=\"font-size:0.65em\">правила CloudKit з першого дня: дефолти, без unique, опційні звʼязки</span>"
+      "content": "<b>▢ 2.1 · SwiftData-моделі</b><br><span style=\"font-size:0.62em\">правила CloudKit з першого дня: дефолти, без unique, опційні звʼязки</span>"
     },
     {
-      "id": "task-2.2",
+      "id": "it-f2-1",
       "type": "text",
       "x": 950,
-      "y": 440,
+      "y": 470,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 2.2 · Маппінг</b><br><span style=\"font-size:0.65em\">записи ↔ доменні типи-значення</span>"
+      "content": "<b>▢ 2.2 · Маппінг</b><br><span style=\"font-size:0.62em\">записи ↔ доменні типи-значення</span>"
     },
     {
-      "id": "task-2.3",
+      "id": "it-f2-2",
       "type": "text",
       "x": 950,
-      "y": 640,
+      "y": 690,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 2.3 · Запис події</b><br><span style=\"font-size:0.65em\">occurredAt окремо від recordedAt; майбутнє відхиляється</span>"
+      "content": "<b>▢ 2.3 · Запис події</b><br><span style=\"font-size:0.62em\">occurredAt окремо від recordedAt; майбутнє відхиляється</span>"
     },
     {
-      "id": "task-2.4",
+      "id": "it-f2-3",
       "type": "text",
       "x": 950,
-      "y": 840,
+      "y": 910,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 2.4 · Кешований стор</b><br><span style=\"font-size:0.65em\">@Observable, перерахунок на запуску / фоні / записі; нічого в тілі View</span>"
+      "content": "<b>▢ 2.4 · Кешований стор</b><br><span style=\"font-size:0.62em\">@Observable, перерахунок на запуску / фоні / записі; нічого в тілі View</span>"
     },
     {
-      "id": "phase-f3",
+      "id": "sec-f3",
       "type": "text",
       "x": 1380,
       "y": 0,
@@ -253,60 +253,60 @@
       "height": 130,
       "style": "heading",
       "color": "#5F4B8B",
-      "content": "<b>Ф3 · РИТУАЛ ВИКЛИКУ</b><br><span style=\"font-size:0.55em\">BaluPixel — 5 фото → спрайти</span><br><span style=\"font-size:0.5em\">0 / 5</span>"
+      "content": "<b>Ф3 · РИТУАЛ ВИКЛИКУ</b><br><span style=\"font-size:0.52em\">BaluPixel — 5 фото → спрайти</span><br><span style=\"font-size:0.48em\">0 / 5</span>"
     },
     {
-      "id": "task-3.1",
+      "id": "it-f3-0",
       "type": "text",
       "x": 1410,
-      "y": 240,
+      "y": 250,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 3.1 · Захоплення 5 поз</b><br><span style=\"font-size:0.65em\">силуетні підказки, поради про світло й фон</span>"
+      "content": "<b>▢ 3.1 · Захоплення 5 поз</b><br><span style=\"font-size:0.62em\">силуетні підказки, поради про світло й фон</span>"
     },
     {
-      "id": "task-3.2",
+      "id": "it-f3-1",
       "type": "text",
       "x": 1410,
-      "y": 440,
+      "y": 470,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 3.2 · Конвеєр у продакшн</b><br><span style=\"font-size:0.65em\">зі спайку; 64×64 пози, 96×96 портрет; фон, памʼять відпускається</span>"
+      "content": "<b>▢ 3.2 · Конвеєр у продакшн</b><br><span style=\"font-size:0.62em\">зі спайку; 64×64 пози, 96×96 портрет; фон, памʼять відпускається</span>"
     },
     {
-      "id": "task-3.3",
+      "id": "it-f3-2",
       "type": "text",
       "x": 1410,
-      "y": 640,
+      "y": 690,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 3.3 · Акцентна палітра</b><br><span style=\"font-size:0.65em\">2-3 домінантні кольори Балу → акцент інтерфейсу</span>"
+      "content": "<b>▢ 3.3 · Акцентна палітра</b><br><span style=\"font-size:0.62em\">2-3 домінантні кольори Балу → акцент інтерфейсу</span>"
     },
     {
-      "id": "task-3.4",
+      "id": "it-f3-3",
       "type": "text",
       "x": 1410,
-      "y": 840,
+      "y": 910,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 3.4 · Редактор доопрацювання</b><br><span style=\"font-size:0.65em\">сітка 64×64, тап, піпетка, undo. Свідомо без шарів</span>"
+      "content": "<b>▢ 3.4 · Редактор доопрацювання</b><br><span style=\"font-size:0.62em\">сітка 64×64, тап, піпетка, undo. Свідомо без шарів</span>"
     },
     {
-      "id": "task-3.5",
+      "id": "it-f3-4",
       "type": "text",
       "x": 1410,
-      "y": 1040,
+      "y": 1130,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 3.5 · Відкат на архетип</b><br><span style=\"font-size:0.65em\">силуетний сайтхаунд у палітрі Балу, якщо файл побитий або спайк провалився</span>"
+      "content": "<b>▢ 3.5 · Відкат на архетип</b><br><span style=\"font-size:0.62em\">силуетний сайтхаунд у палітрі Балу, якщо файл побитий або спайк провалився</span>"
     },
     {
-      "id": "phase-f4",
+      "id": "sec-f4",
       "type": "text",
       "x": 1840,
       "y": 0,
@@ -314,90 +314,90 @@
       "height": 130,
       "style": "heading",
       "color": "#009B77",
-      "content": "<b>Ф4 · ІНТЕРФЕЙС</b><br><span style=\"font-size:0.55em\">BaluUI — лігво, дошка, лист, герольд</span><br><span style=\"font-size:0.5em\">0 / 8</span>"
+      "content": "<b>Ф4 · ІНТЕРФЕЙС</b><br><span style=\"font-size:0.52em\">BaluUI — лігво, дошка, лист, герольд</span><br><span style=\"font-size:0.48em\">0 / 8</span>"
     },
     {
-      "id": "task-4.1",
+      "id": "it-f4-0",
       "type": "text",
       "x": 1870,
-      "y": 240,
+      "y": 250,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 4.1 · Тема</b><br><span style=\"font-size:0.65em\">палітра, рамки з CC0-паків за абстракцією, рендер спрайтів без згладжування</span>"
+      "content": "<b>▢ 4.1 · Тема</b><br><span style=\"font-size:0.62em\">палітра, рамки з CC0-паків за абстракцією, рендер спрайтів без згладжування</span>"
     },
     {
-      "id": "task-4.2",
+      "id": "it-f4-1",
       "type": "text",
       "x": 1870,
-      "y": 440,
+      "y": 470,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 4.2 · Лігво</b><br><span style=\"font-size:0.65em\">сцена у верхній третині, рівень і XP над головою Балу</span>"
+      "content": "<b>▢ 4.2 · Лігво</b><br><span style=\"font-size:0.62em\">сцена у верхній третині, рівень і XP над головою Балу</span>"
     },
     {
-      "id": "task-4.3",
+      "id": "it-f4-2",
       "type": "text",
       "x": 1870,
-      "y": 640,
+      "y": 690,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 4.3 · Дошка квестів</b><br><span style=\"font-size:0.65em\">Щоденні / Обряди / Походи, один скрол під сценою</span>"
+      "content": "<b>▢ 4.3 · Дошка квестів</b><br><span style=\"font-size:0.62em\">Щоденні / Обряди / Походи, один скрол під сценою</span>"
     },
     {
-      "id": "task-4.4",
+      "id": "it-f4-3",
       "type": "text",
       "x": 1870,
-      "y": 840,
+      "y": 910,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 4.4 · Лист персонажа</b><br><span style=\"font-size:0.65em\">тап по Балу: статі, оберіги, блок «Звір»</span>"
+      "content": "<b>▢ 4.4 · Лист персонажа</b><br><span style=\"font-size:0.62em\">тап по Балу: статі, оберіги, блок «Звір»</span>"
     },
     {
-      "id": "task-4.5",
+      "id": "it-f4-4",
       "type": "text",
       "x": 1870,
-      "y": 1040,
+      "y": 1130,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 4.5 · Герольд</b><br><span style=\"font-size:0.65em\">рамка хроніки, три різні рішення, кнопки після появи тексту</span>"
+      "content": "<b>▢ 4.5 · Герольд</b><br><span style=\"font-size:0.62em\">рамка хроніки, три різні рішення, кнопки після появи тексту</span>"
     },
     {
-      "id": "task-4.6",
+      "id": "it-f4-5",
       "type": "text",
       "x": 1870,
-      "y": 1240,
+      "y": 1350,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 4.6 · Обряд звершено</b><br><span style=\"font-size:0.65em\">коло мага, іскри, стрибок рівня — єдина анімація в апці</span>"
+      "content": "<b>▢ 4.6 · Обряд звершено</b><br><span style=\"font-size:0.62em\">коло мага, іскри, стрибок рівня — єдина анімація в апці</span>"
     },
     {
-      "id": "task-4.7",
+      "id": "it-f4-6",
       "type": "text",
       "x": 1870,
-      "y": 1440,
+      "y": 1570,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 4.7 · Дописування минулим числом</b><br><span style=\"font-size:0.65em\">вибір дати з листа й з герольда</span>"
+      "content": "<b>▢ 4.7 · Дописування минулим числом</b><br><span style=\"font-size:0.62em\">вибір дати з листа й з герольда</span>"
     },
     {
-      "id": "task-4.8",
+      "id": "it-f4-7",
       "type": "text",
       "x": 1870,
-      "y": 1640,
+      "y": 1790,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 4.8 · Редагування каталогу</b><br><span style=\"font-size:0.65em\">періодичність, тривалість оберега, увімкнено</span>"
+      "content": "<b>▢ 4.8 · Редагування каталогу</b><br><span style=\"font-size:0.62em\">періодичність, тривалість оберега, увімкнено</span>"
     },
     {
-      "id": "phase-f5",
+      "id": "sec-f5",
       "type": "text",
       "x": 2300,
       "y": 0,
@@ -405,50 +405,50 @@
       "height": 130,
       "style": "heading",
       "color": "#955251",
-      "content": "<b>Ф5 · НАГАДУВАННЯ</b><br><span style=\"font-size:0.55em\">детектор тишини, не пуш-спам</span><br><span style=\"font-size:0.5em\">0 / 4</span>"
+      "content": "<b>Ф5 · НАГАДУВАННЯ</b><br><span style=\"font-size:0.52em\">детектор тишини, не пуш-спам</span><br><span style=\"font-size:0.48em\">0 / 4</span>"
     },
     {
-      "id": "task-5.1",
+      "id": "it-f5-0",
       "type": "text",
       "x": 2330,
-      "y": 240,
+      "y": 250,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 5.1 · Детектор тишини</b><br><span style=\"font-size:0.65em\">на фоні скасувати й перепланувати now+3/6/10д; відкриття скасовує</span>"
+      "content": "<b>▢ 5.1 · Детектор тишини</b><br><span style=\"font-size:0.62em\">на фоні скасувати й перепланувати now+3/6/10д; відкриття скасовує</span>"
     },
     {
-      "id": "task-5.2",
+      "id": "it-f5-1",
       "type": "text",
       "x": 2330,
-      "y": 440,
+      "y": 470,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 5.2 · АУУУУУУ</b><br><span style=\"font-size:0.65em\">виття + підзаголовок що потребує уваги + дія «Звершено» з локскріна</span>"
+      "content": "<b>▢ 5.2 · АУУУУУУ</b><br><span style=\"font-size:0.62em\">виття + підзаголовок що потребує уваги + дія «Звершено» з локскріна</span>"
     },
     {
-      "id": "task-5.3",
+      "id": "it-f5-2",
       "type": "text",
       "x": 2330,
-      "y": 640,
+      "y": 690,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 5.3 · Календарна страховка</b><br><span style=\"font-size:0.65em\">EventKit для огляду й вакцини, ідентифікатор на розкладі щоб не дублювати</span>"
+      "content": "<b>▢ 5.3 · Календарна страховка</b><br><span style=\"font-size:0.62em\">EventKit для огляду й вакцини, ідентифікатор на розкладі щоб не дублювати</span>"
     },
     {
-      "id": "task-5.4",
+      "id": "it-f5-3",
       "type": "text",
       "x": 2330,
-      "y": 840,
+      "y": 910,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 5.4 · Дозволи</b><br><span style=\"font-size:0.65em\">просимо після Ритуалу; будь-яка відмова нічого не ламає</span>"
+      "content": "<b>▢ 5.4 · Дозволи</b><br><span style=\"font-size:0.62em\">просимо після Ритуалу; будь-яка відмова нічого не ламає</span>"
     },
     {
-      "id": "phase-f6",
+      "id": "sec-f6",
       "type": "text",
       "x": 2760,
       "y": 0,
@@ -456,50 +456,50 @@
       "height": 130,
       "style": "heading",
       "color": "#A47864",
-      "content": "<b>Ф6 · ХРОНІКА</b><br><span style=\"font-size:0.55em\">хроніка, трофеї, місця</span><br><span style=\"font-size:0.5em\">0 / 4</span>"
+      "content": "<b>Ф6 · ХРОНІКА</b><br><span style=\"font-size:0.52em\">хроніка, трофеї, місця</span><br><span style=\"font-size:0.48em\">0 / 4</span>"
     },
     {
-      "id": "task-6.1",
+      "id": "it-f6-0",
       "type": "text",
       "x": 2790,
-      "y": 240,
+      "y": 250,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 6.1 · Хроніка</b><br><span style=\"font-size:0.65em\">таймлайн подій, голос світу</span>"
+      "content": "<b>▢ 6.1 · Хроніка</b><br><span style=\"font-size:0.62em\">таймлайн подій, голос світу</span>"
     },
     {
-      "id": "task-6.2",
+      "id": "it-f6-1",
       "type": "text",
       "x": 2790,
-      "y": 440,
+      "y": 470,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 6.2 · Трофеї</b><br><span style=\"font-size:0.65em\">список зі стартовим набором з §8.4</span>"
+      "content": "<b>▢ 6.2 · Трофеї</b><br><span style=\"font-size:0.62em\">список зі стартовим набором з §8.4</span>"
     },
     {
-      "id": "task-6.3",
+      "id": "it-f6-2",
       "type": "text",
       "x": 2790,
-      "y": 640,
+      "y": 690,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 6.3 · Місця</b><br><span style=\"font-size:0.65em\">простий список, назви руками; координати про запас</span>"
+      "content": "<b>▢ 6.3 · Місця</b><br><span style=\"font-size:0.62em\">простий список, назви руками; координати про запас</span>"
     },
     {
-      "id": "task-6.4",
+      "id": "it-f6-3",
       "type": "text",
       "x": 2790,
-      "y": 840,
+      "y": 910,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 6.4 · Річний підсумок</b><br><span style=\"font-size:0.65em\">«Рік I: 18 з 24 обрядів» — без скиду рівня</span>"
+      "content": "<b>▢ 6.4 · Річний підсумок</b><br><span style=\"font-size:0.62em\">«Рік I: 18 з 24 обрядів» — без скиду рівня</span>"
     },
     {
-      "id": "phase-f7",
+      "id": "sec-f7",
       "type": "text",
       "x": 3220,
       "y": 0,
@@ -507,319 +507,319 @@
       "height": 130,
       "style": "heading",
       "color": "#FF6F61",
-      "content": "<b>Ф7 · НА ПРИСТРІЙ</b><br><span style=\"font-size:0.55em\">збірка й установка</span><br><span style=\"font-size:0.5em\">0 / 3</span>"
+      "content": "<b>Ф7 · НА ПРИСТРІЙ</b><br><span style=\"font-size:0.52em\">збірка й установка</span><br><span style=\"font-size:0.48em\">0 / 3</span>"
     },
     {
-      "id": "task-7.1",
+      "id": "it-f7-0",
       "type": "text",
       "x": 3250,
-      "y": 240,
+      "y": 250,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 7.1 · Xcode-проєкт</b><br><span style=\"font-size:0.65em\">таргети, capabilities, межі модулів</span>"
+      "content": "<b>▢ 7.1 · Xcode-проєкт</b><br><span style=\"font-size:0.62em\">таргети, capabilities, межі модулів</span>"
     },
     {
-      "id": "task-7.2",
+      "id": "it-f7-1",
       "type": "text",
       "x": 3250,
-      "y": 440,
+      "y": 470,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 7.2 · Установка на iPhone</b><br><span style=\"font-size:0.65em\">безкоштовний провіженинг, перевстановлення раз на 7 днів</span>"
+      "content": "<b>▢ 7.2 · Установка на iPhone</b><br><span style=\"font-size:0.62em\">безкоштовний провіженинг, перевстановлення раз на 7 днів</span>"
     },
     {
-      "id": "task-7.3",
+      "id": "it-f7-2",
       "type": "text",
       "x": 3250,
-      "y": 640,
+      "y": 690,
       "width": 340,
-      "height": 170,
+      "height": 190,
       "style": "body",
-      "content": "<b>▢ 7.3 · Ассет-паки</b><br><span style=\"font-size:0.65em\">Kenney CC0 + itch.io, підключені через тему а не хардкодом</span>"
+      "content": "<b>▢ 7.3 · Ассет-паки</b><br><span style=\"font-size:0.62em\">Kenney CC0 + itch.io, підключені через тему а не хардкодом</span>"
     },
     {
       "id": "progress",
-      "type": "text",
-      "x": 1040,
-      "y": -400,
-      "width": 380,
-      "height": 150,
       "style": "subheading",
-      "content": "<b>ВИКОНАНО 0 / 44</b><br><span style=\"font-size:0.45em\">Ф0 0/3 · Ф1 0/13 · Ф2 0/4 · Ф3 0/5 · Ф4 0/8 · Ф5 0/4 · Ф6 0/4 · Ф7 0/3</span>"
+      "height": 150,
+      "content": "<b>ВИКОНАНО 0 / 44</b><br><span style=\"font-size:0.44em\">Ф0 0/3 · Ф1 0/13 · Ф2 0/4 · Ф3 0/5 · Ф4 0/8 · Ф5 0/4 · Ф6 0/4 · Ф7 0/3</span>",
+      "type": "text",
+      "x": 1060,
+      "y": -420,
+      "width": 380
     },
     {
       "id": "legend",
-      "type": "text",
-      "x": 2200,
-      "y": -400,
-      "width": 380,
-      "height": 230,
       "style": "caption",
-      "content": "<b>ЛЕГЕНДА</b><br><span style=\"font-size:0.6em\">▢  не почато</span><br><span style=\"font-size:0.6em\">◐  в роботі</span><br><span style=\"font-size:0.6em\">▣  зроблено</span><br><span style=\"font-size:0.6em\">⊘  заблоковано</span><br><span style=\"font-size:0.45em\">колір фази = важливість; статус задачі = колір + глиф</span>"
+      "height": 230,
+      "content": "<b>ЛЕГЕНДА</b><br><span style=\"font-size:0.6em\">▢  не почато</span><br><span style=\"font-size:0.6em\">◐  в роботі</span><br><span style=\"font-size:0.6em\">▣  зроблено</span><br><span style=\"font-size:0.6em\">⊘  заблоковано</span><br><span style=\"font-size:0.44em\">колір фази = важливість · статус задачі = колір + глиф</span>",
+      "type": "text",
+      "x": 2180,
+      "y": -420,
+      "width": 380
     }
   ],
   "edges": [
     {
-      "id": "e-root-phase-f0",
+      "id": "e-root-sec-f0",
       "from": "root",
-      "to": "phase-f0"
+      "to": "sec-f0"
     },
     {
-      "id": "e-phase-f0-task-0.1",
-      "from": "phase-f0",
-      "to": "task-0.1"
+      "id": "e-sec-f0-it-f0-0",
+      "from": "sec-f0",
+      "to": "it-f0-0"
     },
     {
-      "id": "e-phase-f0-task-0.2",
-      "from": "phase-f0",
-      "to": "task-0.2"
+      "id": "e-sec-f0-it-f0-1",
+      "from": "sec-f0",
+      "to": "it-f0-1"
     },
     {
-      "id": "e-phase-f0-task-0.3",
-      "from": "phase-f0",
-      "to": "task-0.3"
+      "id": "e-sec-f0-it-f0-2",
+      "from": "sec-f0",
+      "to": "it-f0-2"
     },
     {
-      "id": "e-root-phase-f1",
+      "id": "e-root-sec-f1",
       "from": "root",
-      "to": "phase-f1"
+      "to": "sec-f1"
     },
     {
-      "id": "e-phase-f1-task-1.1",
-      "from": "phase-f1",
-      "to": "task-1.1"
+      "id": "e-sec-f1-it-f1-0",
+      "from": "sec-f1",
+      "to": "it-f1-0"
     },
     {
-      "id": "e-phase-f1-task-1.2",
-      "from": "phase-f1",
-      "to": "task-1.2"
+      "id": "e-sec-f1-it-f1-1",
+      "from": "sec-f1",
+      "to": "it-f1-1"
     },
     {
-      "id": "e-phase-f1-task-1.3",
-      "from": "phase-f1",
-      "to": "task-1.3"
+      "id": "e-sec-f1-it-f1-2",
+      "from": "sec-f1",
+      "to": "it-f1-2"
     },
     {
-      "id": "e-phase-f1-task-1.4",
-      "from": "phase-f1",
-      "to": "task-1.4"
+      "id": "e-sec-f1-it-f1-3",
+      "from": "sec-f1",
+      "to": "it-f1-3"
     },
     {
-      "id": "e-phase-f1-task-1.5",
-      "from": "phase-f1",
-      "to": "task-1.5"
+      "id": "e-sec-f1-it-f1-4",
+      "from": "sec-f1",
+      "to": "it-f1-4"
     },
     {
-      "id": "e-phase-f1-task-1.6",
-      "from": "phase-f1",
-      "to": "task-1.6"
+      "id": "e-sec-f1-it-f1-5",
+      "from": "sec-f1",
+      "to": "it-f1-5"
     },
     {
-      "id": "e-phase-f1-task-1.7",
-      "from": "phase-f1",
-      "to": "task-1.7"
+      "id": "e-sec-f1-it-f1-6",
+      "from": "sec-f1",
+      "to": "it-f1-6"
     },
     {
-      "id": "e-phase-f1-task-1.8",
-      "from": "phase-f1",
-      "to": "task-1.8"
+      "id": "e-sec-f1-it-f1-7",
+      "from": "sec-f1",
+      "to": "it-f1-7"
     },
     {
-      "id": "e-phase-f1-task-1.9",
-      "from": "phase-f1",
-      "to": "task-1.9"
+      "id": "e-sec-f1-it-f1-8",
+      "from": "sec-f1",
+      "to": "it-f1-8"
     },
     {
-      "id": "e-phase-f1-task-1.10",
-      "from": "phase-f1",
-      "to": "task-1.10"
+      "id": "e-sec-f1-it-f1-9",
+      "from": "sec-f1",
+      "to": "it-f1-9"
     },
     {
-      "id": "e-phase-f1-task-1.11",
-      "from": "phase-f1",
-      "to": "task-1.11"
+      "id": "e-sec-f1-it-f1-10",
+      "from": "sec-f1",
+      "to": "it-f1-10"
     },
     {
-      "id": "e-phase-f1-task-1.12",
-      "from": "phase-f1",
-      "to": "task-1.12"
+      "id": "e-sec-f1-it-f1-11",
+      "from": "sec-f1",
+      "to": "it-f1-11"
     },
     {
-      "id": "e-phase-f1-task-1.13",
-      "from": "phase-f1",
-      "to": "task-1.13"
+      "id": "e-sec-f1-it-f1-12",
+      "from": "sec-f1",
+      "to": "it-f1-12"
     },
     {
-      "id": "e-root-phase-f2",
+      "id": "e-root-sec-f2",
       "from": "root",
-      "to": "phase-f2"
+      "to": "sec-f2"
     },
     {
-      "id": "e-phase-f2-task-2.1",
-      "from": "phase-f2",
-      "to": "task-2.1"
+      "id": "e-sec-f2-it-f2-0",
+      "from": "sec-f2",
+      "to": "it-f2-0"
     },
     {
-      "id": "e-phase-f2-task-2.2",
-      "from": "phase-f2",
-      "to": "task-2.2"
+      "id": "e-sec-f2-it-f2-1",
+      "from": "sec-f2",
+      "to": "it-f2-1"
     },
     {
-      "id": "e-phase-f2-task-2.3",
-      "from": "phase-f2",
-      "to": "task-2.3"
+      "id": "e-sec-f2-it-f2-2",
+      "from": "sec-f2",
+      "to": "it-f2-2"
     },
     {
-      "id": "e-phase-f2-task-2.4",
-      "from": "phase-f2",
-      "to": "task-2.4"
+      "id": "e-sec-f2-it-f2-3",
+      "from": "sec-f2",
+      "to": "it-f2-3"
     },
     {
-      "id": "e-root-phase-f3",
+      "id": "e-root-sec-f3",
       "from": "root",
-      "to": "phase-f3"
+      "to": "sec-f3"
     },
     {
-      "id": "e-phase-f3-task-3.1",
-      "from": "phase-f3",
-      "to": "task-3.1"
+      "id": "e-sec-f3-it-f3-0",
+      "from": "sec-f3",
+      "to": "it-f3-0"
     },
     {
-      "id": "e-phase-f3-task-3.2",
-      "from": "phase-f3",
-      "to": "task-3.2"
+      "id": "e-sec-f3-it-f3-1",
+      "from": "sec-f3",
+      "to": "it-f3-1"
     },
     {
-      "id": "e-phase-f3-task-3.3",
-      "from": "phase-f3",
-      "to": "task-3.3"
+      "id": "e-sec-f3-it-f3-2",
+      "from": "sec-f3",
+      "to": "it-f3-2"
     },
     {
-      "id": "e-phase-f3-task-3.4",
-      "from": "phase-f3",
-      "to": "task-3.4"
+      "id": "e-sec-f3-it-f3-3",
+      "from": "sec-f3",
+      "to": "it-f3-3"
     },
     {
-      "id": "e-phase-f3-task-3.5",
-      "from": "phase-f3",
-      "to": "task-3.5"
+      "id": "e-sec-f3-it-f3-4",
+      "from": "sec-f3",
+      "to": "it-f3-4"
     },
     {
-      "id": "e-root-phase-f4",
+      "id": "e-root-sec-f4",
       "from": "root",
-      "to": "phase-f4"
+      "to": "sec-f4"
     },
     {
-      "id": "e-phase-f4-task-4.1",
-      "from": "phase-f4",
-      "to": "task-4.1"
+      "id": "e-sec-f4-it-f4-0",
+      "from": "sec-f4",
+      "to": "it-f4-0"
     },
     {
-      "id": "e-phase-f4-task-4.2",
-      "from": "phase-f4",
-      "to": "task-4.2"
+      "id": "e-sec-f4-it-f4-1",
+      "from": "sec-f4",
+      "to": "it-f4-1"
     },
     {
-      "id": "e-phase-f4-task-4.3",
-      "from": "phase-f4",
-      "to": "task-4.3"
+      "id": "e-sec-f4-it-f4-2",
+      "from": "sec-f4",
+      "to": "it-f4-2"
     },
     {
-      "id": "e-phase-f4-task-4.4",
-      "from": "phase-f4",
-      "to": "task-4.4"
+      "id": "e-sec-f4-it-f4-3",
+      "from": "sec-f4",
+      "to": "it-f4-3"
     },
     {
-      "id": "e-phase-f4-task-4.5",
-      "from": "phase-f4",
-      "to": "task-4.5"
+      "id": "e-sec-f4-it-f4-4",
+      "from": "sec-f4",
+      "to": "it-f4-4"
     },
     {
-      "id": "e-phase-f4-task-4.6",
-      "from": "phase-f4",
-      "to": "task-4.6"
+      "id": "e-sec-f4-it-f4-5",
+      "from": "sec-f4",
+      "to": "it-f4-5"
     },
     {
-      "id": "e-phase-f4-task-4.7",
-      "from": "phase-f4",
-      "to": "task-4.7"
+      "id": "e-sec-f4-it-f4-6",
+      "from": "sec-f4",
+      "to": "it-f4-6"
     },
     {
-      "id": "e-phase-f4-task-4.8",
-      "from": "phase-f4",
-      "to": "task-4.8"
+      "id": "e-sec-f4-it-f4-7",
+      "from": "sec-f4",
+      "to": "it-f4-7"
     },
     {
-      "id": "e-root-phase-f5",
+      "id": "e-root-sec-f5",
       "from": "root",
-      "to": "phase-f5"
+      "to": "sec-f5"
     },
     {
-      "id": "e-phase-f5-task-5.1",
-      "from": "phase-f5",
-      "to": "task-5.1"
+      "id": "e-sec-f5-it-f5-0",
+      "from": "sec-f5",
+      "to": "it-f5-0"
     },
     {
-      "id": "e-phase-f5-task-5.2",
-      "from": "phase-f5",
-      "to": "task-5.2"
+      "id": "e-sec-f5-it-f5-1",
+      "from": "sec-f5",
+      "to": "it-f5-1"
     },
     {
-      "id": "e-phase-f5-task-5.3",
-      "from": "phase-f5",
-      "to": "task-5.3"
+      "id": "e-sec-f5-it-f5-2",
+      "from": "sec-f5",
+      "to": "it-f5-2"
     },
     {
-      "id": "e-phase-f5-task-5.4",
-      "from": "phase-f5",
-      "to": "task-5.4"
+      "id": "e-sec-f5-it-f5-3",
+      "from": "sec-f5",
+      "to": "it-f5-3"
     },
     {
-      "id": "e-root-phase-f6",
+      "id": "e-root-sec-f6",
       "from": "root",
-      "to": "phase-f6"
+      "to": "sec-f6"
     },
     {
-      "id": "e-phase-f6-task-6.1",
-      "from": "phase-f6",
-      "to": "task-6.1"
+      "id": "e-sec-f6-it-f6-0",
+      "from": "sec-f6",
+      "to": "it-f6-0"
     },
     {
-      "id": "e-phase-f6-task-6.2",
-      "from": "phase-f6",
-      "to": "task-6.2"
+      "id": "e-sec-f6-it-f6-1",
+      "from": "sec-f6",
+      "to": "it-f6-1"
     },
     {
-      "id": "e-phase-f6-task-6.3",
-      "from": "phase-f6",
-      "to": "task-6.3"
+      "id": "e-sec-f6-it-f6-2",
+      "from": "sec-f6",
+      "to": "it-f6-2"
     },
     {
-      "id": "e-phase-f6-task-6.4",
-      "from": "phase-f6",
-      "to": "task-6.4"
+      "id": "e-sec-f6-it-f6-3",
+      "from": "sec-f6",
+      "to": "it-f6-3"
     },
     {
-      "id": "e-root-phase-f7",
+      "id": "e-root-sec-f7",
       "from": "root",
-      "to": "phase-f7"
+      "to": "sec-f7"
     },
     {
-      "id": "e-phase-f7-task-7.1",
-      "from": "phase-f7",
-      "to": "task-7.1"
+      "id": "e-sec-f7-it-f7-0",
+      "from": "sec-f7",
+      "to": "it-f7-0"
     },
     {
-      "id": "e-phase-f7-task-7.2",
-      "from": "phase-f7",
-      "to": "task-7.2"
+      "id": "e-sec-f7-it-f7-1",
+      "from": "sec-f7",
+      "to": "it-f7-1"
     },
     {
-      "id": "e-phase-f7-task-7.3",
-      "from": "phase-f7",
-      "to": "task-7.3"
+      "id": "e-sec-f7-it-f7-2",
+      "from": "sec-f7",
+      "to": "it-f7-2"
     },
     {
       "id": "e-root-progress",

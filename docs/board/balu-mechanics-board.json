@@ -1,0 +1,970 @@
+{
+  "nodes": [
+    {
+      "id": "root",
+      "type": "text",
+      "x": 1500,
+      "y": -420,
+      "width": 620,
+      "height": 150,
+      "style": "heading",
+      "color": "#BB2649",
+      "content": "<b>МЕХАНІКИ</b><br><span style=\"font-size:0.5em\">те, що найлегше забути й найдорожче виводити заново</span>"
+    },
+    {
+      "id": "sec-routines",
+      "type": "text",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#0F4C81",
+      "content": "<b>4 ТИПИ РОЗКЛАДІВ</b><br><span style=\"font-size:0.52em\">серце двигуна</span>"
+    },
+    {
+      "id": "it-routines-0",
+      "type": "text",
+      "x": 30,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Слотовий добовий</b><br><span style=\"font-size:0.62em\">N разів на день. Скидається вночі, борг НЕ переноситься — подвійну порцію не дають. Герольда не піднімає ніколи. Годування 2× · Патруль 3×</span>"
+    },
+    {
+      "id": "it-routines-1",
+      "type": "text",
+      "x": 30,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Захисний</b><br><span style=\"font-size:0.62em\">дає оберіг на X днів. Згас → дебафф. Кліщі 30 днів · Глисти 90 днів</span>"
+    },
+    {
+      "id": "it-routines-2",
+      "type": "text",
+      "x": 30,
+      "y": 690,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Обовʼязок</b><br><span style=\"font-size:0.62em\">раз на N місяців, прострочення накопичується. Огляд 6 міс · Вакцина 12 міс · Вага й кігті 1 міс</span>"
+    },
+    {
+      "id": "it-routines-3",
+      "type": "text",
+      "x": 30,
+      "y": 910,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Квота</b><br><span style=\"font-size:0.62em\">хоча б N разів за період. Нічого не карає, просто лічильник «0 з 1». Ліс 1×/міс · Біг 2×/тижд · Ікла 3×/тижд</span>"
+    },
+    {
+      "id": "it-routines-4",
+      "type": "text",
+      "x": 30,
+      "y": 1130,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Чому не один тип на всіх</b><br><span style=\"font-size:0.62em\">зведення дало б або токсичну апку (борг за годування), або беззубу (прострочена вакцина без наслідків)</span>"
+    },
+    {
+      "id": "it-routines-5",
+      "type": "text",
+      "x": 30,
+      "y": 1350,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Оберіг НЕ накопичується</b><br><span style=\"font-size:0.62em\">дав засіб на 25-й день з 30 → новий термін ВІД НОВОЇ ДАТИ, не 35 днів. Саме так це працює насправді</span>"
+    },
+    {
+      "id": "sec-xp",
+      "type": "text",
+      "x": 460,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#BB2649",
+      "content": "<b>МАТЕМАТИКА 999</b><br><span style=\"font-size:0.52em\">числа, що вбудовують сенс</span>"
+    },
+    {
+      "id": "it-xp-0",
+      "type": "text",
+      "x": 490,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>150 XP на рівень, стеля 999</b><br><span style=\"font-size:0.62em\">999 × 150 = 149 850 ≈ ідеальний рік (147 000). Рівень НЕ скидається, стеля довічна</span>"
+    },
+    {
+      "id": "it-xp-1",
+      "type": "text",
+      "x": 490,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Вага XP обернено до частоти</b><br><span style=\"font-size:0.62em\">Годування 20 · Патруль 30 · Біг 100 · Ікла 40 · Кліщі 1200 · Глисти 2000 · Огляд 4000 · Вакцина 6000 · Вага 600 · Кігті 400 · Ліс 2500 · Огляд на кліщів 400</span>"
+    },
+    {
+      "id": "it-xp-2",
+      "type": "text",
+      "x": 490,
+      "y": 690,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Щоденне = 64 090 XP/рік</b><br><span style=\"font-size:0.62em\">43% від суми</span>"
+    },
+    {
+      "id": "it-xp-3",
+      "type": "text",
+      "x": 490,
+      "y": 910,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Рідке = 83 200 XP/рік</b><br><span style=\"font-size:0.62em\">57% від суми</span>"
+    },
+    {
+      "id": "it-xp-4",
+      "type": "text",
+      "x": 490,
+      "y": 1130,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>ГОЛОВНА ВЛАСТИВІСТЬ</b><br><span style=\"font-size:0.62em\">ідеальні щоденні тапи цілий рік дають рівень 427 І ВСЕ. Наблизитись до 999 без оглядів, обробок і походів ФІЗИЧНО НЕМОЖЛИВО. Це тест — якщо впаде, хтось зробив клікер</span>"
+    },
+    {
+      "id": "it-xp-5",
+      "type": "text",
+      "x": 490,
+      "y": 1350,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Рідке відчувається як подія</b><br><span style=\"font-size:0.62em\">похід у ліс +16 рівнів одним разом · огляд +27 · вакцинація +40</span>"
+    },
+    {
+      "id": "it-xp-6",
+      "type": "text",
+      "x": 490,
+      "y": 1570,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Чому не рівень = вік</b><br><span style=\"font-size:0.62em\">зі стелею 999 за рік «4 з 999» це нуль. Вік — окремий атрибут листа</span>"
+    },
+    {
+      "id": "it-xp-7",
+      "type": "text",
+      "x": 490,
+      "y": 1790,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Реалістичний темп</b><br><span style=\"font-size:0.62em\">при ~70% сумлінності 999 припадає на другий рік. Стеля, до якої йдеш 2-3 роки, важить більше за річний скид</span>"
+    },
+    {
+      "id": "it-xp-8",
+      "type": "text",
+      "x": 490,
+      "y": 2010,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Межа року</b><br><span style=\"font-size:0.62em\">підсумок у хроніці замість скиду: «Рік I: 18 з 24 обрядів, 11 походів, оберіг не гас 341 день»</span>"
+    },
+    {
+      "id": "sec-stats",
+      "type": "text",
+      "x": 920,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#009B77",
+      "content": "<b>СТАТІ</b><br><span style=\"font-size:0.52em\">ковзні вікна, все відновлюється саме</span>"
+    },
+    {
+      "id": "it-stats-0",
+      "type": "text",
+      "x": 950,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Чому вікно, а не накопичення</b><br><span style=\"font-size:0.62em\">пропущене САМЕ випадає з вікна. Не треба механіки «прощення» — тижневий провал через два тижні просто перестає впливати</span>"
+    },
+    {
+      "id": "it-stats-1",
+      "type": "text",
+      "x": 950,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Vitality</b><br><span style=\"font-size:0.62em\">20 кліщі + 20 глисти + 15 огляд + 15 вакцина + 20 вага в діапазоні + 10 кігті = 100</span>"
+    },
+    {
+      "id": "it-stats-2",
+      "type": "text",
+      "x": 950,
+      "y": 690,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Stamina (14 днів)</b><br><span style=\"font-size:0.62em\">70 × min(1, патрулі/42) + 30 × min(1, забіги/4)</span>"
+    },
+    {
+      "id": "it-stats-3",
+      "type": "text",
+      "x": 950,
+      "y": 910,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Coat (14 днів)</b><br><span style=\"font-size:0.62em\">60 × min(1, ікла/6) + 40 × (кігті не прострочені)</span>"
+    },
+    {
+      "id": "it-stats-4",
+      "type": "text",
+      "x": 950,
+      "y": 1130,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Bond (30 днів)</b><br><span style=\"font-size:0.62em\">50 × походи + 30 × (днів з подією / 30) + 20 × нових місць за 90 днів</span>"
+    },
+    {
+      "id": "sec-herald",
+      "type": "text",
+      "x": 1380,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#DD4124",
+      "content": "<b>ГЕРОЛЬД</b><br><span style=\"font-size:0.52em\">головний канал, не пуші</span>"
+    },
+    {
+      "id": "it-herald-0",
+      "type": "text",
+      "x": 1410,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Чому не пуші</b><br><span style=\"font-size:0.62em\">пуш приходить, коли ти не готовий діяти — за кермом, на роботі — і згорає. Діалог при вході ловить тебе в контексті пса з вільними руками</span>"
+    },
+    {
+      "id": "it-herald-1",
+      "type": "text",
+      "x": 1410,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Правило 1: тільки дороге</b><br><span style=\"font-size:0.62em\">оберіг гасне, обовʼязок прострочений. НІКОЛИ «ти ще не гуляв» — щоденне живе на дошці</span>"
+    },
+    {
+      "id": "it-herald-2",
+      "type": "text",
+      "x": 1410,
+      "y": 690,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Правило 2: раз на стадію</b><br><span style=\"font-size:0.62em\">запис HeraldShown. Заходиш пʼять разів на день — бачиш один раз</span>"
+    },
+    {
+      "id": "it-herald-3",
+      "type": "text",
+      "x": 1410,
+      "y": 910,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Правило 3: один на відкриття</b><br><span style=\"font-size:0.62em\">решта в черзі: прострочене → скоро згасне → квота</span>"
+    },
+    {
+      "id": "it-herald-4",
+      "type": "text",
+      "x": 1410,
+      "y": 1130,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Правило 4: не «ОК», а рішення</b><br><span style=\"font-size:0.62em\">три РІЗНІ кнопки. Читати змушує не затримка, а осмислений вибір — якщо варіанти не взаємозамінні, наосліп не тапнеш</span>"
+    },
+    {
+      "id": "it-herald-5",
+      "type": "text",
+      "x": 1410,
+      "y": 1350,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Стадії захисного</b><br><span style=\"font-size:0.62em\">−7 днів · −3 дні · день згасання · +1 день · далі кожні 7</span>"
+    },
+    {
+      "id": "it-herald-6",
+      "type": "text",
+      "x": 1410,
+      "y": 1570,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Стадії обовʼязку</b><br><span style=\"font-size:0.62em\">−30 · −14 · −3 дні · день · далі кожні 14</span>"
+    },
+    {
+      "id": "it-herald-7",
+      "type": "text",
+      "x": 1410,
+      "y": 1790,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Приклад</b><br><span style=\"font-size:0.62em\">«Огляд Цілителя прострочено дванадцять днів» → Записатись до Цілителя (в календар) · Нагадай за три дні · Вже звершено — записати датою</span>"
+    },
+    {
+      "id": "sec-voice",
+      "type": "text",
+      "x": 1840,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#6667AB",
+      "content": "<b>ГОЛОС</b><br><span style=\"font-size:0.52em\">дефіцитний ресурс</span>"
+    },
+    {
+      "id": "it-voice-0",
+      "type": "text",
+      "x": 1870,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Світ говорить за замовчуванням</b><br><span style=\"font-size:0.62em\">хроніка в реєстрі бестіарію, сухо й гідно: «Оберіг Нічного Гонця згасне через три дні»</span>"
+    },
+    {
+      "id": "it-voice-1",
+      "type": "text",
+      "x": 1870,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Балу говорить РІДКО</b><br><span style=\"font-size:0.62em\">саме тому це працює. Тільки на піках: перший виклик · повернення з походу · левелап · день народження · АУУУУУУ · момент лікування</span>"
+    },
+    {
+      "id": "it-voice-2",
+      "type": "text",
+      "x": 1870,
+      "y": 690,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Стиль</b><br><span style=\"font-size:0.62em\">лаконічний звір, не дитина. «Щит змикається.» Не «мені страшно»</span>"
+    },
+    {
+      "id": "it-voice-3",
+      "type": "text",
+      "x": 1870,
+      "y": 910,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Ніяких «покорми мене»</b><br><span style=\"font-size:0.62em\">якщо він говорить щодня — він мультик. Пʼять разів на рік — кожна репліка бʼє</span>"
+    },
+    {
+      "id": "sec-notif",
+      "type": "text",
+      "x": 2300,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#955251",
+      "content": "<b>ДЕТЕКТОР ТИШИНИ</b><br><span style=\"font-size:0.52em\">пуш = сигнал, що основний канал зламався</span>"
+    },
+    {
+      "id": "it-notif-0",
+      "type": "text",
+      "x": 2330,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Щоденних пушів НЕМА</b><br><span style=\"font-size:0.62em\">взагалі. Ти й так заходиш</span>"
+    },
+    {
+      "id": "it-notif-1",
+      "type": "text",
+      "x": 2330,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Дірка, яку це закриває</b><br><span style=\"font-size:0.62em\">тиждень без апки, і саме тоді згасає оберіг. Герольда нема, бо не зайшов</span>"
+    },
+    {
+      "id": "it-notif-2",
+      "type": "text",
+      "x": 2330,
+      "y": 690,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Правило спрацювання</b><br><span style=\"font-size:0.62em\">апку не відкривали 3+ дні І є дороге (оберіг гасне ≤7 днів або згас; обовʼязок прострочений або ≤14 днів)</span>"
+    },
+    {
+      "id": "it-notif-3",
+      "type": "text",
+      "x": 2330,
+      "y": 910,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>АУУУУУУ</b><br><span style=\"font-size:0.62em\">чорний гончак виє на локскріні. Рамка — КЛИЧ НА ВІДСТАНІ, не докір. «Я тебе гукаю», не «ти мене покинув»</span>"
+    },
+    {
+      "id": "it-notif-4",
+      "type": "text",
+      "x": 2330,
+      "y": 1130,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Реалізація</b><br><span style=\"font-size:0.62em\">на фоні скасувати все й перепланувати now+3/6/10д. Відкриття апки скасовує. Заходиш регулярно — не побачиш жодної ніколи</span>"
+    },
+    {
+      "id": "it-notif-5",
+      "type": "text",
+      "x": 2330,
+      "y": 1350,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Бюджет 64</b><br><span style=\"font-size:0.62em\">iOS тримає max 64 запланованих. Щоденні по одній на день вигоріли б за 12 днів, і нагадування через 5 місяців МОВЧКИ не поставилось би. Детектор займає ≤4</span>"
+    },
+    {
+      "id": "it-notif-6",
+      "type": "text",
+      "x": 2330,
+      "y": 1570,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Календарна страховка</b><br><span style=\"font-size:0.62em\">огляд і вакцина → справжня подія в Календарі з нагадуванням за 7 днів. Переживає перевстановлення апки</span>"
+    },
+    {
+      "id": "sec-arch",
+      "type": "text",
+      "x": 2760,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#5F4B8B",
+      "content": "<b>АРХІТЕКТУРА</b><br><span style=\"font-size:0.52em\">журнал подій + обчислюваний стан</span>"
+    },
+    {
+      "id": "it-arch-0",
+      "type": "text",
+      "x": 2790,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>State = compute(events, routines, dog, now)</b><br><span style=\"font-size:0.62em\">рівень, XP, оберіги, статі, квести, трофеї НІДЕ не зберігаються. Час завжди аргументом, ніколи Date() всередині</span>"
+    },
+    {
+      "id": "it-arch-1",
+      "type": "text",
+      "x": 2790,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Причина 1: минуле число</b><br><span style=\"font-size:0.62em\">вставив подію в четвер — усе перерахувалось. У мутабельному стані це ручний відкат і переграння історії</span>"
+    },
+    {
+      "id": "it-arch-2",
+      "type": "text",
+      "x": 2790,
+      "y": 690,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Причина 2: трофеї ретроспективні</b><br><span style=\"font-size:0.62em\">додав трофей через рік — він одразу відкривається, якщо умова вже виконана в журналі</span>"
+    },
+    {
+      "id": "it-arch-3",
+      "type": "text",
+      "x": 2790,
+      "y": 910,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Причина 3: синк безкоштовний</b><br><span style=\"font-size:0.62em\">журнал, у який тільки додають, зливається без конфліктів</span>"
+    },
+    {
+      "id": "it-arch-4",
+      "type": "text",
+      "x": 2790,
+      "y": 1130,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Модулі</b><br><span style=\"font-size:0.62em\">BaluCore (чистий, тестується без пристрою) · BaluStore (SwiftData) · BaluPixel (Vision) · BaluUI · BaluApp</span>"
+    },
+    {
+      "id": "it-arch-5",
+      "type": "text",
+      "x": 2790,
+      "y": 1350,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Породжені квести</b><br><span style=\"font-size:0.62em\">похід → квест «Огляд на кліщів» на 24 год. Не розклад, бо залежить від того, чи їздили</span>"
+    },
+    {
+      "id": "it-arch-6",
+      "type": "text",
+      "x": 2790,
+      "y": 1570,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Перф</b><br><span style=\"font-size:0.62em\">11 000 подій за 5 років = одиниці мілісекунд. Чекпойнти СВІДОМО не закладаються. Перерахунок на запуску/фоні/записі, кеш у @Observable, у тілі View нічого</span>"
+    },
+    {
+      "id": "sec-pixel",
+      "type": "text",
+      "x": 3220,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#FF6F61",
+      "content": "<b>ПІКСЕЛІЗАЦІЯ</b><br><span style=\"font-size:0.52em\">головний технічний ризик</span>"
+    },
+    {
+      "id": "it-pixel-0",
+      "type": "text",
+      "x": 3250,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Чорний пес — найважчий випадок</b><br><span style=\"font-size:0.62em\">суцільно чорна шерсть при квантуванні схлопується в СИЛУЕТНУ ПЛЯМУ без форми</span>"
+    },
+    {
+      "id": "it-pixel-1",
+      "type": "text",
+      "x": 3250,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Крок 1: маска обʼєкта</b><br><span style=\"font-size:0.62em\">VNGenerateForegroundInstanceMaskRequest. Фон і є головне джерело мулу</span>"
+    },
+    {
+      "id": "it-pixel-2",
+      "type": "text",
+      "x": 3250,
+      "y": 690,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Крок 2: РОЗТЯГУВАННЯ ТОНІВ У МАСЦІ</b><br><span style=\"font-size:0.62em\">вирішальний крок. Гістограма ЛИШЕ пікселів пса розтягується — 4% різниці в тінях стають формою: груди, лапи, лінія спини</span>"
+    },
+    {
+      "id": "it-pixel-3",
+      "type": "text",
+      "x": 3250,
+      "y": 910,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Крок 3: сплющити</b><br><span style=\"font-size:0.62em\">медіанний фільтр, щоб шерсть не всереднилась у кашу</span>"
+    },
+    {
+      "id": "it-pixel-4",
+      "type": "text",
+      "x": 3250,
+      "y": 1130,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Крок 4: зменшити усередненням</b><br><span style=\"font-size:0.62em\">vImage, по площі — не білінійно. 64×64 пози, 96×96 портрет</span>"
+    },
+    {
+      "id": "it-pixel-5",
+      "type": "text",
+      "x": 3250,
+      "y": 1350,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Крок 5: квантувати</b><br><span style=\"font-size:0.62em\">16-24 кольори, привʼязані до палітри апки. Холодні тони, чистий чорний лише для найглибшої тіні</span>"
+    },
+    {
+      "id": "it-pixel-6",
+      "type": "text",
+      "x": 3250,
+      "y": 1570,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Крок 6: світлий обідок</b><br><span style=\"font-size:0.62em\">1 піксель по контуру. На темному персонажі дає більше читабельності, ніж усе інше</span>"
+    },
+    {
+      "id": "it-pixel-7",
+      "type": "text",
+      "x": 3250,
+      "y": 1790,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>Крок 7: очі й ніс</b><br><span style=\"font-size:0.62em\">половина впізнаваності чорного пса. Руками в редакторі — автоматика ненадійна</span>"
+    },
+    {
+      "id": "it-pixel-8",
+      "type": "text",
+      "x": 3250,
+      "y": 2010,
+      "width": 340,
+      "height": 190,
+      "style": "body",
+      "content": "<b>План Б</b><br><span style=\"font-size:0.62em\">намальований архетип худого сайтхаунда, перефарбований у палітру Балу. Гірше для «це мій пес», але гарантовано консистентно</span>"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-root-sec-routines",
+      "from": "root",
+      "to": "sec-routines"
+    },
+    {
+      "id": "e-sec-routines-it-routines-0",
+      "from": "sec-routines",
+      "to": "it-routines-0"
+    },
+    {
+      "id": "e-sec-routines-it-routines-1",
+      "from": "sec-routines",
+      "to": "it-routines-1"
+    },
+    {
+      "id": "e-sec-routines-it-routines-2",
+      "from": "sec-routines",
+      "to": "it-routines-2"
+    },
+    {
+      "id": "e-sec-routines-it-routines-3",
+      "from": "sec-routines",
+      "to": "it-routines-3"
+    },
+    {
+      "id": "e-sec-routines-it-routines-4",
+      "from": "sec-routines",
+      "to": "it-routines-4"
+    },
+    {
+      "id": "e-sec-routines-it-routines-5",
+      "from": "sec-routines",
+      "to": "it-routines-5"
+    },
+    {
+      "id": "e-root-sec-xp",
+      "from": "root",
+      "to": "sec-xp"
+    },
+    {
+      "id": "e-sec-xp-it-xp-0",
+      "from": "sec-xp",
+      "to": "it-xp-0"
+    },
+    {
+      "id": "e-sec-xp-it-xp-1",
+      "from": "sec-xp",
+      "to": "it-xp-1"
+    },
+    {
+      "id": "e-sec-xp-it-xp-2",
+      "from": "sec-xp",
+      "to": "it-xp-2"
+    },
+    {
+      "id": "e-sec-xp-it-xp-3",
+      "from": "sec-xp",
+      "to": "it-xp-3"
+    },
+    {
+      "id": "e-sec-xp-it-xp-4",
+      "from": "sec-xp",
+      "to": "it-xp-4"
+    },
+    {
+      "id": "e-sec-xp-it-xp-5",
+      "from": "sec-xp",
+      "to": "it-xp-5"
+    },
+    {
+      "id": "e-sec-xp-it-xp-6",
+      "from": "sec-xp",
+      "to": "it-xp-6"
+    },
+    {
+      "id": "e-sec-xp-it-xp-7",
+      "from": "sec-xp",
+      "to": "it-xp-7"
+    },
+    {
+      "id": "e-sec-xp-it-xp-8",
+      "from": "sec-xp",
+      "to": "it-xp-8"
+    },
+    {
+      "id": "e-root-sec-stats",
+      "from": "root",
+      "to": "sec-stats"
+    },
+    {
+      "id": "e-sec-stats-it-stats-0",
+      "from": "sec-stats",
+      "to": "it-stats-0"
+    },
+    {
+      "id": "e-sec-stats-it-stats-1",
+      "from": "sec-stats",
+      "to": "it-stats-1"
+    },
+    {
+      "id": "e-sec-stats-it-stats-2",
+      "from": "sec-stats",
+      "to": "it-stats-2"
+    },
+    {
+      "id": "e-sec-stats-it-stats-3",
+      "from": "sec-stats",
+      "to": "it-stats-3"
+    },
+    {
+      "id": "e-sec-stats-it-stats-4",
+      "from": "sec-stats",
+      "to": "it-stats-4"
+    },
+    {
+      "id": "e-root-sec-herald",
+      "from": "root",
+      "to": "sec-herald"
+    },
+    {
+      "id": "e-sec-herald-it-herald-0",
+      "from": "sec-herald",
+      "to": "it-herald-0"
+    },
+    {
+      "id": "e-sec-herald-it-herald-1",
+      "from": "sec-herald",
+      "to": "it-herald-1"
+    },
+    {
+      "id": "e-sec-herald-it-herald-2",
+      "from": "sec-herald",
+      "to": "it-herald-2"
+    },
+    {
+      "id": "e-sec-herald-it-herald-3",
+      "from": "sec-herald",
+      "to": "it-herald-3"
+    },
+    {
+      "id": "e-sec-herald-it-herald-4",
+      "from": "sec-herald",
+      "to": "it-herald-4"
+    },
+    {
+      "id": "e-sec-herald-it-herald-5",
+      "from": "sec-herald",
+      "to": "it-herald-5"
+    },
+    {
+      "id": "e-sec-herald-it-herald-6",
+      "from": "sec-herald",
+      "to": "it-herald-6"
+    },
+    {
+      "id": "e-sec-herald-it-herald-7",
+      "from": "sec-herald",
+      "to": "it-herald-7"
+    },
+    {
+      "id": "e-root-sec-voice",
+      "from": "root",
+      "to": "sec-voice"
+    },
+    {
+      "id": "e-sec-voice-it-voice-0",
+      "from": "sec-voice",
+      "to": "it-voice-0"
+    },
+    {
+      "id": "e-sec-voice-it-voice-1",
+      "from": "sec-voice",
+      "to": "it-voice-1"
+    },
+    {
+      "id": "e-sec-voice-it-voice-2",
+      "from": "sec-voice",
+      "to": "it-voice-2"
+    },
+    {
+      "id": "e-sec-voice-it-voice-3",
+      "from": "sec-voice",
+      "to": "it-voice-3"
+    },
+    {
+      "id": "e-root-sec-notif",
+      "from": "root",
+      "to": "sec-notif"
+    },
+    {
+      "id": "e-sec-notif-it-notif-0",
+      "from": "sec-notif",
+      "to": "it-notif-0"
+    },
+    {
+      "id": "e-sec-notif-it-notif-1",
+      "from": "sec-notif",
+      "to": "it-notif-1"
+    },
+    {
+      "id": "e-sec-notif-it-notif-2",
+      "from": "sec-notif",
+      "to": "it-notif-2"
+    },
+    {
+      "id": "e-sec-notif-it-notif-3",
+      "from": "sec-notif",
+      "to": "it-notif-3"
+    },
+    {
+      "id": "e-sec-notif-it-notif-4",
+      "from": "sec-notif",
+      "to": "it-notif-4"
+    },
+    {
+      "id": "e-sec-notif-it-notif-5",
+      "from": "sec-notif",
+      "to": "it-notif-5"
+    },
+    {
+      "id": "e-sec-notif-it-notif-6",
+      "from": "sec-notif",
+      "to": "it-notif-6"
+    },
+    {
+      "id": "e-root-sec-arch",
+      "from": "root",
+      "to": "sec-arch"
+    },
+    {
+      "id": "e-sec-arch-it-arch-0",
+      "from": "sec-arch",
+      "to": "it-arch-0"
+    },
+    {
+      "id": "e-sec-arch-it-arch-1",
+      "from": "sec-arch",
+      "to": "it-arch-1"
+    },
+    {
+      "id": "e-sec-arch-it-arch-2",
+      "from": "sec-arch",
+      "to": "it-arch-2"
+    },
+    {
+      "id": "e-sec-arch-it-arch-3",
+      "from": "sec-arch",
+      "to": "it-arch-3"
+    },
+    {
+      "id": "e-sec-arch-it-arch-4",
+      "from": "sec-arch",
+      "to": "it-arch-4"
+    },
+    {
+      "id": "e-sec-arch-it-arch-5",
+      "from": "sec-arch",
+      "to": "it-arch-5"
+    },
+    {
+      "id": "e-sec-arch-it-arch-6",
+      "from": "sec-arch",
+      "to": "it-arch-6"
+    },
+    {
+      "id": "e-root-sec-pixel",
+      "from": "root",
+      "to": "sec-pixel"
+    },
+    {
+      "id": "e-sec-pixel-it-pixel-0",
+      "from": "sec-pixel",
+      "to": "it-pixel-0"
+    },
+    {
+      "id": "e-sec-pixel-it-pixel-1",
+      "from": "sec-pixel",
+      "to": "it-pixel-1"
+    },
+    {
+      "id": "e-sec-pixel-it-pixel-2",
+      "from": "sec-pixel",
+      "to": "it-pixel-2"
+    },
+    {
+      "id": "e-sec-pixel-it-pixel-3",
+      "from": "sec-pixel",
+      "to": "it-pixel-3"
+    },
+    {
+      "id": "e-sec-pixel-it-pixel-4",
+      "from": "sec-pixel",
+      "to": "it-pixel-4"
+    },
+    {
+      "id": "e-sec-pixel-it-pixel-5",
+      "from": "sec-pixel",
+      "to": "it-pixel-5"
+    },
+    {
+      "id": "e-sec-pixel-it-pixel-6",
+      "from": "sec-pixel",
+      "to": "it-pixel-6"
+    },
+    {
+      "id": "e-sec-pixel-it-pixel-7",
+      "from": "sec-pixel",
+      "to": "it-pixel-7"
+    },
+    {
+      "id": "e-sec-pixel-it-pixel-8",
+      "from": "sec-pixel",
+      "to": "it-pixel-8"
+    }
+  ]
+}
