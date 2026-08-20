@@ -1,0 +1,5 @@
+.DS_Store
+
+# рантайм браузерного компаньйона — макети лишаємо, стан і токени ні
+.superpowers/brainstorm/*/state/
+.superpowers/brainstorm/.last-*

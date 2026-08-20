@@ -1,0 +1,294 @@
+<style>
+  .balu-wrap { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+
+  .phone {
+    width: 300px; background: #0d0f14; border: 3px solid #3a3223;
+    box-shadow: inset 0 0 0 1px #6b5c3c, 0 0 24px rgba(0,0,0,.6);
+    padding: 0; overflow: hidden; color: #c9b98f;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px;
+  }
+  .p-head {
+    display:flex; justify-content:space-between; align-items:center;
+    padding: 7px 10px; background: linear-gradient(#1c1a14,#12100c);
+    border-bottom: 1px solid #6b5c3c; letter-spacing: .08em;
+  }
+  .p-head .nm { color:#d9a54a; font-weight:700; font-size:12px; }
+  .p-head .lv { color:#8a7d5c; font-size:10px; }
+  .p-body { padding: 10px; }
+
+  .panel {
+    background:#15171f; border:1px solid #3a3223;
+    box-shadow: inset 0 0 0 1px #23202a; padding:8px; margin-bottom:8px;
+  }
+  .panel-t {
+    color:#8a7d5c; font-size:9px; letter-spacing:.14em; text-transform:uppercase;
+    margin-bottom:6px; border-bottom:1px solid #2a2519; padding-bottom:3px;
+  }
+
+  .sprite { image-rendering: pixelated; display:block; }
+
+  .portrait {
+    background: radial-gradient(circle at 50% 40%, #1e2430 0%, #0d0f14 75%);
+    border:1px solid #3a3223; display:flex; align-items:center; justify-content:center;
+    padding:6px 0;
+  }
+
+  .stat { margin-bottom:5px; }
+  .stat-r { display:flex; justify-content:space-between; font-size:9px; color:#a89873; margin-bottom:2px; }
+  .bar { height:6px; background:#0a0b0f; border:1px solid #2a2519; }
+  .bar > i { display:block; height:100%; }
+  .f-vit { background:linear-gradient(90deg,#4a7a4a,#7ab86a); }
+  .f-sta { background:linear-gradient(90deg,#6a5aa0,#9a86d0); }
+  .f-coa { background:linear-gradient(90deg,#8a6a3a,#c9a05a); }
+  .f-bon { background:linear-gradient(90deg,#a04a4a,#d08a6a); }
+
+  .buffs { display:flex; gap:6px; }
+  .buff {
+    flex:1; text-align:center; background:#12141b; border:1px solid #3a3223; padding:4px 2px;
+  }
+  .buff .ic { font-size:13px; line-height:1.2; }
+  .buff .tm { font-size:8px; color:#7d9a6a; letter-spacing:.05em; }
+  .buff.dead { border-color:#5a2f2a; }
+  .buff.dead .tm { color:#c9564a; }
+  .buff.dead .ic { opacity:.35; }
+
+  .q { display:flex; align-items:center; gap:7px; padding:5px 4px; border-bottom:1px solid #1e1b14; }
+  .q:last-child { border-bottom:none; }
+  .q .box { width:13px; height:13px; border:1px solid #6b5c3c; background:#0a0b0f; flex:0 0 auto; }
+  .q .box.on { background:#d9a54a; border-color:#d9a54a; }
+  .q .tx { flex:1; font-size:10px; color:#bfae84; }
+  .q .tx small { display:block; color:#6d6349; font-size:8px; letter-spacing:.05em; }
+  .q .xp { font-size:8px; color:#8a7d5c; }
+  .q.late .tx { color:#c9564a; }
+  .q.late .box { border-color:#8a3a32; }
+
+  .den {
+    height:150px; position:relative;
+    background:
+      linear-gradient(#1a1f2b 0%, #10131a 62%, #0a0c11 62%, #0a0c11 100%);
+    border:1px solid #3a3223; overflow:hidden;
+  }
+  .den .obj {
+    position:absolute; font-size:15px; filter: saturate(.6);
+  }
+  .den .tag {
+    position:absolute; font-size:7px; color:#6d6349; letter-spacing:.05em;
+  }
+  .den .floor { position:absolute; left:0; right:0; bottom:0; height:38%;
+    background: repeating-linear-gradient(90deg,#0f1218 0 7px,#0c0e13 7px 14px); }
+
+  .tabs { display:flex; border-top:1px solid #6b5c3c; background:#12100c; }
+  .tabs div { flex:1; text-align:center; padding:6px 0; font-size:8px;
+    color:#6d6349; letter-spacing:.08em; }
+  .tabs div.act { color:#d9a54a; box-shadow: inset 0 2px 0 #d9a54a; }
+
+  .strip { display:flex; align-items:center; gap:8px; }
+  .pips { display:flex; gap:3px; }
+  .pip { width:22px; height:4px; background:#0a0b0f; border:1px solid #2a2519; }
+  .pip > i { display:block; height:100%; }
+
+  .herald {
+    background:#14120c; border:1px solid #6b5c3c; padding:7px 8px; margin-bottom:8px;
+  }
+  .herald .who { font-size:8px; color:#8a7d5c; letter-spacing:.14em; margin-bottom:3px; }
+  .herald .ln { font-size:10px; color:#d9c9a0; line-height:1.45; }
+
+  .cap { font-size:10px; color:#6d6349; margin-top:6px; line-height:1.5; }
+  .cards { align-items: start; }
+  .card-image { background:#08090c !important; padding:14px 0; display:flex; justify-content:center; }
+</style>
+
+<div class="balu-wrap">
+<h2>Головний екран — три компонування</h2>
+<p class="subtitle">Балу, чорний як ніч, 4 роки. Спрайт намальовано в холодних тонах зі світлим обідком — саме так ми плануємо його пікселізувати. Питання: <b>що ти бачиш першим, коли відкриваєш апку?</b></p>
+
+<div class="cards">
+
+  <!-- ============ A ============ -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="phone">
+        <div class="p-head"><span class="nm">БАЛУ</span><span class="lv">НІЧНИЙ ГОНЕЦЬ · ур. 4</span></div>
+        <div class="p-body">
+          <div class="portrait" style="margin-bottom:8px">
+            <div class="sprite" data-sprite="full" data-px="5"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-t">Стан</div>
+            <div class="stat"><div class="stat-r"><span>VITALITY</span><span>82</span></div><div class="bar"><i class="f-vit" style="width:82%"></i></div></div>
+            <div class="stat"><div class="stat-r"><span>STAMINA</span><span>67</span></div><div class="bar"><i class="f-sta" style="width:67%"></i></div></div>
+            <div class="stat"><div class="stat-r"><span>COAT</span><span>91</span></div><div class="bar"><i class="f-coa" style="width:91%"></i></div></div>
+            <div class="stat"><div class="stat-r"><span>BOND</span><span>74</span></div><div class="bar"><i class="f-bon" style="width:74%"></i></div></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-t">Оберіги</div>
+            <div class="buffs">
+              <div class="buff"><div class="ic">🛡</div><div class="tm">18д</div></div>
+              <div class="buff"><div class="ic">🜂</div><div class="tm">54д</div></div>
+              <div class="buff dead"><div class="ic">✚</div><div class="tm">згас</div></div>
+            </div>
+          </div>
+
+          <div class="panel" style="margin-bottom:0">
+            <div class="panel-t">Сьогодні</div>
+            <div class="q"><div class="box on"></div><div class="tx">Годування <small>2 / 2</small></div><div class="xp">+2</div></div>
+            <div class="q"><div class="box"></div><div class="tx">Патруль <small>2 / 3</small></div><div class="xp">+3</div></div>
+          </div>
+        </div>
+        <div class="tabs"><div class="act">ЛИСТ</div><div>КВЕСТИ</div><div>МАПА</div><div>ХРОНІКА</div></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A · Лист персонажа</h3>
+      <p>Балу в центрі, під ним статі й оберіги. Класика Diablo. Найкраще передає «це живий персонаж», але щоденний тап живе нижче — треба скролити або йти в таб.</p>
+    </div>
+  </div>
+
+  <!-- ============ B ============ -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="phone">
+        <div class="p-head"><span class="nm">ЛІГВО</span><span class="lv">ур. 4 · 1240 XP</span></div>
+        <div class="p-body">
+          <div class="den" style="margin-bottom:8px">
+            <div class="floor"></div>
+            <div class="obj" style="left:12px; top:16px">🍖</div><div class="tag" style="left:8px; top:38px">МИСКА</div>
+            <div class="obj" style="right:14px; top:14px">⚗</div><div class="tag" style="right:6px; top:36px">ЗІЛЛЯ</div>
+            <div class="obj" style="left:50%; top:10px; transform:translateX(-50%)">🜋</div>
+            <div class="tag" style="left:50%; top:32px; transform:translateX(-50%)">ПОВОДОК</div>
+            <div style="position:absolute; left:50%; bottom:12px; transform:translateX(-50%)">
+              <div class="sprite" data-sprite="full" data-px="4"></div>
+            </div>
+          </div>
+
+          <div class="herald">
+            <div class="who">ХРОНІКА</div>
+            <div class="ln">Оберіг від кровопивць згасне через три дні.</div>
+          </div>
+
+          <div class="panel" style="margin-bottom:0">
+            <div class="panel-t">Оберіги</div>
+            <div class="buffs">
+              <div class="buff"><div class="ic">🛡</div><div class="tm">3д</div></div>
+              <div class="buff"><div class="ic">🜂</div><div class="tm">54д</div></div>
+              <div class="buff dead"><div class="ic">✚</div><div class="tm">згас</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs"><div class="act">ЛІГВО</div><div>КВЕСТИ</div><div>ЛИСТ</div><div>МАПА</div></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B · Лігво (сцена)</h3>
+      <p>Балу в піксельній кімнаті, дії — тап по предметах: миска, зілля, поводок. Найбільш «гра». Але потребує намальованої сцени, і щоденні дії стають довшими: знайди предмет, тапни, підтверди.</p>
+    </div>
+  </div>
+
+  <!-- ============ C ============ -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="phone">
+        <div class="p-head"><span class="nm">БАЛУ</span><span class="lv">ур. 4</span></div>
+        <div class="p-body">
+          <div class="panel strip" style="padding:7px 8px">
+            <div style="background:#0d0f14; border:1px solid #3a3223; padding:3px 4px">
+              <div class="sprite" data-sprite="head" data-px="4"></div>
+            </div>
+            <div style="flex:1">
+              <div style="font-size:9px; color:#8a7d5c; letter-spacing:.1em; margin-bottom:4px">НІЧНИЙ ГОНЕЦЬ · 11.5 кг</div>
+              <div class="pips">
+                <div class="pip"><i class="f-vit" style="width:82%"></i></div>
+                <div class="pip"><i class="f-sta" style="width:67%"></i></div>
+                <div class="pip"><i class="f-coa" style="width:91%"></i></div>
+                <div class="pip"><i class="f-bon" style="width:74%"></i></div>
+              </div>
+            </div>
+            <div class="buffs" style="flex:0 0 auto; gap:4px">
+              <div class="buff" style="padding:2px 4px"><div class="ic" style="font-size:11px">🛡</div><div class="tm">18д</div></div>
+              <div class="buff dead" style="padding:2px 4px"><div class="ic" style="font-size:11px">✚</div><div class="tm">!</div></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-t">Щоденні</div>
+            <div class="q"><div class="box on"></div><div class="tx">Годування <small>ВЕЧІРНЯ ПОРЦІЯ</small></div><div class="xp">+2</div></div>
+            <div class="q"><div class="box"></div><div class="tx">Патруль <small>2 / 3 · ВЕЧІР</small></div><div class="xp">+3</div></div>
+            <div class="q"><div class="box"></div><div class="tx">Ікла <small>2 / 3 ЦЬОГО ТИЖНЯ</small></div><div class="xp">+4</div></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-t">Обряди</div>
+            <div class="q late"><div class="box"></div><div class="tx">Огляд Цілителя <small>ПРОСТРОЧЕНО 12 ДНІВ</small></div><div class="xp">+400</div></div>
+            <div class="q"><div class="box"></div><div class="tx">Зілля від кровопивць <small>ЧЕРЕЗ 18 ДНІВ</small></div><div class="xp">+120</div></div>
+          </div>
+
+          <div class="panel" style="margin-bottom:0">
+            <div class="panel-t">Похід</div>
+            <div class="q"><div class="box"></div><div class="tx">Глибокий Ліс <small>0 / 1 ЦЬОГО МІСЯЦЯ</small></div><div class="xp">+250</div></div>
+          </div>
+        </div>
+        <div class="tabs"><div class="act">КВЕСТИ</div><div>ЛИСТ</div><div>МАПА</div><div>ХРОНІКА</div></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C · Дошка квестів</h3>
+      <p>Спереду — те, що треба зробити, згруповане за нашими чотирма типами: щоденні / обряди / походи. Балу згорнутий у смужку зверху. Найшвидший щоденний тап і найчесніша ієрархія, але персонаж відступає на другий план.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="cap">Оберіги в мокапі: 🛡 від кліщів (18 днів), 🜂 від глистів (54 дні), ✚ огляд у лікаря (згас). Прострочене світиться червоним, і саме воно піднімає герольда при вході.</p>
+</div>
+
+<script>
+(function () {
+  var PAL = { b:'#2b3040', d:'#13151d', o:'#6b7a99', e:'#d9a54a', t:'#1b1f29' };
+  var FULL = [
+    "........................",
+    "....................ooo.",
+    "...................obbbo",
+    "..................obbbbb",
+    "..........oooo....obbbeb",
+    "........oobbbbboobbbbbb.",
+    "...o...obbbbbbbbbbbbb...",
+    "..oo..obbbbbbbbbbbbb....",
+    "..bo.obbbbbbbbbbbbbb....",
+    "..bb.bbbbbdddbbbbbbb....",
+    "..bb.bbbb...bbbbbbb.....",
+    "...b.dbb.....bb.bbb.....",
+    ".....bb......bb.bb......",
+    ".....bb......bb.bb......",
+    ".....bb......bb.bb......",
+    ".....dd......dd.dd......"
+  ];
+  var HEAD = [
+    "..oooo..",
+    ".obbbbo.",
+    "obbbbbbo",
+    "obbebbbb",
+    "obbbbbbb",
+    ".obbbbdd",
+    "..obbbd.",
+    "...odd.."
+  ];
+  function render(el) {
+    var rows = el.dataset.sprite === 'head' ? HEAD : FULL;
+    var px = parseInt(el.dataset.px || '4', 10);
+    var w = rows[0].length, h = rows.length;
+    var svg = '<svg class="sprite" width="' + w * px + '" height="' + h * px +
+              '" viewBox="0 0 ' + w + ' ' + h + '" shape-rendering="crispEdges">';
+    for (var y = 0; y < h; y++) {
+      for (var x = 0; x < w; x++) {
+        var c = rows[y][x];
+        if (c === '.' || !PAL[c]) continue;
+        svg += '<rect x="' + x + '" y="' + y + '" width="1" height="1" fill="' + PAL[c] + '"/>';
+      }
+    }
+    el.innerHTML = svg + '</svg>';
+  }
+  document.querySelectorAll('[data-sprite]').forEach(render);
+})();
+</script>

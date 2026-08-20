@@ -1,0 +1,308 @@
+<style>
+  .bw { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  .phone {
+    width: 320px; background:#0d0f14; border:3px solid #3a3223;
+    box-shadow: inset 0 0 0 1px #6b5c3c, 0 0 24px rgba(0,0,0,.6);
+    overflow:hidden; color:#c9b98f; font-size:11px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  .p-head { display:flex; justify-content:space-between; align-items:center;
+    padding:7px 10px; background:linear-gradient(#1c1a14,#12100c);
+    border-bottom:1px solid #6b5c3c; letter-spacing:.08em; }
+  .p-head .nm { color:#d9a54a; font-weight:700; font-size:12px; }
+  .p-head .rg { color:#8a7d5c; font-size:9px; }
+  .p-body { padding:9px; }
+
+  .panel { background:#15171f; border:1px solid #3a3223;
+    box-shadow: inset 0 0 0 1px #23202a; padding:8px; margin-bottom:8px; }
+  .panel-t { color:#8a7d5c; font-size:9px; letter-spacing:.14em; text-transform:uppercase;
+    margin-bottom:6px; border-bottom:1px solid #2a2519; padding-bottom:3px;
+    display:flex; justify-content:space-between; }
+  .panel-t span.r { letter-spacing:.05em; color:#5f5741; }
+
+  /* ---------- den ---------- */
+  .den { height:186px; position:relative; overflow:hidden;
+    border:1px solid #3a3223; margin-bottom:8px;
+    background: linear-gradient(#141926 0%, #0e1119 58%, #0b0d12 58%, #090a0e 100%); }
+  .den .floor { position:absolute; left:0; right:0; bottom:0; height:42%;
+    background: repeating-linear-gradient(90deg,#0e1117 0 8px,#0b0d12 8px 16px);
+    box-shadow: inset 0 1px 0 #262d3a; }
+  .moon { position:absolute; right:16px; top:12px; width:22px; height:22px;
+    border-radius:50%; background:#c9c3a8; box-shadow:0 0 14px rgba(201,195,168,.35); }
+  .win { position:absolute; right:8px; top:4px; width:38px; height:38px;
+    border:1px solid #2d3442; background:#0f1521; }
+  .obj { position:absolute; }
+  .tag { position:absolute; font-size:7px; color:#5f5741; letter-spacing:.06em; }
+
+  /* level plate above head */
+  .plate { position:absolute; left:50%; transform:translateX(-50%);
+    text-align:center; width:110px; }
+  .plate .lv { display:inline-block; background:#14120c; border:1px solid #6b5c3c;
+    color:#d9a54a; font-size:11px; font-weight:700; letter-spacing:.06em;
+    padding:1px 7px; box-shadow:0 0 10px rgba(217,165,74,.15); }
+  .plate .xpb { height:4px; background:#0a0b0f; border:1px solid #2a2519; margin-top:3px; }
+  .plate .xpb > i { display:block; height:100%; background:linear-gradient(90deg,#8a6a2a,#d9a54a); }
+  .plate .xpn { font-size:7px; color:#6d6349; margin-top:2px; letter-spacing:.06em; }
+
+  /* ---------- quests ---------- */
+  .q { display:flex; align-items:center; gap:7px; padding:5px 3px; border-bottom:1px solid #1e1b14; }
+  .q:last-child { border-bottom:none; }
+  .q .box { width:14px; height:14px; border:1px solid #6b5c3c; background:#0a0b0f; flex:0 0 auto; }
+  .q .box.on { background:#d9a54a; border-color:#d9a54a; }
+  .q .tx { flex:1; font-size:10px; color:#bfae84; }
+  .q .tx small { display:block; color:#6d6349; font-size:8px; letter-spacing:.05em; margin-top:1px; }
+  .q .xp { font-size:9px; color:#8a7d5c; }
+  .q .xp.big { color:#d9a54a; }
+  .q.late .tx { color:#c9564a; }
+  .q.late .box { border-color:#8a3a32; }
+
+  /* ---------- stats ---------- */
+  .stat { margin-bottom:5px; }
+  .stat-r { display:flex; justify-content:space-between; font-size:9px; color:#a89873; margin-bottom:2px; }
+  .bar { height:6px; background:#0a0b0f; border:1px solid #2a2519; }
+  .bar > i { display:block; height:100%; }
+  .f-vit { background:linear-gradient(90deg,#4a7a4a,#7ab86a); }
+  .f-sta { background:linear-gradient(90deg,#6a5aa0,#9a86d0); }
+  .f-coa { background:linear-gradient(90deg,#8a6a3a,#c9a05a); }
+  .f-bon { background:linear-gradient(90deg,#a04a4a,#d08a6a); }
+
+  .buffs { display:flex; gap:6px; }
+  .buff { flex:1; text-align:center; background:#12141b; border:1px solid #3a3223; padding:4px 2px; }
+  .buff .bn { font-size:7px; color:#6d6349; letter-spacing:.04em; }
+  .buff .tm { font-size:9px; color:#7d9a6a; letter-spacing:.05em; margin-top:2px; }
+  .buff.dead { border-color:#5a2f2a; }
+  .buff.dead .tm { color:#c9564a; }
+  .buff.dead .sg { opacity:.3; }
+  .sg { display:flex; justify-content:center; }
+
+  .kv { display:flex; justify-content:space-between; font-size:9px;
+    color:#8a7d5c; padding:3px 0; border-bottom:1px solid #1a1811; }
+  .kv:last-child { border-bottom:none; }
+  .kv b { color:#bfae84; font-weight:400; }
+
+  .tabs { display:flex; border-top:1px solid #6b5c3c; background:#12100c; }
+  .tabs div { flex:1; text-align:center; padding:6px 0; font-size:8px;
+    color:#6d6349; letter-spacing:.08em; }
+  .tabs div.act { color:#d9a54a; box-shadow: inset 0 2px 0 #d9a54a; }
+
+  .herald { background:#14120c; border:1px solid #6b5c3c; padding:7px 8px; margin-bottom:8px; }
+  .herald .who { font-size:7px; color:#8a7d5c; letter-spacing:.16em; margin-bottom:3px; }
+  .herald .ln { font-size:10px; color:#d9c9a0; line-height:1.45; }
+
+  .hint { position:absolute; bottom:5px; left:50%; transform:translateX(-50%);
+    font-size:7px; color:#4d4staff; }
+  .taphint { font-size:7px; color:#55503c; letter-spacing:.08em; text-align:center; margin-top:-4px; margin-bottom:8px; }
+
+  .split { display:flex; gap:22px; flex-wrap:wrap; justify-content:center; }
+  .col h3 { color:#d9a54a; font-size:12px; letter-spacing:.06em; margin:0 0 3px; }
+  .col .sub { font-size:10px; color:#6d6349; margin:0 0 10px; }
+  .col { text-align:center; }
+  .col > .phone { text-align:left; }
+</style>
+
+<div class="bw">
+<h2>Лігво + лист персонажа</h2>
+<p class="subtitle">Лігво зверху зі рівнем над головою Балу, дошка квестів одразу під ним — один скрол, без перемикання табів. Тап по Балу відкриває лист.</p>
+
+<div class="split">
+
+  <!-- ================= LEFT: HOME ================= -->
+  <div class="col">
+    <h3>Головний екран</h3>
+    <p class="sub">лігво + дошка квестів</p>
+    <div class="phone">
+      <div class="p-head"><span class="nm">ЛІГВО</span><span class="rg">РІК I · ДЕНЬ 47</span></div>
+      <div class="p-body">
+
+        <div class="den">
+          <div class="floor"></div>
+          <div class="win"></div><div class="moon"></div>
+
+          <div class="plate" style="top:8px">
+            <div class="lv">УР. 128</div>
+            <div class="xpb"><i style="width:62%"></i></div>
+            <div class="xpn">93 / 150 XP</div>
+          </div>
+
+          <div class="obj" style="left:50%; bottom:26px; transform:translateX(-50%)">
+            <div data-sprite="full" data-px="5"></div>
+          </div>
+
+          <div class="obj" style="left:10px; bottom:22px"><div data-sprite="bed" data-px="4"></div></div>
+          <div class="tag" style="left:14px; bottom:12px">ЛЕЖАНКА</div>
+
+          <div class="obj" style="right:16px; bottom:24px"><div data-sprite="bowl" data-px="4"></div></div>
+          <div class="tag" style="right:20px; bottom:12px">МИСКА</div>
+
+          <div class="obj" style="right:52px; top:52px"><div data-sprite="flask" data-px="3"></div></div>
+          <div class="tag" style="right:44px; top:76px">ЗІЛЛЯ</div>
+        </div>
+        <div class="taphint">↑ ТАП ПО БАЛУ — ЛИСТ ПЕРСОНАЖА</div>
+
+        <div class="herald">
+          <div class="who">ХРОНІКА</div>
+          <div class="ln">Огляд Цілителя прострочено дванадцять днів.</div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-t">Щоденні <span class="r">3 / 6</span></div>
+          <div class="q"><div class="box on"></div><div class="tx">Годування <small>РАНКОВА ПОРЦІЯ</small></div><div class="xp">+20</div></div>
+          <div class="q"><div class="box"></div><div class="tx">Годування <small>ВЕЧІРНЯ ПОРЦІЯ</small></div><div class="xp">+20</div></div>
+          <div class="q"><div class="box"></div><div class="tx">Патруль <small>2 / 3 · ВЕЧІР</small></div><div class="xp">+30</div></div>
+          <div class="q"><div class="box"></div><div class="tx">Ікла <small>2 / 3 ЦЬОГО ТИЖНЯ</small></div><div class="xp">+40</div></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-t">Обряди</div>
+          <div class="q late"><div class="box"></div><div class="tx">Огляд Цілителя <small>ПРОСТРОЧЕНО 12 ДНІВ</small></div><div class="xp big">+4000</div></div>
+          <div class="q"><div class="box"></div><div class="tx">Зілля від кровопивць <small>ЧЕРЕЗ 18 ДНІВ</small></div><div class="xp big">+1200</div></div>
+          <div class="q"><div class="box"></div><div class="tx">Зважування <small>ЧЕРЕЗ 6 ДНІВ</small></div><div class="xp">+600</div></div>
+        </div>
+
+        <div class="panel" style="margin-bottom:0">
+          <div class="panel-t">Походи</div>
+          <div class="q"><div class="box"></div><div class="tx">Глибокий Ліс <small>0 / 1 ЦЬОГО МІСЯЦЯ</small></div><div class="xp big">+2500</div></div>
+          <div class="q"><div class="box on"></div><div class="tx">Вільний Біг <small>2 / 2 ЦЬОГО ТИЖНЯ</small></div><div class="xp">+100</div></div>
+        </div>
+
+      </div>
+      <div class="tabs"><div class="act">ЛІГВО</div><div>МАПА</div><div>ХРОНІКА</div><div>ТРОФЕЇ</div></div>
+    </div>
+  </div>
+
+  <!-- ================= RIGHT: SHEET ================= -->
+  <div class="col">
+    <h3>Лист персонажа</h3>
+    <p class="sub">відкривається тапом по Балу</p>
+    <div class="phone">
+      <div class="p-head"><span class="nm">БАЛУ</span><span class="rg">НІЧНИЙ ГОНЕЦЬ</span></div>
+      <div class="p-body">
+
+        <div style="position:relative; height:150px; border:1px solid #3a3223; margin-bottom:8px;
+                    background:radial-gradient(circle at 50% 62%, #1e2430 0%, #0b0d12 76%);">
+          <div class="plate" style="top:8px">
+            <div class="lv">УР. 128</div>
+            <div class="xpb"><i style="width:62%"></i></div>
+            <div class="xpn">93 / 150 XP · 19 293 ЗА РІК</div>
+          </div>
+          <div style="position:absolute; left:50%; bottom:14px; transform:translateX(-50%)">
+            <div data-sprite="full" data-px="6"></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-t">Стан</div>
+          <div class="stat"><div class="stat-r"><span>VITALITY</span><span>68</span></div><div class="bar"><i class="f-vit" style="width:68%"></i></div></div>
+          <div class="stat"><div class="stat-r"><span>STAMINA</span><span>81</span></div><div class="bar"><i class="f-sta" style="width:81%"></i></div></div>
+          <div class="stat"><div class="stat-r"><span>COAT</span><span>91</span></div><div class="bar"><i class="f-coa" style="width:91%"></i></div></div>
+          <div class="stat" style="margin-bottom:0"><div class="stat-r"><span>BOND</span><span>74</span></div><div class="bar"><i class="f-bon" style="width:74%"></i></div></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-t">Оберіги</div>
+          <div class="buffs">
+            <div class="buff"><div class="sg"><div data-sprite="shield" data-px="3"></div></div><div class="bn">КЛІЩІ</div><div class="tm">18д</div></div>
+            <div class="buff"><div class="sg"><div data-sprite="flask" data-px="3"></div></div><div class="bn">ГЛИСТИ</div><div class="tm">54д</div></div>
+            <div class="buff dead"><div class="sg"><div data-sprite="cross" data-px="3"></div></div><div class="bn">ОГЛЯД</div><div class="tm">згас</div></div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-bottom:0">
+          <div class="panel-t">Звір</div>
+          <div class="kv"><span>ВІК</span><b>4 роки 2 місяці</b></div>
+          <div class="kv"><span>ВАГА</span><b>11.5 кг · у нормі</b></div>
+          <div class="kv"><span>ПОРІД</span><b>безпорідний · тип віппета</b></div>
+          <div class="kv"><span>ДІАПАЗОН ЗІЛЛЯ</span><b>10–20 кг</b></div>
+          <div class="kv"><span>МІСЦЬ ВІДКРИТО</span><b>7</b></div>
+          <div class="kv"><span>ПОХОДІВ У ЛІС</span><b>11</b></div>
+          <div class="kv"><span>РАЗОМ ПРОЙДЕНО</span><b>—</b></div>
+        </div>
+
+      </div>
+      <div class="tabs"><div>ЛІГВО</div><div>МАПА</div><div>ХРОНІКА</div><div>ТРОФЕЇ</div></div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+(function () {
+  var PAL = {
+    b:'#2b3040', d:'#13151d', o:'#6b7a99', e:'#d9a54a',
+    c:'#3a2f4a', f:'#8a5a3a', a:'#6a9a7a', g:'#8a7d5c', r:'#a8443c', w:'#c9c3a8'
+  };
+  var S = {
+    full: [
+      "........................",
+      "....................ooo.",
+      "...................obbbo",
+      "..................obbbbb",
+      "..........oooo....obbbeb",
+      "........oobbbbboobbbbbb.",
+      "...o...obbbbbbbbbbbbb...",
+      "..oo..obbbbbbbbbbbbb....",
+      "..bo.obbbbbbbbbbbbbb....",
+      "..bb.bbbbbdddbbbbbbb....",
+      "..bb.bbbb...bbbbbbb.....",
+      "...b.dbb.....bb.bbb.....",
+      ".....bb......bb.bb......",
+      ".....bb......bb.bb......",
+      ".....bb......bb.bb......",
+      ".....dd......dd.dd......"
+    ],
+    bed: [
+      "..oooooooo..",
+      ".occccccco.",
+      "occccccccco",
+      ".dcccccccd.",
+      "..dddddddd.."
+    ],
+    bowl: [
+      ".ffffff.",
+      "offffffo",
+      ".gbbbbg.",
+      "..dddd.."
+    ],
+    flask: [
+      "..gg..",
+      "..gg..",
+      ".oaao.",
+      "oaaaao",
+      "oaaaao",
+      "oaaaao",
+      ".oaao.",
+      "..oo.."
+    ],
+    shield: [
+      "oooooo",
+      "obbbbo",
+      "obwwbo",
+      "obbbbo",
+      ".obbo.",
+      "..oo.."
+    ],
+    cross: [
+      "..rr..",
+      "..rr..",
+      "rrrrrr",
+      "rrrrrr",
+      "..rr..",
+      "..rr.."
+    ]
+  };
+  function render(el) {
+    var rows = S[el.dataset.sprite]; if (!rows) return;
+    var px = parseInt(el.dataset.px || '4', 10);
+    var w = rows[0].length, h = rows.length, out = '';
+    for (var y = 0; y < h; y++) for (var x = 0; x < w; x++) {
+      var ch = rows[y][x];
+      if (ch === '.' || !PAL[ch]) continue;
+      out += '<rect x="' + x + '" y="' + y + '" width="1" height="1" fill="' + PAL[ch] + '"/>';
+    }
+    el.innerHTML = '<svg width="' + w*px + '" height="' + h*px + '" viewBox="0 0 ' + w + ' ' + h +
+                   '" shape-rendering="crispEdges">' + out + '</svg>';
+  }
+  document.querySelectorAll('[data-sprite]').forEach(render);
+})();
+</script>

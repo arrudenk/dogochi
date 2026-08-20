@@ -1,0 +1,212 @@
+<style>
+  .bw { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  .phone { width:320px; background:#0d0f14; border:3px solid #3a3223;
+    box-shadow: inset 0 0 0 1px #6b5c3c, 0 0 24px rgba(0,0,0,.6);
+    overflow:hidden; color:#c9b98f; font-size:11px; position:relative;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  .p-head { display:flex; justify-content:space-between; align-items:center;
+    padding:7px 10px; background:linear-gradient(#1c1a14,#12100c);
+    border-bottom:1px solid #6b5c3c; letter-spacing:.08em; }
+  .p-head .nm { color:#d9a54a; font-weight:700; font-size:12px; }
+  .p-head .rg { color:#8a7d5c; font-size:9px; }
+
+  .den { height:190px; position:relative; overflow:hidden;
+    background: linear-gradient(#141926 0%, #0e1119 58%, #0b0d12 58%, #090a0e 100%); }
+  .den .floor { position:absolute; left:0; right:0; bottom:0; height:42%;
+    background: repeating-linear-gradient(90deg,#0e1117 0 8px,#0b0d12 8px 16px);
+    box-shadow: inset 0 1px 0 #262d3a; }
+  .win { position:absolute; right:10px; top:8px; width:36px; height:36px;
+    border:1px solid #2d3442; background:#0f1521; }
+  .moon { position:absolute; right:18px; top:16px; width:20px; height:20px;
+    border-radius:50%; background:#c9c3a8; box-shadow:0 0 14px rgba(201,195,168,.3); }
+
+  .plate { position:absolute; left:50%; transform:translateX(-50%); text-align:center; width:120px; }
+  .plate .lv { display:inline-block; background:#14120c; border:1px solid #6b5c3c;
+    color:#d9a54a; font-size:11px; font-weight:700; letter-spacing:.06em; padding:1px 7px; }
+  .plate .xpb { height:4px; background:#0a0b0f; border:1px solid #2a2519; margin-top:3px; }
+  .plate .xpb > i { display:block; height:100%; background:linear-gradient(90deg,#8a6a2a,#d9a54a); }
+  .plate .xpn { font-size:7px; color:#6d6349; margin-top:2px; letter-spacing:.06em; }
+
+  .dim { position:absolute; inset:0; background:rgba(4,5,8,.78); }
+
+  .dlg { position:absolute; left:12px; right:12px; bottom:12px;
+    background:#12100c; border:1px solid #6b5c3c;
+    box-shadow: inset 0 0 0 1px #2a2519, 0 6px 20px rgba(0,0,0,.7); padding:10px; }
+  .dlg .who { font-size:7px; color:#8a7d5c; letter-spacing:.18em; margin-bottom:6px;
+    border-bottom:1px solid #2a2519; padding-bottom:4px; }
+  .dlg .ln { font-size:11px; color:#d9c9a0; line-height:1.55; margin-bottom:4px; }
+  .dlg .ln .em { color:#c9564a; }
+  .dlg .meta { font-size:8px; color:#5f5741; letter-spacing:.06em; margin-bottom:9px; }
+  .ch { display:block; width:100%; text-align:left; background:#191610;
+    border:1px solid #4a3f2a; color:#c9b98f; font-size:10px; padding:6px 8px;
+    margin-bottom:5px; letter-spacing:.02em;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  .ch:last-child { margin-bottom:0; }
+  .ch.prime { border-color:#8a7440; color:#e2cf9c; background:#1e1a10; }
+  .ch .k { color:#6d6349; font-size:9px; }
+
+  /* heal */
+  .ring { position:absolute; left:50%; bottom:16px; transform:translateX(-50%);
+    width:150px; height:44px; border:1px solid rgba(217,165,74,.55); border-radius:50%;
+    box-shadow: 0 0 26px rgba(217,165,74,.28), inset 0 0 18px rgba(217,165,74,.18); }
+  .ring2 { position:absolute; left:50%; bottom:8px; transform:translateX(-50%);
+    width:196px; height:58px; border:1px solid rgba(217,165,74,.22); border-radius:50%; }
+  .glow { position:absolute; left:50%; bottom:0; transform:translateX(-50%);
+    width:210px; height:150px;
+    background: radial-gradient(ellipse at 50% 88%, rgba(217,165,74,.30) 0%, rgba(217,165,74,0) 62%); }
+  .spark { position:absolute; width:2px; height:2px; background:#e8c878;
+    box-shadow:0 0 5px #d9a54a; }
+
+  .burst { position:absolute; left:50%; top:52px; transform:translateX(-50%);
+    text-align:center; width:210px; }
+  .burst .xp { color:#e8c878; font-size:17px; font-weight:700; letter-spacing:.05em;
+    text-shadow:0 0 12px rgba(217,165,74,.6); }
+  .burst .lvup { color:#d9a54a; font-size:9px; letter-spacing:.16em; margin-top:4px; }
+  .burst .say { color:#9fb0c9; font-size:10px; margin-top:8px; letter-spacing:.03em; }
+  .burst .sayw { color:#5f5741; font-size:7px; letter-spacing:.18em; margin-top:7px; }
+
+  .shieldrow { position:absolute; left:12px; right:12px; bottom:12px;
+    background:#12141b; border:1px solid #4a6a4a; padding:6px 8px;
+    display:flex; align-items:center; gap:8px; }
+  .shieldrow .t { flex:1; font-size:9px; color:#8fae7a; letter-spacing:.05em; }
+  .shieldrow .t small { display:block; color:#5f7350; font-size:7px; margin-top:2px; }
+
+  .split { display:flex; gap:22px; flex-wrap:wrap; justify-content:center; }
+  .col { text-align:center; }
+  .col h3 { color:#d9a54a; font-size:12px; letter-spacing:.06em; margin:0 0 3px; }
+  .col .sub { font-size:10px; color:#6d6349; margin:0 0 10px; }
+  .col > .phone { text-align:left; }
+  .note { font-size:10px; color:#6d6349; margin-top:14px; line-height:1.6; }
+</style>
+
+<div class="bw">
+<h2>Герольд і момент лікування</h2>
+<p class="subtitle">Два екрани, на яких тримається вся апка. Ліворуч — те, що ти бачиш при вході, коли щось прострочене. Праворуч — що відбувається, коли ти <b>реально це зробив</b> і натиснув «звершено».</p>
+
+<div class="split">
+
+  <!-- ======= HERALD ======= -->
+  <div class="col">
+    <h3>Герольд при вході</h3>
+    <p class="sub">не «ОК», а три різні рішення</p>
+    <div class="phone">
+      <div class="p-head"><span class="nm">ЛІГВО</span><span class="rg">РІК I · ДЕНЬ 47</span></div>
+      <div class="den">
+        <div class="floor"></div>
+        <div class="win"></div><div class="moon"></div>
+        <div class="plate" style="top:8px">
+          <div class="lv">УР. 128</div>
+          <div class="xpb"><i style="width:62%"></i></div>
+          <div class="xpn">93 / 150 XP</div>
+        </div>
+        <div style="position:absolute; left:50%; bottom:24px; transform:translateX(-50%)">
+          <div data-sprite="full" data-px="5"></div>
+        </div>
+
+        <div class="dim"></div>
+
+        <div class="dlg">
+          <div class="who">ХРОНІКА</div>
+          <div class="ln">Огляд Цілителя <span class="em">прострочено дванадцять днів</span>.</div>
+          <div class="meta">ОСТАННІЙ ОГЛЯД — 12 ТРАВНЯ · +4000 XP</div>
+          <button class="ch prime">Записатись до Цілителя <span class="k">→ календар</span></button>
+          <button class="ch">Нагадай за три дні</button>
+          <button class="ch">Вже звершено — записати датою</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= HEAL ======= -->
+  <div class="col">
+    <h3>Обряд звершено</h3>
+    <p class="sub">спектакль за дію, не за вхід</p>
+    <div class="phone">
+      <div class="p-head"><span class="nm">ЛІГВО</span><span class="rg">РІК I · ДЕНЬ 47</span></div>
+      <div class="den" style="background:linear-gradient(#1a1c22 0%,#12111a 58%,#0d0c10 58%,#0a0a0c 100%)">
+        <div class="floor"></div>
+        <div class="win"></div><div class="moon"></div>
+        <div class="glow"></div>
+        <div class="ring2"></div>
+        <div class="ring"></div>
+
+        <span class="spark" style="left:66px; bottom:64px"></span>
+        <span class="spark" style="left:104px; bottom:92px"></span>
+        <span class="spark" style="right:78px; bottom:74px"></span>
+        <span class="spark" style="right:52px; bottom:104px"></span>
+        <span class="spark" style="left:140px; bottom:118px"></span>
+        <span class="spark" style="right:112px; bottom:56px"></span>
+
+        <div class="burst">
+          <div class="xp">+4000 XP</div>
+          <div class="lvup">УР. 128 → 154</div>
+          <div class="say">«Щит змикається.»</div>
+          <div class="sayw">БАЛУ</div>
+        </div>
+
+        <div style="position:absolute; left:50%; bottom:22px; transform:translateX(-50%)">
+          <div data-sprite="full" data-px="5"></div>
+        </div>
+
+        <div class="shieldrow">
+          <div data-sprite="shield" data-px="3"></div>
+          <div class="t">ОБЕРІГ ЦІЛИТЕЛЯ ВІДНОВЛЕНО<small>ЧИННИЙ 6 МІСЯЦІВ · VITALITY 68 → 94</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p class="note">
+  <b>Герольд:</b> три кнопки, і всі три роблять різне — тому наосліп не тапнеш. «Записатись» кидає в календар, «за три дні» відкладає стадію, «вже звершено» дає вибрати дату минулим числом. Балу тут <b>не говорить</b> — говорить хроніка.<br><br>
+  <b>Лікування:</b> єдине місце в апці з анімацією — коло, світло, іскри, стрибок рівня. Балу озивається одним рядком, і саме тому це важить. Оберіг знизу показує, що саме змінилось у реальності: щит на 6 місяців, Vitality з 68 на 94.
+</p>
+</div>
+
+<script>
+(function () {
+  var PAL = { b:'#2b3040', d:'#13151d', o:'#6b7a99', e:'#d9a54a', w:'#c9c3a8' };
+  var S = {
+    full: [
+      "........................",
+      "....................ooo.",
+      "...................obbbo",
+      "..................obbbbb",
+      "..........oooo....obbbeb",
+      "........oobbbbboobbbbbb.",
+      "...o...obbbbbbbbbbbbb...",
+      "..oo..obbbbbbbbbbbbb....",
+      "..bo.obbbbbbbbbbbbbb....",
+      "..bb.bbbbbdddbbbbbbb....",
+      "..bb.bbbb...bbbbbbb.....",
+      "...b.dbb.....bb.bbb.....",
+      ".....bb......bb.bb......",
+      ".....bb......bb.bb......",
+      ".....bb......bb.bb......",
+      ".....dd......dd.dd......"
+    ],
+    shield: [
+      "oooooo",
+      "obbbbo",
+      "obwwbo",
+      "obbbbo",
+      ".obbo.",
+      "..oo.."
+    ]
+  };
+  function render(el) {
+    var rows = S[el.dataset.sprite]; if (!rows) return;
+    var px = parseInt(el.dataset.px || '4', 10);
+    var w = rows[0].length, h = rows.length, out = '';
+    for (var y = 0; y < h; y++) for (var x = 0; x < w; x++) {
+      var ch = rows[y][x];
+      if (ch === '.' || !PAL[ch]) continue;
+      out += '<rect x="' + x + '" y="' + y + '" width="1" height="1" fill="' + PAL[ch] + '"/>';
+    }
+    el.innerHTML = '<svg width="' + w*px + '" height="' + h*px + '" viewBox="0 0 ' + w + ' ' + h +
+                   '" shape-rendering="crispEdges">' + out + '</svg>';
+  }
+  document.querySelectorAll('[data-sprite]').forEach(render);
+})();
+</script>
