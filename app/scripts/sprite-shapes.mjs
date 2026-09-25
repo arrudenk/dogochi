@@ -146,55 +146,72 @@ export const POSES = {
   },
 
   // ── RUN ───────────────────────────────────────────────────────────────────
-  // Double-suspension gallop at full extension — the gait only a sighthound has.
+  // Double-suspension gallop, extended phase — the gait only a sighthound has: fore pair
+  // thrown forward together, rear pair driving back together, loin crested, tuck wide open.
+  // Near limbs are painted `light`, far limbs `deep` — a full tone apart, or the four
+  // legs fuse into one blur.
   run: {
     size: 64,
     body: [
-      [16, 47, 50], [17, 46, 51],                             // ear
-      [18, 46, 57], [19, 46, 59], [20, 47, 60], [21, 47, 60], // skull
-      [22, 47, 63], [23, 47, 63], [24, 47, 63], [25, 48, 61], // muzzle
-      [26, 46, 57], [27, 44, 52],                             // jaw
-      [28, 42, 50], [29, 40, 49], [30, 38, 48],               // neck, nearly level
-      // croup carried high, the whole topline stretched flat
-      [26, 12, 20], [27, 10, 26], [28, 9, 32], [29, 8, 40],
-      [30, 8, 48], [31, 8, 47], [32, 8, 47],
-      [33, 8, 46], [34, 8, 46],                               // waist bottoms out at y34
-      [35, 8, 20], [35, 26, 46],                              // extreme tuck, 20px of daylight
-      [36, 8, 20], [36, 28, 45],
-      [37, 8, 19], [37, 30, 45],
-      [38, 9, 19], [38, 31, 44],
-      [39, 9, 19], [39, 32, 44],
-      [40, 10, 18], [40, 33, 43],
-      [41, 11, 18], [41, 34, 43],
-      [42, 12, 18], [42, 34, 42],
-      [43, 35, 42], [44, 36, 41],
+      [23, 44, 49], [24, 43, 51],                             // rose ear laid flat by the wind
+      [25, 42, 55], [26, 42, 58], [27, 42, 57],               // skull, then the stop
+      [28, 43, 62], [29, 43, 63], [30, 44, 62],               // muzzle, thrown forward
+      [31, 45, 58], [32, 44, 53],                             // jaw
+      [33, 41, 51], [34, 38, 49], [35, 36, 48],               // neck, reaching low
+      // topline: loin crest at y32, withers dip at y33, croup and shoulder tied at y34
+      [32, 20, 27], [33, 16, 33], [34, 13, 40],
+      [35, 12, 46], [36, 11, 46], [37, 10, 46],
+      [38, 10, 19], [38, 27, 46],                             // tuck opens — 7px of daylight
+      [39, 10, 19], [39, 29, 46],
+      [40, 11, 19], [40, 30, 45],
+      [41, 11, 19], [41, 31, 44],
+      [42, 12, 18], [42, 32, 43],
+      [43, 13, 18], [43, 33, 42],
+      [44, 14, 18], [44, 34, 41],
+      [45, 35, 40], [46, 36, 39],                             // brisket keel
       // tail streaming back and up off the croup
-      [27, 4, 9], [26, 2, 7], [25, 1, 5], [24, 0, 4], [23, 0, 2],
-      // both rear legs driving back — the tuck stays wide open, which is what makes
-      // the pose read as "sighthound at speed" and not as "dog-shaped brick".
-      [43, 10, 15], [44, 8, 13], [45, 6, 11], [46, 4, 9], [47, 2, 8],
-      [43, 14, 19], [44, 13, 18], [45, 12, 17], [46, 11, 16], [47, 11, 16],
-      // both forelegs reaching forward
-      [45, 38, 43], [46, 40, 45], [47, 42, 47], [48, 44, 50], [49, 47, 53],
-      [45, 35, 40], [46, 36, 41], [47, 37, 42], [48, 38, 43],
+      [33, 9, 13], [32, 6, 11], [31, 4, 8], [30, 2, 6], [29, 0, 4],
+      // near rear leg — fully extended behind
+      [45, 13, 16], [46, 11, 14], [47, 9, 12], [48, 7, 11], [49, 6, 9],
+      [50, 4, 8], [51, 3, 7], [52, 2, 6], [53, 1, 6],
+      // far rear leg — one stride behind it, and a tone darker
+      [45, 17, 19], [46, 16, 19], [47, 15, 18], [48, 14, 17], [49, 13, 16],
+      [50, 12, 15], [51, 11, 14], [52, 10, 13], [53, 8, 13],
+      // near foreleg — reaching past the nose line
+      [46, 39, 42], [47, 41, 44], [48, 43, 46], [49, 45, 48], [50, 47, 50],
+      [51, 49, 52], [52, 51, 54], [53, 53, 57],
+      // far foreleg, trailing the near one
+      [46, 35, 38], [47, 37, 40], [48, 38, 41], [49, 40, 43], [50, 41, 44],
+      [51, 43, 46], [52, 44, 47], [53, 45, 49],
     ],
     deep: [
-      [43, 14, 19], [44, 13, 18], [45, 12, 17], [46, 11, 16], [47, 11, 16],
-      [45, 35, 40], [46, 36, 41], [47, 37, 42], [48, 38, 43],
+      [45, 17, 19], [46, 16, 19], [47, 15, 18], [48, 14, 17], [49, 13, 16],
+      [50, 12, 15], [51, 11, 14], [52, 10, 13], [53, 8, 13],
+      [46, 35, 38], [47, 37, 40], [48, 38, 41], [49, 40, 43], [50, 41, 44],
+      [51, 43, 46], [52, 44, 47], [53, 45, 49],
     ],
     shadow: [
-      [18, 48, 49], [19, 48, 50],                             // ear canal
-      [24, 62, 63], [25, 59, 61],                             // nose + lip
-      [41, 36, 42], [42, 36, 41],                             // under the stretched brisket
-      [47, 11, 16], [48, 38, 43],                             // far paws
-      [33, 21, 26],                                           // flank hollow
+      [24, 45, 47], [25, 44, 47],                             // ear canal
+      [29, 61, 63], [30, 58, 61],                             // nose + lip
+      [44, 34, 39],                                           // under the stretched brisket
+      [38, 30, 34], [39, 31, 35],                             // flank behind the ribs
+      [53, 8, 13], [53, 45, 49],                              // far paws
     ],
     light: [
-      [32, 9, 17], [33, 36, 45],                              // haunch, shoulder — offset rows,
-      [43, 10, 15], [45, 38, 43],                             // otherwise they read as one seam
+      [40, 12, 18], [39, 33, 43],                             // haunch, shoulder
+      [45, 13, 16], [46, 11, 14], [47, 9, 12], [48, 7, 11], [49, 6, 9],
+      [50, 4, 8], [51, 3, 7], [52, 2, 6], [53, 1, 6],
+      [46, 39, 42], [47, 41, 44], [48, 43, 46], [49, 45, 48], [50, 47, 50],
+      [51, 49, 52], [52, 51, 54], [53, 53, 57],
     ],
-    rim: [[23, 63, 63], [27, 4, 9], [43, 10, 14], [45, 38, 42]],
-    eye: [[55, 22], [56, 22]],
+    rim: [
+      [29, 63, 63], [32, 6, 11],                              // nose top, tail
+      [45, 16, 16], [46, 14, 14], [47, 12, 12], [48, 11, 11], [49, 9, 9],
+      [50, 8, 8], [51, 7, 7], [52, 6, 6], [53, 6, 6],
+      [46, 39, 39], [47, 41, 41], [48, 43, 43], [49, 45, 45], [50, 47, 47],
+      [51, 49, 49], [52, 51, 51], [53, 53, 53],
+    ],
+    eye: [[50, 28], [51, 28]],
   },
 };
 
@@ -204,59 +221,80 @@ export const POSES = {
 export const PORTRAIT = {
   size: 96,
   body: [
-    // rose ear: its leading edge slopes forward-down to meet the skull line, so it
-    // reads as an ear laid back and not as a cap welded onto the head.
-    [12, 36, 44], [13, 34, 46], [14, 33, 47], [15, 32, 48], [16, 31, 49],
-    [17, 31, 50], [18, 30, 51], [19, 30, 52], [20, 30, 53], [21, 30, 55],
-    // skull — flat top, almost no stop. Skull length ≈ muzzle length.
-    [22, 30, 56], [23, 30, 59], [24, 29, 61], [25, 29, 62], [26, 29, 62],
-    // barely-there stop at y27, then the muzzle — kept shorter than the skull so the
-    // head reads as a hound and not as a bird
-    [27, 28, 63], [28, 28, 68], [29, 28, 72], [30, 27, 76], [31, 27, 80],
-    [32, 26, 83], [33, 26, 85], [34, 26, 87], [35, 25, 88], [36, 25, 88],
-    [37, 25, 88], [38, 24, 87], [39, 24, 85], [40, 24, 82],
-    // lip, then the jaw running back to the angle at x52
-    [41, 27, 79], [42, 27, 75], [43, 27, 71], [44, 26, 67], [45, 26, 63],
-    [46, 25, 60], [47, 25, 57], [48, 24, 54], [49, 24, 52], [50, 24, 50],
-    [51, 23, 48],
-    // throat cuts back hard — without this notch the head fuses into the chest
-    [52, 22, 47], [53, 21, 44], [54, 20, 41], [55, 19, 39], [56, 18, 38],
-    [57, 17, 38], [58, 16, 39], [59, 15, 41], [60, 14, 43],
-    // chest
-    [61, 13, 46], [62, 12, 49], [63, 11, 52], [64, 10, 55], [65, 9, 58],
-    [66, 8, 61], [67, 7, 64], [68, 6, 66], [69, 6, 69], [70, 5, 71],
-    [71, 5, 73], [72, 4, 75], [73, 4, 77], [74, 3, 79], [75, 3, 81],
-    [76, 2, 83], [77, 2, 85], [78, 1, 86], [79, 1, 88], [80, 1, 89],
-    [81, 0, 90], [82, 0, 91], [83, 0, 92], [84, 0, 93], [85, 0, 94],
-    ...bar(0, 95, 86, 95),
+    // Head fills the upper 55% of the frame; chest is cropped by the bottom and right
+    // edges rather than sitting in the middle as a dome.
+    [14, 48, 56],
+    [15, 36, 42], [15, 44, 58],                                // 1px notch: crown, then ear tip
+    [16, 34, 60], [17, 32, 61],
+    // the rose ear bulges the back of the skull out to x22 and pulls back in by y27 —
+    // a folded flap, not a lump on top. The fold itself is drawn in light + shadow below.
+    [18, 30, 62], [19, 27, 63], [20, 24, 64], [21, 23, 65], [22, 22, 66],
+    [23, 22, 67], [24, 23, 68], [25, 25, 68], [26, 28, 68],
+    [27, 31, 67],                                              // the stop — a real recess
+    // muzzle: 24px from stop to nose against a 40px skull, and kept deep to the chin.
+    // A muzzle that tapers to a point is a beak; this one ends blunt on the nose.
+    [28, 32, 73], [29, 32, 78], [30, 32, 82], [31, 33, 85], [32, 33, 87],
+    [33, 33, 89], [34, 34, 90], [35, 34, 90], [36, 34, 90], [37, 34, 90],
+    [38, 34, 89], [39, 34, 88], [40, 34, 87], [41, 34, 86], [42, 34, 85],
+    [43, 34, 84], [44, 34, 83], [45, 34, 82], [46, 34, 80],
+    // chin, then the jaw angle — a hard step back, not one long diagonal
+    [47, 34, 77], [48, 34, 73], [49, 34, 67], [50, 34, 60], [51, 34, 54],
+    [52, 33, 50],
+    // throat cuts back — without this notch the head fuses into the chest
+    [53, 32, 47], [54, 31, 45], [55, 30, 44],
+    // chest: the front runs off the RIGHT edge by y69, so it crops instead of doming
+    [56, 29, 46], [57, 28, 49], [58, 27, 52], [59, 26, 56], [60, 25, 60],
+    [61, 24, 64], [62, 23, 68], [63, 21, 72], [64, 19, 76], [65, 17, 80],
+    [66, 15, 84], [67, 13, 88], [68, 11, 92], [69, 9, 95], [70, 7, 95],
+    [71, 5, 95], [72, 3, 95], [73, 1, 95],
+    ...bar(0, 95, 74, 95),
   ],
+  // Every override is a 1px staircase that follows a form. Flat 2-row bands across a
+  // mass this dark read as stripes painted on, not as anatomy.
   shadow: [
-    [21, 31, 52],                                              // ear meets skull
-    [14, 36, 45], [15, 35, 46], [16, 34, 47], [17, 34, 47], [18, 34, 46], // ear canal
-    [35, 83, 88], [36, 83, 88], [37, 83, 88], [38, 84, 87],    // nose leather
-    [39, 62, 80], [40, 60, 76],                                // lip line
-    [54, 22, 32], [55, 21, 31],                                // throat falling away
-    [49, 38, 50], [50, 36, 48],                                // under the jaw
-    [64, 12, 30], [65, 11, 28],
+    [17, 44, 46], [18, 42, 44], [19, 40, 42], [20, 38, 40], [21, 36, 38],
+    [22, 34, 36], [23, 32, 34], [24, 31, 33], [25, 30, 32], [26, 30, 32],
+    [27, 31, 33],                                              // crease behind the ear fold
+    [33, 84, 89], [34, 84, 90], [35, 84, 90], [36, 84, 90],    // nose leather
+    [37, 84, 90], [38, 84, 89], [39, 84, 88],
+    [42, 78, 84], [43, 72, 78], [44, 66, 72], [45, 58, 66],    // lip line to the mouth corner
+    [50, 38, 58], [51, 36, 52],                                // underside of the jaw
+    [54, 32, 42], [55, 31, 40], [56, 30, 38],                  // throat falling away
+    // the chest turns away from the moon along a diagonal, not along a flat band —
+    // a horizontal tone boundary here reads as a plinth the head is sitting on
+    [68, 0, 20], [69, 0, 28], [70, 0, 36], [71, 0, 46], [72, 0, 56],
+    [73, 0, 66], [74, 0, 76], [75, 0, 86],
+    ...bar(0, 95, 76, 95),
   ],
   deep: [
-    [24, 32, 50], [25, 32, 52],                                // skull under the ear
-    ...bar(0, 95, 88, 95),                                     // chest bulk falls away
+    [58, 27, 34], [59, 26, 33],                                // far side of the neck
+    [60, 0, 30], [61, 0, 34], [62, 0, 38], [63, 0, 43], [64, 0, 48],
+    [65, 0, 53], [66, 0, 58], [67, 0, 64], [68, 0, 70], [69, 0, 76],
+    [70, 0, 82], [71, 0, 88],
+    ...bar(0, 95, 72, 95),                                     // chest bulk falls away
   ],
   light: [
-    [30, 64, 74], [31, 68, 78],                                // bridge of the muzzle
-    [42, 30, 42], [43, 29, 40],                                // cheekbone
-    [47, 27, 38],
+    [18, 39, 41], [19, 37, 39], [20, 35, 37], [21, 33, 35],
+    [22, 31, 33], [23, 30, 31], [24, 29, 30],                  // the lit fold of the rose ear
+    [29, 64, 76], [30, 70, 80],                                // bridge of the muzzle
+    [38, 45, 52], [39, 42, 48],                                // cheekbone under the eye
+    [47, 58, 72], [48, 50, 62], [49, 42, 54],                  // the jaw bone itself
+    [59, 44, 52], [60, 46, 56], [61, 48, 60], [62, 50, 64],    // shoulder front
   ],
   rim: [
-    [27, 46, 62], [28, 48, 62],                                // brow ridge over the stop
-    [34, 80, 86],                                              // moonlight on the nose leather
-    [44, 26, 32], [45, 26, 31],
-    [62, 13, 18], [63, 12, 17],
+    [19, 27, 27], [20, 24, 24], [21, 23, 23], [22, 22, 22],
+    [23, 22, 22], [24, 23, 23],                                // moonlit back edge of the ear
+    [26, 60, 68], [27, 58, 66],                                // brow ridge over the stop
+    [32, 80, 87], [34, 86, 88], [35, 87, 88],                  // moonlight on the nose leather
+    [59, 50, 56], [60, 54, 60],                                // moonlit front of the chest
   ],
-  // almond eye, just behind the stop: dark lid, gold iris, dark pupil, one catchlight
-  lid: [[28, 56, 60], [34, 56, 60], [31, 52, 53], [31, 63, 64]],
-  gold: [[29, 56, 60], [30, 55, 61], [31, 54, 62], [32, 55, 61], [33, 56, 60]],
-  pupil: [[31, 57, 59]],
-  spark: [[30, 55, 55]],
+  // almond eye behind the stop: lid, gold iris, pupil, one catchlight
+  lid: [
+    [29, 52, 61], [35, 52, 61],
+    [30, 50, 52], [31, 50, 51], [32, 50, 51], [33, 51, 52], [34, 52, 53],
+    [30, 60, 62], [31, 62, 63], [32, 63, 64], [33, 62, 64], [34, 60, 62],
+  ],
+  gold: [[30, 53, 60], [31, 52, 62], [32, 51, 63], [33, 52, 62], [34, 53, 60]],
+  pupil: [[31, 56, 59], [32, 56, 59]],
+  spark: [[31, 53, 54]],
 };

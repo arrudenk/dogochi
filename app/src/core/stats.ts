@@ -55,6 +55,9 @@ export function vitality(
   for (const r of routines) {
     const w = VITALITY_WEIGHTS[r.id];
     if (w === undefined || !r.enabled) continue;
+    const q = quests.find((x) => x.routine.id === r.id);
+    // Невідоме не рахується ні в чисельник, ні в знаменник — інакше чистий журнал дав би нуль.
+    if (q === undefined || q.status === 'unknown') continue;
     max += w;
     let ok: boolean;
     if (r.kind === 'ward') ok = wardActive(quests, r.id);
@@ -76,7 +79,15 @@ export function stamina(events: CareEvent[], now: Millis): number {
 export function coat(events: CareEvent[], quests: QuestView[], now: Millis): number {
   const from = windowFrom(now, COAT_WINDOW_DAYS);
   const fangs = countIn(events, 'fangs', from, now);
-  return clamp100(60 * Math.min(1, fangs / 6) + 40 * (notOverdue(quests, 'claws') ? 1 : 0));
+  let max = 60;
+  let earned = 60 * Math.min(1, fangs / 6);
+  const claws = quests.find((x) => x.routine.id === 'claws');
+  // Невідомі кігті випадають з розрахунку, а не зараховуються як провал.
+  if (claws !== undefined && claws.status !== 'unknown') {
+    max += 40;
+    if (notOverdue(quests, 'claws')) earned += 40;
+  }
+  return clamp100((100 * earned) / max);
 }
 
 export function bond(events: CareEvent[], places: Place[], now: Millis): number {

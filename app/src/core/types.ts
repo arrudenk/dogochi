@@ -97,7 +97,8 @@ export type QuestStatus =
   | 'done' // на сьогодні / на період закрито
   | 'dueSoon' // скоро
   | 'overdue' // прострочено
-  | 'expired'; // оберіг згас
+  | 'expired' // оберіг згас
+  | 'unknown'; // журнал нічого про це не знає — не борг і не провина
 
 export interface QuestView {
   routine: CareRoutine;

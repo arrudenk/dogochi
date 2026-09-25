@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Як скетчити форму кільця зі срібла</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EBECEE;
+    --sheet: #F8F8F6;
+    --graphite: #2B2E33;
+    --pencil: #55595F;
+    --silver: #9AA2AD;
+    --rouge: #B0483C;
+    --grid: rgba(154, 162, 173, 0.28);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--graphite);
+    font-family: "Literata", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .hand {
+    font-family: "Caveat", cursive;
+    color: var(--pencil);
+  }
+
+  .sheet {
+    max-width: 880px;
+    margin: 40px auto 80px;
+    background: var(--sheet);
+    border: 1px solid #DDDEDF;
+    box-shadow: 0 1px 0 #D2D3D5, 0 14px 30px -18px rgba(43, 46, 51, 0.35);
+    padding: 64px 72px 72px;
+  }
+
+  /* Hero */
+  .hero { margin-bottom: 56px; }
+
+  .hero h1 {
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 18ch;
+    margin-bottom: 14px;
+  }
+
+  .hero .lede {
+    max-width: 58ch;
+    color: var(--pencil);
+    margin-bottom: 36px;
+  }
+
+  .hero-sketch {
+    background:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 22px 22px;
+    border: 1px solid var(--silver);
+    padding: 8px;
+  }
+
+  .hero-sketch svg { display: block; width: 100%; height: auto; }
+
+  /* Steps */
+  .step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 20px;
+    padding: 36px 0;
+    border-top: 1px solid #DFE0E2;
+  }
+
+  .step-no {
+    font-family: "Caveat", cursive;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--rouge);
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .step h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .step p { max-width: 62ch; margin-bottom: 12px; }
+  .step p:last-child { margin-bottom: 0; }
+
+  .step ul {
+    max-width: 60ch;
+    margin: 0 0 12px 22px;
+  }
+  .step li { margin-bottom: 6px; }
+
+  .diagram {
+    background:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 22px 22px;
+    border: 1px solid var(--silver);
+    margin: 18px 0 6px;
+    padding: 6px;
+  }
+  .diagram svg { display: block; width: 100%; height: auto; }
+
+  .note {
+    border-left: 3px solid var(--rouge);
+    padding: 10px 16px;
+    margin: 16px 0 4px;
+    background: rgba(176, 72, 60, 0.06);
+    max-width: 60ch;
+  }
+
+  .formula {
+    font-size: 20px;
+    font-style: italic;
+    margin: 14px 0;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: 14px 0 6px;
+    font-size: 15.5px;
+  }
+  th, td {
+    border: 1px solid #D5D7D9;
+    padding: 7px 16px;
+    text-align: left;
+  }
+  th { font-weight: 600; background: #F0F0EE; }
+
+  .outro {
+    border-top: 1px solid #DFE0E2;
+    padding-top: 32px;
+    color: var(--pencil);
+    max-width: 62ch;
+  }
+  .outro .hand { font-size: 26px; color: var(--rouge); }
+
+  @media (max-width: 720px) {
+    .sheet { margin: 0; padding: 36px 22px 48px; border: none; }
+    .step { grid-template-columns: 40px 1fr; gap: 12px; }
+    .step-no { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<main class="sheet">
+
+  <header class="hero">
+    <h1>Як скетчити форму кільця зі срібла</h1>
+    <p class="lede">
+      Скетч — це половина роботи ювеліра. Помилку на папері виправляє гумка,
+      помилку в металі — годину пиляння. Нижче — шлях від виміру пальця до
+      технічного ескіза, з якого вже можна різати заготовку зі срібла 925.
+    </p>
+
+    <figure class="hero-sketch" aria-label="Олівцевий ескіз кільця: три проєкції з ручними підписами">
+      <svg viewBox="0 0 760 300" role="img">
+        <g fill="none" stroke="#2B2E33" stroke-width="2" stroke-linecap="round">
+          <!-- perspective view -->
+          <ellipse cx="150" cy="150" rx="78" ry="88" />
+          <ellipse cx="150" cy="150" rx="56" ry="66" />
+          <ellipse cx="150" cy="150" rx="80" ry="90" stroke="#9AA2AD" stroke-width="1" stroke-dasharray="1 5"/>
+          <!-- side view -->
+          <path d="M390 62 q-84 0 -84 88 q0 88 84 88" />
+          <path d="M390 84 q-62 0 -62 66 q0 66 62 66" />
+          <line x1="390" y1="62" x2="390" y2="84" />
+          <line x1="390" y1="216" x2="390" y2="238" />
+          <line x1="390" y1="40" x2="390" y2="260" stroke="#9AA2AD" stroke-width="1" stroke-dasharray="8 5"/>
+          <!-- cross-section -->
+          <path d="M600 110 q30 0 30 40 q0 40 -30 40 q-12 0 -12 -40 q0 -40 12 -40 Z" fill="rgba(154,162,173,0.25)"/>
+          <line x1="596" y1="118" x2="622" y2="140" stroke-width="1"/>
+          <line x1="592" y1="134" x2="624" y2="162" stroke-width="1"/>
+          <line x1="592" y1="152" x2="620" y2="178" stroke-width="1"/>
+        </g>
+        <!-- red dimension marks -->
+        <g stroke="#B0483C" stroke-width="1.2" fill="none">
+          <line x1="94" y1="150" x2="206" y2="150"/>
+          <line x1="94" y1="144" x2="94" y2="156"/>
+          <line x1="206" y1="144" x2="206" y2="156"/>
+          <line x1="306" y1="258" x2="390" y2="258"/>
+        </g>
+        <g font-family="Caveat, cursive" font-size="24" fill="#B0483C">
+          <text x="118" y="140">⌀ 16.5</text>
+          <text x="322" y="282">ширина 6 мм</text>
+        </g>
+        <g font-family="Caveat, cursive" font-size="23" fill="#55595F">
+          <text x="96" y="270">вид спереду</text>
+          <text x="316" y="46">вид збоку</text>
+          <text x="560" y="92">переріз шини</text>
+          <text x="640" y="170">t = 1.5 мм</text>
+        </g>
+      </svg>
+    </figure>
+  </header>
+
+  <section class="step">
+    <div class="step-no">1</div>
+    <div>
+      <h2>Зніміть розміри, перш ніж малювати</h2>
+      <p>
+        Форма кільця починається не з ідеї, а з пальця, на якому воно
+        сидітиме. Виміряйте обхват пальця смужкою паперу або кільцеміром —
+        у другій половині дня, коли палець трохи ширший. Запишіть три числа,
+        які триматимуть увесь скетч:
+      </p>
+      <ul>
+        <li>внутрішній діаметр (розмір кільця);</li>
+        <li>ширину шини — скільки місця кільце займає вздовж пальця;</li>
+        <li>товщину стінки — для срібла не тонше 1.2–1.5 мм.</li>
+      </ul>
+      <table>
+        <tr><th>Обхват пальця</th><th>Внутрішній ⌀</th><th>Розмір (EU)</th></tr>
+        <tr><td>52 мм</td><td>16.5 мм</td><td>52</td></tr>
+        <tr><td>54 мм</td><td>17.2 мм</td><td>54</td></tr>
+        <tr><td>57 мм</td><td>18.1 мм</td><td>57</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-no">2</div>
+    <div>
+      <h2>Накидайте 10–15 мініатюр</h2>
+      <p>
+        Малюйте маленькі силуети кільця, по 2–3 см кожен, швидко і без
+        деталей — тільки характер форми: рівна шина, хвиля, клин, печатка.
+        Перша ідея рідко найкраща; десята вже цікава. Не стирайте нічого —
+        погані варіанти показують, чому хороший працює.
+      </p>
+      <p>
+        Обведіть один-два силуети, з якими підете далі.
+      </p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-no">3</div>
+    <div>
+      <h2>Розгорніть форму у три проєкції</h2>
+      <p>
+        Обрану мініатюру перемалюйте великою — у масштабі 2:1 зручно
+        працювати — і в трьох видах: спереду (крізь отвір), збоку і зверху.
+        Малюйте циркулем або по шаблону: внутрішнє коло — це діаметр з
+        кроку 1, і воно ідеально кругле, навіть якщо зовнішня форма вільна.
+      </p>
+      <p>
+        Осьова лінія — пунктиром через центр кожного виду. Якщо кільце
+        симетричне, достатньо промалювати половину і віддзеркалити.
+      </p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-no">4</div>
+    <div>
+      <h2>Промалюйте переріз шини</h2>
+      <p>
+        Переріз — те, що рука відчуває щодня. Виріжте його окремим
+        малюнком у масштабі 4:1 і заштрихуйте метал:
+      </p>
+      <figure class="diagram" aria-label="Три перерізи шини: плоский, напівкруглий, комфорт-фіт">
+        <svg viewBox="0 0 720 190" role="img">
+          <g fill="rgba(154,162,173,0.25)" stroke="#2B2E33" stroke-width="2">
+            <rect x="80" y="55" width="90" height="26" rx="3"/>
+            <path d="M310 81 q45 -52 90 0 Z"/>
+            <path d="M540 81 q45 -52 90 0 q-45 30 -90 0 Z"/>
+          </g>
+          <g font-family="Caveat, cursive" font-size="23" fill="#55595F" text-anchor="middle">
+            <text x="125" y="130">плоский</text>
+            <text x="355" y="130">напівкруглий</text>
+            <text x="585" y="130">комфорт-фіт</text>
+          </g>
+          <g font-family="Caveat, cursive" font-size="21" fill="#B0483C" text-anchor="middle">
+            <text x="125" y="158">простий у роботі</text>
+            <text x="355" y="158">класика</text>
+            <text x="585" y="158">не муляє палець</text>
+          </g>
+        </svg>
+      </figure>
+      <p>
+        Для широких кілець (від 6 мм) комфорт-фіт із заокругленим
+        внутрішнім краєм — майже обовʼязковий, інакше кільце тисне.
+      </p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-no">5</div>
+    <div>
+      <h2>Порахуйте розгортку заготовки</h2>
+      <p>
+        Якщо кільце гнеться зі смуги срібла, домалюйте поруч розгортку —
+        пряму смугу, з якої воно вийде. Довжину рахують по середній лінії
+        стінки:
+      </p>
+      <p class="formula">L = π × (d + t)</p>
+      <p>
+        де d — внутрішній діаметр, t — товщина стінки. Для розміру 16.5 мм
+        і стінки 1.5 мм: L = 3.14 × 18 ≈ 56.5 мм. Додайте ~0.5 мм припуску
+        на спилювання торців перед пайкою.
+      </p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-no">6</div>
+    <div>
+      <h2>Зробіть фінальний технічний скетч</h2>
+      <p>
+        Перемалюйте начисто всі три проєкції, переріз і розгортку на одному
+        аркуші. Червоним проставте кожен розмір: діаметр, ширину, товщину,
+        довжину заготовки. Підпишіть метал і фактуру — «срібло 925,
+        полірування» або «мат, чорніння».
+      </p>
+      <div class="note">
+        Срібло 925 — мʼякий метал: тонкі стінки й гострі виступи гнуться
+        та стираються. Тримайте мінімум 1.2 мм товщини і закладайте
+        ~0.2 мм припуску на шліфування й полірування.
+      </div>
+    </div>
+  </section>
+
+  <footer class="outro">
+    <p>
+      Готовий скетч — це інструкція, за якою ви (або інший майстер) зробите
+      кільце без жодного питання. Якщо з малюнка зрозуміло, де різати,
+      скільки металу брати і як воно сидить на пальці — скетч закінчено.
+    </p>
+    <p class="hand" style="margin-top:12px;">Тепер — до верстака.</p>
+  </footer>
+
+</main>
+
+</body>
+</html>

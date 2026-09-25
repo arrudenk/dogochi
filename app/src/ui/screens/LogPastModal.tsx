@@ -4,7 +4,15 @@ import * as Haptics from 'expo-haptics';
 import type { Millis } from '@/core/types';
 import PixelButton from '@/ui/components/PixelButton';
 import PixelText from '@/ui/components/PixelText';
-import { MONTHS_NOM, WEEKDAYS_SHORT, daysBetween, startOfDay } from '@/ui/components/format';
+import WeightPad, { parseWeight } from '@/ui/components/WeightPad';
+import {
+  MONTHS_NOM,
+  WEEKDAYS_SHORT,
+  daysBetween,
+  formatDate,
+  formatKg,
+  startOfDay,
+} from '@/ui/components/format';
 import { C, SPACING } from '@/ui/theme';
 
 export interface LogPastModalProps {
@@ -15,8 +23,13 @@ export interface LogPastModalProps {
   now: Millis;
   /** початково вибрана дата; за замовчуванням — сьогодні */
   initialDate?: Millis;
+  /** розклад несе вагу — після дати питаємо число, інакше запис безглуздий */
+  needsWeight?: boolean;
+  targetWeightMin?: number;
+  targetWeightMax?: number;
+  initialWeightKg?: number;
   onCancel: () => void;
-  onConfirm: (occurredAt: Millis) => void;
+  onConfirm: (occurredAt: Millis, weightKg?: number) => void;
 }
 
 interface Cell {
@@ -49,7 +62,16 @@ function buildMonth(anchor: Millis, max: Millis): Cell[] {
  * Дописування минулим числом — несуча фіча, а не дрібниця (§2).
  * Календар свій, піксельний: жодної сторонньої бібліотеки.
  */
-function Picker({ routineTitle, now, initialDate, onCancel, onConfirm }: Omit<LogPastModalProps, 'visible'>) {
+interface PickerProps {
+  routineTitle: string;
+  now: Millis;
+  initialDate?: Millis;
+  confirmLabel: string;
+  onCancel: () => void;
+  onConfirm: (occurredAt: Millis) => void;
+}
+
+function Picker({ routineTitle, now, initialDate, confirmLabel, onCancel, onConfirm }: PickerProps) {
   const today = useMemo(() => startOfDay(now), [now]);
   const [selected, setSelected] = useState<Millis>(() => startOfDay(initialDate ?? now));
   const [anchor, setAnchor] = useState<Millis>(() => startOfDay(initialDate ?? now));
@@ -175,9 +197,117 @@ function Picker({ routineTitle, now, initialDate, onCancel, onConfirm }: Omit<Lo
         {selectedLabel}
       </PixelText>
 
-      <PixelButton label="Записати" variant="prime" align="center" onPress={confirm} />
+      <PixelButton label={confirmLabel} variant="prime" align="center" onPress={confirm} />
       <PixelButton label="Скасувати" variant="ghost" align="center" style={s.cancel} onPress={onCancel} />
     </View>
+  );
+}
+
+/** Другий крок тієї самої модалки: минуле зважування без числа нічого не варте. */
+function WeightStep({
+  routineTitle,
+  dateLabel,
+  targetWeightMin,
+  targetWeightMax,
+  initialWeightKg,
+  onBack,
+  onConfirm,
+}: {
+  routineTitle: string;
+  dateLabel: string;
+  targetWeightMin?: number;
+  targetWeightMax?: number;
+  initialWeightKg?: number;
+  onBack: () => void;
+  onConfirm: (kg: number) => void;
+}) {
+  const [raw, setRaw] = useState(() => (initialWeightKg != null ? formatKg(initialWeightKg) : ''));
+  const kg = parseWeight(raw);
+
+  return (
+    <View style={s.card}>
+      <PixelText variant="label" style={s.head}>
+        ЗАПИСАТИ ВАГУ
+      </PixelText>
+      <PixelText variant="bright" style={s.title}>
+        {routineTitle}
+      </PixelText>
+      <PixelText variant="tiny" color={C.labelDim} style={s.stepDate}>
+        {dateLabel}
+      </PixelText>
+
+      <WeightPad
+        value={raw}
+        onChange={setRaw}
+        targetMin={targetWeightMin}
+        targetMax={targetWeightMax}
+      />
+
+      <PixelButton
+        label="Записати"
+        variant="prime"
+        align="center"
+        disabled={kg == null}
+        style={s.stepConfirm}
+        onPress={() => {
+          if (kg != null) onConfirm(kg);
+        }}
+      />
+      <PixelButton
+        label="Назад до дати"
+        variant="ghost"
+        align="center"
+        style={s.cancel}
+        onPress={onBack}
+      />
+    </View>
+  );
+}
+
+function Flow({
+  routineTitle,
+  now,
+  initialDate,
+  needsWeight = false,
+  targetWeightMin,
+  targetWeightMax,
+  initialWeightKg,
+  onCancel,
+  onConfirm,
+}: Omit<LogPastModalProps, 'visible'>) {
+  const [picked, setPicked] = useState<Millis | null>(null);
+
+  const afterDate = useCallback(
+    (occurredAt: Millis) => {
+      if (needsWeight) setPicked(occurredAt);
+      else onConfirm(occurredAt);
+    },
+    [needsWeight, onConfirm],
+  );
+
+  if (needsWeight && picked != null) {
+    return (
+      <WeightStep
+        routineTitle={routineTitle}
+        dateLabel={formatDate(picked).toUpperCase()}
+        targetWeightMin={targetWeightMin}
+        targetWeightMax={targetWeightMax}
+        initialWeightKg={initialWeightKg}
+        onBack={() => setPicked(null)}
+        onConfirm={(kg) => onConfirm(picked, kg)}
+      />
+    );
+  }
+
+  return (
+    <Picker
+      routineTitle={routineTitle}
+      now={now}
+      initialDate={initialDate}
+      confirmLabel={needsWeight ? 'Далі — вага' : 'Записати'}
+      onCancel={onCancel}
+      onConfirm={afterDate}
+    />
   );
 }
 
@@ -187,7 +317,7 @@ function LogPastModal(props: LogPastModalProps) {
   return (
     <Modal visible transparent animationType="fade" statusBarTranslucent onRequestClose={rest.onCancel}>
       <View style={s.dim}>
-        <Picker {...rest} />
+        <Flow {...rest} />
       </View>
     </Modal>
   );
@@ -226,6 +356,8 @@ const s = StyleSheet.create({
   quickBtn: { flex: 1, paddingHorizontal: 2 },
   selected: { marginVertical: SPACING.sm },
   cancel: { marginTop: SPACING.xs },
+  stepDate: { marginTop: 2, marginBottom: SPACING.sm },
+  stepConfirm: { marginTop: SPACING.md },
 });
 
 export default LogPastModal;

@@ -8,7 +8,8 @@ import ScreenHeader from '@/ui/components/ScreenHeader';
 import StatBar from '@/ui/components/StatBar';
 import WardIcon from '@/ui/components/WardIcon';
 import XpBar from '@/ui/components/XpBar';
-import { formatWeight, formatXp, wardStatusLabel } from '@/ui/components/format';
+import PixelButton from '@/ui/components/PixelButton';
+import { formatWeight, formatWeightRange, formatXp, wardStatusLabel } from '@/ui/components/format';
 import type { SpriteMap } from '@/ui/components/types';
 import { C, METRICS, SPACING, STAT_COLORS, STAT_LABELS } from '@/ui/theme';
 
@@ -21,10 +22,17 @@ export interface CharacterSheetScreenProps {
   yearXp?: number;
   sprites?: SpriteMap;
   onClose: () => void;
+  /** вхід у редактор каталогу догляду (§15 п.2) */
+  onOpenRoutines?: () => void;
+  /** зважування прямо з листа — саме тут видно, що ваги немає */
+  onLogWeight?: () => void;
 }
 
 /** Ваговий діапазон упаковки протипаразитарного засобу — константа реальності, не пса (§3). */
 const POTION_BAND = '10–20 кг';
+
+/** табличка рівня зверху + підпис класу знизу — простір, що спрайту не належить */
+const PORTRAIT_CHROME = 26;
 
 interface WardRow {
   ward: Ward;
@@ -63,6 +71,8 @@ function CharacterSheetScreen({
   yearXp,
   sprites,
   onClose,
+  onOpenRoutines,
+  onLogWeight,
 }: CharacterSheetScreenProps) {
   const wards = useMemo<WardRow[]>(
     () =>
@@ -84,7 +94,7 @@ function CharacterSheetScreen({
     return `${formatWeight(state.lastWeightKg)} · ${status}`;
   }, [state.lastWeightKg, state.weightInRange]);
 
-  const targetLine = `${dog.targetWeightMin}–${dog.targetWeightMax} кг`;
+  const targetLine = formatWeightRange(dog.targetWeightMin, dog.targetWeightMax);
 
   return (
     <View style={s.root}>
@@ -101,7 +111,12 @@ function CharacterSheetScreen({
             />
           </View>
           <View style={s.portraitDog}>
-            <DogSprite pose="portrait" sprites={sprites} px={6} />
+            <DogSprite
+              pose="portrait"
+              sprites={sprites}
+              px={6}
+              maxSide={METRICS.portraitHeight - PORTRAIT_CHROME}
+            />
           </View>
           <PixelText variant="tiny" align="center" style={s.className}>
             {className}
@@ -144,6 +159,24 @@ function CharacterSheetScreen({
           <Kv k="ПОХОДІВ У ЛІС" v={String(state.journeysCount)} />
           <Kv k="ВСЬОГО XP" v={formatXp(state.totalXp)} last />
         </Panel>
+
+        {onLogWeight != null ? (
+          <PixelButton
+            label={state.lastWeightKg == null ? 'Записати вагу' : 'Зважити наново'}
+            align="center"
+            style={s.cta}
+            onPress={onLogWeight}
+          />
+        ) : null}
+        {onOpenRoutines != null ? (
+          <PixelButton
+            label="Налаштування догляду"
+            hint="→ періодичність"
+            align="center"
+            style={s.cta}
+            onPress={onOpenRoutines}
+          />
+        ) : null}
       </ScrollView>
     </View>
   );
@@ -187,6 +220,7 @@ const s = StyleSheet.create({
   portraitDog: { alignItems: 'center', marginBottom: SPACING.sm },
   className: { marginBottom: SPACING.xs },
   block: { marginBottom: SPACING.sm },
+  cta: { marginTop: SPACING.sm },
   stat: { marginBottom: SPACING.xs + 1 },
   buffs: { flexDirection: 'row', gap: SPACING.xs + 2 },
   buff: {

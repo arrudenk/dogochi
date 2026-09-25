@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import React, { useCallback, useMemo, useState } from 'react';
+import { Pressable, StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import Svg, { Circle, Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
 import PixelSprite from './PixelSprite';
 import PixelText from './PixelText';
@@ -20,6 +20,8 @@ export interface DenSceneProps {
 }
 
 const STRIPE = 8;
+/** табличка рівня зверху + відступ від підлоги знизу — те, що спрайту не належить */
+const DOG_INSET = 56;
 
 /** Фон малюється одним статичним SVG: небо, підлога, вікно, місяць. Нуль роботи щокадру. */
 const Backdrop = React.memo(function Backdrop({ w, h }: { w: number; h: number }) {
@@ -31,7 +33,8 @@ const Backdrop = React.memo(function Backdrop({ w, h }: { w: number; h: number }
   }, [w]);
 
   return (
-    <Svg width="100%" height="100%" viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="none">
+    // viewBox 1:1 до реальних dp — місяць лишається колом на будь-якій ширині
+    <Svg width={w} height={h} viewBox={`0 0 ${w} ${h}`}>
       <Defs>
         <LinearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
           <Stop offset="0" stopColor={C.skyTop} />
@@ -78,10 +81,16 @@ function DenSceneBase({
   height = METRICS.denHeight,
   onPressDog,
 }: DenSceneProps) {
+  // ширина приходить одним layout-подією, не щокадру
+  const [width, setWidth] = useState(0);
+  const measure = useCallback((e: LayoutChangeEvent) => {
+    setWidth(Math.round(e.nativeEvent.layout.width));
+  }, []);
+
   return (
-    <View style={[s.den, { height }]}>
+    <View style={[s.den, { height }]} onLayout={measure}>
       <View style={StyleSheet.absoluteFill}>
-        <Backdrop w={300} h={height} />
+        {width > 0 ? <Backdrop w={width} h={height} /> : null}
       </View>
 
       <View style={s.plate} pointerEvents="none">
@@ -116,7 +125,12 @@ function DenSceneBase({
         style={({ pressed }) => [s.dog, pressed ? s.pressed : null]}
         hitSlop={SPACING.sm}
       >
-        <DogSprite pose="stand" sprites={sprites} px={METRICS.spritePx} />
+        <DogSprite
+          pose="stand"
+          sprites={sprites}
+          px={METRICS.spritePx}
+          maxSide={Math.max(48, height - DOG_INSET)}
+        />
       </Pressable>
     </View>
   );

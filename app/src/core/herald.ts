@@ -24,11 +24,24 @@ function quoted(title: string): string {
   return `«${title}»`;
 }
 
+/** Нижче за будь-яке справжнє прострочення (300+) і за «скоро» (150+), але вище за квоту. */
+export const UNKNOWN_PRIORITY = 120;
+
+/** Журнал мовчить — світ питає, а не дорікає. Дія одна: записати датою. */
+function unknownStage(q: QuestView): HeraldStage | undefined {
+  const title = quoted(q.routine.title);
+  if (q.routine.kind === 'ward') {
+    return { stage: 'ward:unknown', priority: UNKNOWN_PRIORITY, body: `Коли востаннє викувано оберіг ${title} — у реєстрі не записано.` };
+  }
+  if (q.routine.kind === 'duty') {
+    return { stage: 'duty:unknown', priority: UNKNOWN_PRIORITY, body: `Коли востаннє звершено обряд ${title} — у реєстрі не записано.` };
+  }
+  return undefined;
+}
+
 function wardStage(q: QuestView, now: Millis): HeraldStage | undefined {
   const title = quoted(q.routine.title);
-  if (q.wardExpiresAt === undefined) {
-    return { stage: 'ward:never', priority: 399, body: `Оберіг ${title} не викуваний жодного разу. Захисту немає.` };
-  }
+  if (q.wardExpiresAt === undefined) return undefined;
   const left = diffDays(now, q.wardExpiresAt);
   if (left < 0) {
     const over = -left;
@@ -70,7 +83,7 @@ function quotaStage(q: QuestView, now: Millis): HeraldStage | undefined {
   if ((q.periodDone ?? 0) > 0) return undefined;
   const lastDay = addDays(q.periodEndsAt, -1);
   const toEnd = diffDays(now, lastDay);
-  if (toEnd < 0 || toEnd > 5) return undefined;
+  if (toEnd < 0 || toEnd > 4) return undefined; // рівно 5 днів разом із сьогоднішнім — спека §9
   return {
     stage: `quota:end5:${dayKey(q.periodEndsAt)}`,
     priority: 100,
@@ -79,6 +92,7 @@ function quotaStage(q: QuestView, now: Millis): HeraldStage | undefined {
 }
 
 export function stageFor(q: QuestView, now: Millis): HeraldStage | undefined {
+  if (q.status === 'unknown') return unknownStage(q);
   switch (q.routine.kind) {
     case 'ward':
       return wardStage(q, now);
@@ -92,6 +106,14 @@ export function stageFor(q: QuestView, now: Millis): HeraldStage | undefined {
 }
 
 function actionsFor(q: QuestView): HeraldAction[] {
+  if (q.status === 'unknown') {
+    // Сенс стадії — запросити дописати минулим числом, а не записатись на новий прийом.
+    return [
+      { kind: 'markDone', label: 'Вже звершено — записати датою' },
+      { kind: 'snooze3d', label: 'Нагадай за три дні' },
+      { kind: 'dismiss', label: 'Не пригадаю' },
+    ];
+  }
   if (q.routine.kind === 'quota') {
     return [
       { kind: 'markDone', label: 'Звершено — записати датою' },
@@ -117,7 +139,12 @@ export interface HeraldInput {
 /** Черга за пріоритетом: прострочене → скоро згасне → квота. Показати можна лише перший. */
 export function heraldQueue(input: HeraldInput, shown: HeraldShown[]): HeraldItem[] {
   const { now, quests } = input;
-  const seen = new Set(shown.map((s) => `${s.routineId}|${s.stage}`));
+  // Вигорілий снуз перестає бути «вже показано», інакше «нагадай за три дні» глушило б стадію назавжди.
+  const seen = new Set(
+    shown
+      .filter((s) => s.snoozedUntil === undefined || s.snoozedUntil > now)
+      .map((s) => `${s.routineId}|${s.stage}`),
+  );
   const snoozed = new Set(
     shown.filter((s) => s.snoozedUntil !== undefined && s.snoozedUntil > now).map((s) => s.routineId),
   );

@@ -1,6 +1,6 @@
 /** Форматування українською. Чисті функції — викликаються з useMemo, не з тіла рендера. */
 
-import type { Millis, QuestView } from '@/core/types';
+import type { Millis, QuestStatus, QuestView } from '@/core/types';
 
 const DAY = 86_400_000;
 
@@ -87,8 +87,23 @@ export function formatXp(xp: number): string {
   return String(Math.round(xp)).replace(/\B(?=(\d{3})+(?!\d))/g, '\u202f');
 }
 
+/** Українська кома як десятковий роздільник — єдина форма ваги в усьому шарі UI. */
 export function formatWeight(kg: number): string {
-  return `${kg.toFixed(1).replace('.', ',')} кг`;
+  return `${formatKg(kg)} кг`;
+}
+
+/** Число без одиниці — для полів вводу й діапазонів. */
+export function formatKg(kg: number): string {
+  return kg.toFixed(1).replace('.', ',');
+}
+
+export function formatWeightRange(min: number, max: number): string {
+  return `${formatKg(min)}–${formatKg(max)} кг`;
+}
+
+/** «не записано» долітає з core окремою гілкою — порівнюємо через string, щоб збиралось і без неї. */
+export function isUnknownStatus(status: QuestStatus): boolean {
+  return (status as string) === 'unknown';
 }
 
 const PERIOD_LABEL = { week: 'ЦЬОГО ТИЖНЯ', month: 'ЦЬОГО МІСЯЦЯ' } as const;
@@ -98,6 +113,8 @@ const PERIOD_LABEL = { week: 'ЦЬОГО ТИЖНЯ', month: 'ЦЬОГО МІС�
  */
 export function questSubtitle(q: QuestView, now: Millis): string {
   const r = q.routine;
+  // ніколи не рахуємо борг від невідомої дати — «прострочено 0 днів» це брехня, а не стан
+  if (isUnknownStatus(q.status)) return 'НЕ ЗАПИСАНО';
   switch (r.kind) {
     case 'slotted': {
       const done = q.doneToday ?? 0;
@@ -130,6 +147,23 @@ export function questSubtitle(q: QuestView, now: Millis): string {
     default:
       return '';
   }
+}
+
+/**
+ * Відмова записати подію. Реєстр механічний: констатуємо правило, не вибачаємось (§2, §13).
+ * Ключі збігаються з `reason` із `canLogEvent`.
+ */
+export const REFUSAL_TEXT: Record<string, string> = {
+  slotFull: 'Слоти на сьогодні закриті',
+  quotaFull: 'Квоту на період вибрано',
+  future: 'Майбутня дата не приймається',
+  disabled: 'Розклад вимкнено',
+  expired: 'Вікно квесту зачинилось',
+  unknownRoutine: 'Розкладу не знайдено',
+};
+
+export function refusalText(reason: string): string {
+  return REFUSAL_TEXT[reason] ?? 'Запис відхилено';
 }
 
 export function wardStatusLabel(daysLeft: number, active: boolean): string {

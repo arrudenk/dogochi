@@ -76,7 +76,7 @@ function quotaView(routine: CareRoutine, events: CareEvent[], now: Millis): Ques
 function wardView(routine: CareRoutine, events: CareEvent[], now: Millis): QuestView {
   const h = wardHorizon(routine, events, now);
   if (!h) {
-    return { routine, status: 'expired', xp: routine.xp };
+    return { routine, status: 'unknown', xp: routine.xp }; // жодного запису ≠ згас
   }
   const daysLeft = diffDays(now, h.expiresAt);
   let status: QuestStatus;
@@ -89,38 +89,46 @@ function wardView(routine: CareRoutine, events: CareEvent[], now: Millis): Quest
     dueAt: h.expiresAt,
     wardExpiresAt: h.expiresAt,
     wardDaysLeft: Math.max(0, daysLeft),
-    overdueDays: daysLeft < 0 ? -daysLeft : 0,
+    overdueDays: daysLeft < 0 ? -daysLeft : undefined,
     lastDoneAt: h.startedAt,
     xp: routine.xp,
   };
 }
 
-function dutyView(routine: CareRoutine, events: CareEvent[], now: Millis, appStart: Millis): QuestView {
+function dutyView(routine: CareRoutine, events: CareEvent[], now: Millis): QuestView {
   const last = lastEventFor(events, routine.id, now);
-  const dueAt = last ? addMonths(startOfDay(last.occurredAt), routine.everyMonths ?? 1) : appStart;
+  // Без жодного запису терміну не існує: журнал не знає, а не власник завинив.
+  if (!last) return { routine, status: 'unknown', xp: routine.xp };
+  const dueAt = addMonths(startOfDay(last.occurredAt), routine.everyMonths ?? 1);
   const daysUntil = diffDays(now, dueAt);
   let status: QuestStatus;
-  if (daysUntil <= 0) status = 'overdue';
+  if (daysUntil < 0) status = 'overdue';
   else if (daysUntil <= DUTY_DUE_SOON_DAYS) status = 'dueSoon';
   else status = 'done';
   return {
     routine,
     status,
     dueAt,
-    overdueDays: daysUntil < 0 ? -daysUntil : 0,
-    lastDoneAt: last?.occurredAt,
+    overdueDays: daysUntil < 0 ? -daysUntil : undefined,
+    lastDoneAt: last.occurredAt,
     xp: routine.xp,
   };
 }
 
-export function buildQuests(routines: CareRoutine[], events: CareEvent[], now: Millis, appStart: Millis): QuestView[] {
+/** `appStart` більше не впливає на терміни обовʼязків — параметр лишено лише для сумісності виклику. */
+export function buildQuests(
+  routines: CareRoutine[],
+  events: CareEvent[],
+  now: Millis,
+  _appStart?: Millis,
+): QuestView[] {
   const out: QuestView[] = [];
   for (const r of routines) {
     if (!r.enabled || r.kind === 'spawned') continue;
     if (r.kind === 'slotted') out.push(slottedView(r, events, now));
     else if (r.kind === 'quota') out.push(quotaView(r, events, now));
     else if (r.kind === 'ward') out.push(wardView(r, events, now));
-    else out.push(dutyView(r, events, now, appStart));
+    else out.push(dutyView(r, events, now));
   }
   return out;
 }

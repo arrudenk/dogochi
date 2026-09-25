@@ -52,6 +52,16 @@ describe('герольд', () => {
     expect(queueAt(addDays(START, 27), shown).find((i) => i.routineId === 'fleas')!.stage).toBe('ward:pre3');
   });
 
+  test('прострочена стадія відкривається знову, коли снуз вийшов', () => {
+    const now = addDays(START, 23); // ward:pre7, вікно ще триває
+    const shown: HeraldShown[] = [
+      { routineId: 'fleas', stage: 'ward:pre7', shownAt: now, snoozedUntil: addDays(now, 3) },
+    ];
+    const later = addDays(START, 26); // стадія та сама, снуз минув
+    const item = queueAt(later, shown).find((i) => i.routineId === 'fleas');
+    expect(item?.stage).toBe('ward:pre7');
+  });
+
   test('три різні рішення, ніколи одне «ОК»', () => {
     const item = queueAt(addDays(START, 31)).find((i) => i.routineId === 'fleas')!;
     expect(item.actions).toHaveLength(3);
@@ -92,6 +102,45 @@ describe('герольд', () => {
     // один забіг у періоді — герольд мовчить
     push('run', START);
     expect(heraldQueue(compute(input({ events, now: wed })), []).find((i) => i.routineId === 'run')).toBeUndefined();
+  });
+
+  test('квота: вікно рівно 5 днів до кінця періоду', () => {
+    const { events, push } = makeLog();
+    push('feed', START);
+    const stage = (d: number) =>
+      heraldQueue(compute(input({ events, now: addDays(START, d) })), []).find((i) => i.routineId === 'run')?.stage;
+    expect(stage(1)).toBeUndefined(); // вівторок — до кінця тижня 6 днів
+    expect(stage(2)).toBe('quota:end5:2025-08-11'); // середа — рівно 5
+    expect(stage(6)).toBe('quota:end5:2025-08-11'); // неділя — останній день
+  });
+
+  test('невідомий обряд питає, а не звинувачує', () => {
+    const q = heraldQueue(compute(input({ events: [], now: START })), []);
+    const healer = q.filter((i) => i.routineId === 'healer');
+    expect(healer).toHaveLength(1);
+    expect(healer[0].stage).toBe('duty:unknown');
+    expect(healer[0].body).not.toMatch(/прострочен|згас|немає захисту/i);
+    expect(healer[0].actions.map((a) => a.kind)).toEqual(['markDone', 'snooze3d', 'dismiss']);
+
+    const fleas = q.filter((i) => i.routineId === 'fleas');
+    expect(fleas).toHaveLength(1);
+    expect(fleas[0].stage).toBe('ward:unknown');
+    expect(fleas[0].actions.map((a) => a.kind)).toEqual(['markDone', 'snooze3d', 'dismiss']);
+  });
+
+  test('невідоме стоїть нижче за будь-яке справжнє прострочення', () => {
+    const { events, push } = makeLog();
+    push('claws', addDays(START, -90)); // давно прострочений обовʼязок
+    const ids = heraldQueue(compute(input({ events, now: START })), []).map((i) => i.routineId);
+    expect(ids[0]).toBe('claws');
+    expect(ids.indexOf('claws')).toBeLessThan(ids.indexOf('healer'));
+  });
+
+  test('невідома стадія показується один раз', () => {
+    const first = heraldQueue(compute(input({ events: [], now: START })), []).find((i) => i.routineId === 'vaccine')!;
+    const shown: HeraldShown[] = [{ routineId: 'vaccine', stage: first.stage, shownAt: START }];
+    const again = heraldQueue(compute(input({ events: [], now: addDays(START, 1) })), shown);
+    expect(again.find((i) => i.routineId === 'vaccine')).toBeUndefined();
   });
 
   test('черга впорядкована: прострочене → скоро згасне → квота', () => {

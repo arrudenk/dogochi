@@ -29,7 +29,7 @@ export const DEFAULT_ROUTINES: CareRoutine[] = [
     id: 'run',
     title: 'Вільний біг',
     kind: 'quota',
-    group: 'daily',
+    group: 'journey',
     xp: 100,
     enabled: true,
     icon: 'paw',

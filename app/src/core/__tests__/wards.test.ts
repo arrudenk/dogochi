@@ -39,9 +39,9 @@ describe('горизонт оберега', () => {
     expect(wardQuest(addDays(AUG_3, 10)).status).toBe('done');
   });
 
-  test('жодної дози — оберіг відсутній у списку, квест згаслий', () => {
+  test('жодної дози — оберіг відсутній у списку, квест невідомий', () => {
     const state = compute(input({ events: [], now: AUG_3 }));
     expect(state.wards.find((w) => w.routineId === 'fleas')).toBeUndefined();
-    expect(state.quests.find((q) => q.routine.id === 'fleas')!.status).toBe('expired');
+    expect(state.quests.find((q) => q.routine.id === 'fleas')!.status).toBe('unknown');
   });
 });

@@ -271,3 +271,53 @@ export const MOCK_CHRONICLE: ChronicleEntry[] = [
 
 export const MOCK_CHRONICLE_LINE = 'Огляд Цілителя прострочено дванадцять днів.';
 export const MOCK_YEAR_DAY = 'РІК I · ДЕНЬ 47';
+export const MOCK_YEAR_XP = 19_293;
+export const MOCK_HERALD_META = 'ОСТАННІЙ ОГЛЯД — 12 БЕРЕЗНЯ · +4000 XP';
+
+export const MOCK_ROUTINES: CareRoutine[] = DEFAULT_ROUTINES;
+
+// ─── день перший ─────────────────────────────────────────────────────────────
+
+/**
+ * Статус «не записано» долітає з core окремою гілкою. Фікстура не мусить її чекати,
+ * тому звужуємо рядок вручну — код лишається збірним в обох випадках.
+ */
+const UNKNOWN = 'unknown' as unknown as QuestView['status'];
+
+/**
+ * Свіжа установка: жодної події в журналі. Проба на головне — день перший
+ * не має бути стіною червоного. Ніде не мусить з'явитись «прострочено 0 днів».
+ */
+export const FRESH_STATE: ComputedState = {
+  now: MOCK_NOW,
+  totalXp: 0,
+  level: 1,
+  xpIntoLevel: 0,
+  xpPerLevel: XP_PER_LEVEL,
+  stats: { vitality: 0, stamina: 0, coat: 0, bond: 0 },
+  wards: [],
+  quests: DEFAULT_ROUTINES.filter((r) => r.kind !== 'spawned').map((r) => {
+    const known = r.kind === 'slotted' || r.kind === 'quota';
+    return {
+      routine: r,
+      status: known ? 'idle' : UNKNOWN,
+      doneToday: r.kind === 'slotted' ? 0 : undefined,
+      periodDone: r.kind === 'quota' ? 0 : undefined,
+      periodTarget: r.kind === 'quota' ? r.quotaCount : undefined,
+      periodEndsAt: r.kind === 'quota' ? MOCK_NOW + 5 * DAY : undefined,
+      xp: r.xp,
+    };
+  }),
+  spawned: [],
+  achievements: achievements.map((a) => ({
+    ...a,
+    unlocked: false,
+    unlockedAt: undefined,
+    progress: 0,
+    progressLabel: '0',
+  })),
+  newlyUnlocked: [],
+  ageLabel: '4 роки 8 місяців',
+  placesCount: 0,
+  journeysCount: 0,
+};

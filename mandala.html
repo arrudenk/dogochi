@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мандала — дослідження форми</title>
+<meta name="description" content="Анатомія мандали і п’ятнадцять традицій, що незалежно прийшли до кола з центром. Усі схеми збудовано геометрично.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --lapis:#2A4B9B; --cinnabar:#BE3A22; --orpiment:#E2A020;
+  --malachite:#2C7A5E; --bone:#F4F0E2; --gold:#A98A34;
+
+  --ink:#0B1524; --ink-2:#132238; --ink-3:#22344c;
+  --paper:#E6E4D8; --paper-2:#DCD9CA; --text:#17212E; --text-2:#4E5A66;
+
+  --display:'Yeseva One', Georgia, serif;
+  --body:'Literata', Georgia, 'Times New Roman', serif;
+  --mono:'IBM Plex Mono', ui-monospace, Menlo, monospace;
+
+  --gutter:clamp(20px, 5vw, 72px);
+  --measure:66ch;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--text);
+  font-family:var(--body); font-size:clamp(15px,.55vw + 13.4px,17px);
+  line-height:1.62; font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block; max-width:100%}
+a{color:inherit}
+
+.mono{font-family:var(--mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; font-weight:500}
+.wrap{max-width:1220px; margin:0 auto; padding-inline:var(--gutter)}
+.rule{height:1px; background:currentColor; opacity:.16; border:0; margin:0}
+
+/* ---------- заголовки ---------- */
+.h2{
+  font-family:var(--display); font-weight:400; line-height:1.02;
+  font-size:clamp(2rem,4.4vw,3.4rem); margin:0 0 .1em;
+}
+.h3{font-family:var(--display); font-weight:400; font-size:clamp(1.15rem,1.6vw,1.45rem); line-height:1.15; margin:0}
+.lede{font-size:clamp(1.05rem,1.15vw,1.28rem); line-height:1.5; font-weight:400}
+p{margin:0 0 1.1em; max-width:var(--measure)}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--ink); color:var(--bone); position:relative; overflow:hidden}
+.hero-grid-bg{
+  position:absolute; inset:0; pointer-events:none; opacity:.5;
+  background-image:linear-gradient(rgba(244,240,226,.055) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(244,240,226,.055) 1px,transparent 1px);
+  background-size:44px 44px;
+  -webkit-mask-image:radial-gradient(120% 90% at 70% 40%,#000 20%,transparent 75%);
+          mask-image:radial-gradient(120% 90% at 70% 40%,#000 20%,transparent 75%);
+}
+.hero-in{position:relative; display:grid; grid-template-columns:minmax(0,1fr) minmax(300px,.86fr); gap:clamp(24px,4vw,64px);
+  align-items:center; padding-block:clamp(44px,7vw,92px) clamp(48px,7vw,96px)}
+.eyebrow{color:var(--orpiment); margin:0 0 clamp(24px,4vw,46px)}
+.title{
+  font-family:var(--display); font-weight:400;
+  font-size:clamp(3.4rem,11vw,8.4rem); line-height:.84; letter-spacing:-.015em;
+  margin:0 0 .18em; color:var(--bone);
+}
+.title-mark{color:var(--gold)}
+.hero-lede{max-width:44ch; color:#C8CEDA; font-size:clamp(1rem,1.05vw,1.2rem); line-height:1.55}
+.hero-stats{display:flex; flex-wrap:wrap; gap:0 1.25rem; margin-top:clamp(22px,3vw,38px); color:#7E8AA0}
+.hero-stats span{padding-block:.35rem}
+.hero-stats b{color:var(--bone); font-weight:500}
+
+.hero-art{position:relative}
+.hero-art svg{width:100%; height:auto; overflow:visible}
+.hero-art .construct{color:#5C6C86; opacity:.34}
+.hero-cap{margin-top:1.1rem; color:#6F7C91; text-align:center}
+
+/* ---------- секції ---------- */
+.sec{padding-block:clamp(56px,7vw,104px)}
+.sec-head{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr); gap:clamp(16px,3vw,48px);
+  align-items:end; margin-bottom:clamp(32px,4vw,58px)}
+.sec-num{color:var(--cinnabar); margin:0 0 1rem}
+.sec-intro{color:var(--text-2); max-width:52ch; margin:0}
+.dark{background:var(--ink); color:#C8CEDA}
+.dark .h2{color:var(--bone)}
+.dark .sec-intro{color:#8C97AB}
+.dark .sec-num{color:var(--orpiment)}
+
+/* ---------- теза ---------- */
+.thesis{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:clamp(24px,3vw,52px)}
+.pull{
+  font-family:var(--display); font-weight:400; font-size:clamp(1.4rem,2.5vw,2.05rem);
+  line-height:1.18; margin:0; color:var(--text);
+  border-left:2px solid var(--cinnabar); padding-left:clamp(14px,1.6vw,24px); max-width:22ch;
+}
+.pull-src{display:block; margin-top:1rem; color:var(--text-2)}
+
+/* ---------- анатомія ---------- */
+.anat{display:grid; grid-template-columns:minmax(280px,.95fr) minmax(300px,1.05fr);
+  gap:clamp(28px,4vw,64px); align-items:start}
+.anat-fig{position:relative; background:var(--paper-2); padding:clamp(14px,2vw,26px); border:1px solid rgba(23,33,46,.14)}
+.anat-fig svg{width:100%; height:auto; color:var(--text)}
+.anat-fig .construct{opacity:.3}
+.anat-cap{margin-top:.9rem; color:var(--text-2)}
+.legend{list-style:none; margin:0; padding:0; border-top:1px solid rgba(23,33,46,.16)}
+.leg{display:grid; grid-template-columns:auto 1fr auto; gap:.5rem 1rem; align-items:baseline;
+  padding:clamp(12px,1.5vw,18px) 0; border-bottom:1px solid rgba(23,33,46,.16);
+  cursor:default; transition:background .18s}
+.leg:hover,.leg:focus-visible{background:rgba(190,58,34,.07); outline:none}
+.leg-i{color:var(--cinnabar); font-family:var(--mono); font-size:.72rem; font-weight:500}
+.leg-r{color:var(--text-2); font-family:var(--mono); font-size:.68rem; letter-spacing:.06em; white-space:nowrap}
+.leg-b{grid-column:2; margin:.3rem 0 0; color:var(--text-2); font-size:.94rem; max-width:46ch}
+.anat-fig svg[data-hl] .lay{opacity:.16; transition:opacity .2s}
+.anat-fig svg[data-hl="1"] .part-1,.anat-fig svg[data-hl="2"] .part-2,
+.anat-fig svg[data-hl="3"] .part-3,.anat-fig svg[data-hl="4"] .part-4,
+.anat-fig svg[data-hl="5"] .part-5,.anat-fig svg[data-hl="6"] .part-6{opacity:1}
+
+/* ---------- типологія ---------- */
+.tools{display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; justify-content:space-between;
+  margin-bottom:clamp(22px,3vw,36px)}
+.tabs{display:flex; flex-wrap:wrap; gap:.4rem}
+.tab{
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.12em; text-transform:uppercase;
+  background:none; border:1px solid rgba(23,33,46,.3); color:var(--text-2);
+  padding:.55rem .85rem; cursor:pointer; border-radius:0; transition:all .18s;
+}
+.tab:hover{border-color:var(--text); color:var(--text)}
+.tab[aria-pressed="true"]{background:var(--ink); border-color:var(--ink); color:var(--bone)}
+.tab-n{opacity:.55; margin-left:.45em}
+.toggle{font-family:var(--mono); font-size:.7rem; letter-spacing:.12em; text-transform:uppercase;
+  background:none; border:0; border-bottom:1px solid var(--cinnabar); color:var(--cinnabar);
+  padding:.4rem 0; cursor:pointer}
+.toggle[aria-pressed="true"]{background:var(--cinnabar); color:var(--bone); padding-inline:.7rem; border-color:var(--cinnabar)}
+
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(238px,1fr)); gap:clamp(18px,2.4vw,34px);
+  list-style:none; margin:0; padding:0}
+.spec{border-top:1px solid rgba(23,33,46,.22); padding-top:1rem}
+.spec:focus-visible{outline:2px solid var(--cinnabar); outline-offset:6px}
+.spec-fig{position:relative; background:var(--paper-2); margin-bottom:.85rem}
+.spec-fig svg{width:100%; height:auto; color:var(--text)}
+.spec-fig .pigment{transition:opacity .3s}
+.spec-fig .construct{opacity:0; transition:opacity .3s}
+.spec:hover .construct,.spec:focus-visible .construct,.grid.is-draft .construct{opacity:.85}
+.spec:hover .pigment,.spec:focus-visible .pigment,.grid.is-draft .pigment{opacity:.1}
+.spec-name{font-family:var(--display); font-weight:400; font-size:1.12rem; line-height:1.15; margin:0 0 .3rem}
+.spec-trad{display:flex; align-items:center; gap:.5rem; color:var(--text-2);
+  font-family:var(--mono); font-size:.66rem; letter-spacing:.09em; text-transform:uppercase; margin-bottom:.55rem}
+.swatch{width:9px; height:9px; flex:none}
+.g-buddh{background:var(--lapis)} .g-hindu{background:var(--cinnabar)}
+.g-other{background:var(--malachite)} .g-modern{background:var(--orpiment)}
+.spec-note{font-size:.9rem; line-height:1.5; color:var(--text); margin:0 0 .55rem; max-width:none}
+.spec-meta{color:var(--text-2); font-family:var(--mono); font-size:.64rem; letter-spacing:.07em}
+.is-off{display:none}
+
+/* ---------- пігменти ---------- */
+.pig{background:var(--paper-2)}
+.pigs{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:clamp(14px,2vw,26px);
+  list-style:none; margin:0; padding:0}
+.pig-i{border-top:1px solid rgba(23,33,46,.22); padding-top:.9rem}
+.pig-chip{height:56px; margin-bottom:.7rem}
+.pig-n{font-family:var(--display); font-size:1rem; margin:0 0 .25rem}
+.pig-f{font-family:var(--mono); font-size:.64rem; letter-spacing:.08em; color:var(--text-2); margin:0 0 .4rem}
+.fx{text-transform:none; letter-spacing:.04em}
+.pig-d{font-size:.86rem; line-height:1.45; color:var(--text-2); margin:0}
+
+/* ---------- ритуал ---------- */
+.steps{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:clamp(20px,2.6vw,40px);
+  list-style:none; margin:0; padding:0; counter-reset:s}
+.step{border-top:1px solid rgba(200,206,218,.28); padding-top:1rem}
+.step-i{color:var(--orpiment); display:block; margin-bottom:.6rem}
+.step-t{font-family:var(--display); color:var(--bone); font-size:1.05rem; margin:0 0 .4rem}
+.step p{font-size:.9rem; line-height:1.5; margin:0; color:#8C97AB; max-width:none}
+
+/* ---------- джерела ---------- */
+.src{list-style:none; margin:0; padding:0; max-width:78ch}
+.src li{padding:.75rem 0; border-bottom:1px solid rgba(200,206,218,.2); font-size:.92rem}
+.src i{font-style:italic}
+.note{border:1px solid rgba(200,206,218,.28); padding:clamp(16px,2vw,26px); margin-top:clamp(28px,3vw,44px)}
+.note p{color:#8C97AB; font-size:.9rem; margin:0; max-width:62ch}
+.note .mono{color:var(--orpiment); display:block; margin-bottom:.7rem}
+.foot{padding-block:clamp(28px,4vw,44px); color:#5F6C81}
+
+/* ---------- рух: одна послідовність на завантаженні ---------- */
+.hero-art .lay{opacity:0; transform-box:view-box; transform-origin:0 0;
+  animation:lay-in .85s cubic-bezier(.2,.7,.3,1) forwards; animation-delay:calc(var(--i) * .19s + .25s)}
+.hero-art .construct{opacity:0; animation:fade-in 1.2s ease forwards 1.9s}
+@keyframes lay-in{from{opacity:0; transform:scale(.9) rotate(-7deg)} to{opacity:1; transform:none}}
+@keyframes fade-in{to{opacity:.34}}
+
+@media (max-width:900px){
+  .hero-in{grid-template-columns:1fr; padding-block:36px 48px}
+  .hero-art{order:-1; max-width:420px; margin-inline:auto}
+  .sec-head,.anat,.thesis{grid-template-columns:1fr}
+  .sec-head{align-items:start}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important; animation-delay:0ms !important; transition-duration:.001ms !important}
+  .hero-art .lay{opacity:1}
+  .hero-art .construct{opacity:.34}
+}
+:focus-visible{outline:2px solid var(--cinnabar); outline-offset:3px}
+.dark :focus-visible{outline-color:var(--orpiment)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <div>
+      <p class="eyebrow mono">Дослідження форми · 15 традицій</p>
+      <h1 class="title">Манда<span class="title-mark">ла</span></h1>
+      <p class="hero-lede">Не орнамент, а креслення. Коло, вписаний квадрат, чотири брами й точка в центрі: план палацу, який водночас є картою свідомості. Її будують по виміряній сітці — і в частині традицій знищують одразу, щойно вона стане правильною.</p>
+      <p class="hero-stats mono">
+        <span><b>4</b> брами</span><span><b>5</b> напрямків</span>
+        <span><b>1</b> центр</span><span><b>722</b> божества в найгустішій</span>
+      </p>
+    </div>
+    <figure class="hero-art" id="hero-art">
+      <figcaption class="hero-cap mono">Калачакра · схема · сітка проступає останньою</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+
+<section class="sec" id="teza">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="sec-num mono">Розділ 01 — теза</p>
+        <h2 class="h2">Чому всі приходять до кола</h2>
+      </div>
+      <p class="sec-intro">Тибет, Японія, долина Гангу, Шартр, пустеля Аризони, майстерні Ісфахана. Спільної школи не було — була спільна задача.</p>
+    </div>
+
+    <div class="thesis">
+      <div>
+        <p class="lede">Мандала розв’язує одну проблему: як показати ціле так, щоб було видно і його межу, і його середину.</p>
+        <p>Коло дає межу без кутів і без ієрархії напрямків. Вписаний квадрат повертає напрямки назад — чотири сторони світу, чотири кольори, чотири входи. Центр призначає єдину точку, до якої все стягнуто. Далі лишається тільки рахувати: скільки кілець, скільки пелюсток, хто мешкає в котрому поверсі палацу.</p>
+        <p>Тому мандалу правильніше читати як план, а не як картину. Тибетський художник починає не з образу, а з сітки пропорцій: розмічає осі, діагоналі, концентричні кола — і аж потім вкладає в клітини фігури. Наведіть на будь-яку схему нижче, щоб побачити цю сітку замість пігменту.</p>
+      </div>
+      <div>
+        <p class="pull">Мандала — це проєкція космосу, зроблена так, щоб у неї можна було ввійти.
+          <span class="pull-src mono">За Джузеппе Туччі, 1949</span></p>
+        <p style="margin-top:2rem">Збіг форми не означає збігу змісту. Роза Шартра — це вітраж, і її задача пропустити світло. Іікаа навахо — інструмент зцілення, що живе один день. Шрі Янтра — об’єкт для утримання уваги. Юнгова мандала — діагностика. Однакова геометрія обслуговує різні наміри, і саме тому порівнювати їх цікаво.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="anatomiya" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="sec-num mono">Розділ 02 — анатомія</p>
+        <h2 class="h2">Зсередини назовні</h2>
+      </div>
+      <p class="sec-intro">Класична тибетська мандала читається як маршрут: ззовні всередину, крізь шість порогів. Наведіть на рядок — на схемі лишиться тільки цей шар.</p>
+    </div>
+
+    <div class="anat">
+      <figure class="anat-fig" id="anat-fig" style="margin:0">
+        <figcaption class="anat-cap mono">Зведена схема · радіуси в частках від краю</figcaption>
+      </figure>
+      <ol class="legend" id="legend"></ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="typologiya">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="sec-num mono">Розділ 03 — типологія</p>
+        <h2 class="h2">П’ятнадцять схем</h2>
+      </div>
+      <p class="sec-intro">Від найгустішої відомої мандали до одного мазка пензлем. Кожна схема тут збудована геометрично за описом традиції — це діаграми, а не репродукції.</p>
+    </div>
+
+    <div class="tools">
+      <div class="tabs" id="tabs" role="group" aria-label="Фільтр за традицією"></div>
+      <button class="toggle" id="draft-toggle" type="button" aria-pressed="false">Сітка побудови</button>
+    </div>
+
+    <ul class="grid" id="grid"></ul>
+  </div>
+</section>
+
+<section class="sec pig" id="pigmenty">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="sec-num mono">Розділ 04 — матеріал</p>
+        <h2 class="h2">Шість каменів</h2>
+      </div>
+      <p class="sec-intro">Палітра тибетського живопису — це геологія, а не хімія. Кольори тут товчуть, а не синтезують; два з шести отруйні.</p>
+    </div>
+    <ul class="pigs">
+      <li class="pig-i"><div class="pig-chip" style="background:#2A4B9B"></div>
+        <h3 class="pig-n">Ляпіс-лазур</h3><p class="pig-f mono">Лазурит · Бадахшан</p>
+        <p class="pig-d">Возили за тисячі кілометрів з афганських копалень. Найдорожчий синій до появи ультрамарину.</p></li>
+      <li class="pig-i"><div class="pig-chip" style="background:#BE3A22"></div>
+        <h3 class="pig-n">Кіновар</h3><p class="pig-f mono"><span class="fx">HgS</span> · сульфід ртуті</p>
+        <p class="pig-d">Найчистіший червоний доіндустріальної палітри. Отруйний і при розтиранні, і при нагріванні.</p></li>
+      <li class="pig-i"><div class="pig-chip" style="background:#E2A020"></div>
+        <h3 class="pig-n">Аурипігмент</h3><p class="pig-f mono"><span class="fx">As₂S₃</span> · сульфід арсену</p>
+        <p class="pig-d">Золотистий жовтий із назвою від «золотої фарби». Теж отруйний; з мідними пігментами чорніє.</p></li>
+      <li class="pig-i"><div class="pig-chip" style="background:#2C7A5E"></div>
+        <h3 class="pig-n">Малахіт</h3><p class="pig-f mono">Мідний карбонат</p>
+        <p class="pig-d">Зелений, що змінює тон від помелу: грубіший порошок дає темніший колір.</p></li>
+      <li class="pig-i"><div class="pig-chip" style="background:#F4F0E2; box-shadow:inset 0 0 0 1px rgba(23,33,46,.2)"></div>
+        <h3 class="pig-n">Кістяне біле</h3><p class="pig-f mono">Крейда · каолін · кістка</p>
+        <p class="pig-d">Основа ґрунту й розбілювач. Задає теплоту всієї роботи ще до першого кольору.</p></li>
+      <li class="pig-i"><div class="pig-chip" style="background:linear-gradient(135deg,#A98A34,#D9BC63,#8E7128)"></div>
+        <h3 class="pig-n">Золото</h3><p class="pig-f mono">Листове · полірують агатом</p>
+        <p class="pig-d">Не колір, а світло: контури й центр золотять, потім полірують каменем до дзеркала.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec dark" id="rytual">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="sec-num mono">Розділ 05 — практика</p>
+        <h2 class="h2">Зробити й розмести</h2>
+      </div>
+      <p class="sec-intro">Пісочна мандала — єдиний жанр, де знищення роботи закладене в технічне завдання.</p>
+    </div>
+    <ol class="steps">
+      <li class="step"><span class="step-i mono">Крок 01</span><h3 class="step-t">Розмітка</h3>
+        <p>Осі, діагоналі й концентричні кола наносять крейдяною ниткою. Жодного пігменту — лише геометрія й вимір.</p></li>
+      <li class="step"><span class="step-i mono">Крок 02</span><h3 class="step-t">Насипання</h3>
+        <p>Пісок подають металевою лійкою чак-пур: по ребристому боку стукають паличкою, і вібрація жене цівку в кілька зернин завширшки.</p></li>
+      <li class="step"><span class="step-i mono">Крок 03</span><h3 class="step-t">Заселення</h3>
+        <p>Ідуть ззовні всередину, шар за шаром. Велика мандала забирає дні або тижні роботи кількох ченців одночасно.</p></li>
+      <li class="step"><span class="step-i mono">Крок 04</span><h3 class="step-t">Розмітання</h3>
+        <p>Готову мандалу розтинають ваджрою й зметають до центру, змішуючи всі кольори в сірий. Пісок висипають у проточну воду.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec dark" id="dzherela" style="padding-top:0">
+  <div class="wrap">
+    <hr class="rule" style="margin-bottom:clamp(40px,5vw,72px)">
+    <div class="sec-head">
+      <div>
+        <p class="sec-num mono">Додаток</p>
+        <h2 class="h2">Читати далі</h2>
+      </div>
+      <p class="sec-intro">Основа фактажу цієї сторінки. Посилань на зображення немає навмисно — див. примітку нижче.</p>
+    </div>
+    <ul class="src">
+      <li>Giuseppe Tucci. <i>The Theory and Practice of the Mandala</i>. 1949 — класичний розбір символіки та структури.</li>
+      <li>Martin Brauen. <i>The Mandala: Sacred Circle in Tibetan Buddhism</i>. 1997 — вимір, пропорції, ритуал побудови.</li>
+      <li>C. G. Jung. <i>Mandala Symbolism</i> (Collected Works 9i) — мандала як спонтанний образ Самості.</li>
+      <li>Elizabeth ten Grotenhuis. <i>Japanese Mandalas: Representations of Sacred Geography</i>. 1999 — пара рьокай, Тайдзокай і Конґокай.</li>
+      <li>Adrian Snodgrass. <i>The Symbolism of the Stupa</i>. 1985 — про Борободур і мандалу як архітектуру.</li>
+      <li>Peter J. Lu, Paul J. Steinhardt. «Decagonal and Quasi-Crystalline Tilings in Medieval Islamic Architecture». <i>Science</i>, 2007 — геометрія гіриху.</li>
+    </ul>
+    <div class="note">
+      <span class="mono">Про візуали</span>
+      <p>Усі шістнадцять зображень на сторінці намальовані кодом у <code>mandala.js</code>: кола, пелюстки й брами будуються з параметрів під час завантаження. Це схеми, що передають структуру й пропорції, а не репродукції конкретних творів — тому сторінка ліцензійно чиста й не залежить від зовнішніх файлів. За реальними мандалами йдіть у музейні колекції: Rubin Museum, Musée Guimet, Британський музей.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="dark foot">
+  <div class="wrap mono">Дослідження · 2026 · схеми згенеровано геометрично</div>
+</footer>
+
+<script src="mandala.js"></script>
+<script>
+(function () {
+  'use strict';
+  var M = window.MANDALA;
+
+  /* --- шапка --- */
+  var hero = document.getElementById('hero-art');
+  var kala = M.specs.filter(function (s) { return s.id === 'kalachakra'; })[0];
+  hero.insertAdjacentHTML('afterbegin', M.svg(kala));
+
+  /* --- анатомія --- */
+  var LEG = [
+    ['Кільце вогню', 'r 0.99 → 0.84', 'Зовнішня межа. Її не перетинає ніхто непідготовлений: усе звичайне тут згорає.'],
+    ['Кільце ваджр', 'r 0.76', 'Алмазна огорожа. Позначає непорушність того, що всередині.'],
+    ['Лотосове кільце', 'r 0.70 → 0.48', 'Поріг чистоти. За ним починається вже не світ, а палац.'],
+    ['Чотири сторони', 'r 0.44', 'Квадранти зі своїм кольором і напрямком: білий, синій, червоний, зелений.'],
+    ['Мури й брами', 'r 0.44', 'Чотири Т-подібні входи, по одному на сторону світу. Вхід завжди лишають.'],
+    ['Центр', 'r 0.11', 'Божество або порожня точка. Уся конструкція існує заради неї.']
+  ];
+  var fig = document.getElementById('anat-fig');
+  fig.insertAdjacentHTML('afterbegin', M.svg(M.anatomy));
+  var anatSvg = fig.querySelector('svg');
+  var legend = document.getElementById('legend');
+  legend.innerHTML = LEG.map(function (l, i) {
+    return '<li class="leg" tabindex="0" data-i="' + (i + 1) + '">'
+         + '<span class="leg-i">' + String(i + 1).padStart(2, '0') + '</span>'
+         + '<span class="h3">' + l[0] + '</span>'
+         + '<span class="leg-r">' + l[1] + '</span>'
+         + '<p class="leg-b">' + l[2] + '</p></li>';
+  }).join('');
+  function hl(v) { if (v) anatSvg.setAttribute('data-hl', v); else anatSvg.removeAttribute('data-hl'); }
+  legend.addEventListener('mouseover', function (e) {
+    var li = e.target.closest('.leg'); if (li) hl(li.dataset.i);
+  });
+  legend.addEventListener('mouseleave', function () { hl(null); });
+  legend.addEventListener('focusin', function (e) {
+    var li = e.target.closest('.leg'); if (li) hl(li.dataset.i);
+  });
+  legend.addEventListener('focusout', function () { hl(null); });
+
+  /* --- типологія --- */
+  var GROUPS = [
+    { k: 'all', n: 'Усі' }, { k: 'buddh', n: 'Буддизм' }, { k: 'hindu', n: 'Індуїзм' },
+    { k: 'other', n: 'Поза дгармою' }, { k: 'modern', n: 'Сучасність' }
+  ];
+  var grid = document.getElementById('grid');
+  grid.innerHTML = M.specs.map(function (s) {
+    return '<li class="spec" tabindex="0" data-g="' + s.group + '">'
+         + '<div class="spec-fig">' + M.svg(s) + '</div>'
+         + '<h3 class="spec-name">' + s.name + '</h3>'
+         + '<p class="spec-trad"><span class="swatch g-' + s.group + '"></span>' + s.tradition + '</p>'
+         + '<p class="spec-note">' + s.note + '</p>'
+         + '<p class="spec-meta">' + s.meta + '</p></li>';
+  }).join('');
+
+  var tabs = document.getElementById('tabs');
+  tabs.innerHTML = GROUPS.map(function (g, i) {
+    var n = g.k === 'all' ? M.specs.length : M.specs.filter(function (s) { return s.group === g.k; }).length;
+    return '<button class="tab" type="button" data-k="' + g.k + '" aria-pressed="' + (i === 0) + '">'
+         + g.n + '<span class="tab-n">' + n + '</span></button>';
+  }).join('');
+  tabs.addEventListener('click', function (e) {
+    var b = e.target.closest('.tab'); if (!b) return;
+    var k = b.dataset.k;
+    Array.prototype.forEach.call(tabs.children, function (t) {
+      t.setAttribute('aria-pressed', String(t === b));
+    });
+    Array.prototype.forEach.call(grid.children, function (li) {
+      li.classList.toggle('is-off', k !== 'all' && li.dataset.g !== k);
+    });
+  });
+
+  var dt = document.getElementById('draft-toggle');
+  dt.addEventListener('click', function () {
+    var on = dt.getAttribute('aria-pressed') !== 'true';
+    dt.setAttribute('aria-pressed', String(on));
+    grid.classList.toggle('is-draft', on);
+    dt.textContent = on ? 'Показати пігмент' : 'Сітка побудови';
+  });
+})();
+</script>
+</body>
+</html>

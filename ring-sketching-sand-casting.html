@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Як скетчити форму кільця зі срібла під лиття в пісок</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EBECEE;
+    --sheet: #F8F8F6;
+    --graphite: #2B2E33;
+    --pencil: #55595F;
+    --silver: #9AA2AD;
+    --rouge: #B0483C;
+    --grid: rgba(154, 162, 173, 0.28);
+    --sand: rgba(176, 148, 108, 0.30);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--graphite);
+    font-family: "Literata", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .hand {
+    font-family: "Caveat", cursive;
+    color: var(--pencil);
+  }
+
+  .sheet {
+    max-width: 880px;
+    margin: 40px auto 80px;
+    background: var(--sheet);
+    border: 1px solid #DDDEDF;
+    box-shadow: 0 1px 0 #D2D3D5, 0 14px 30px -18px rgba(43, 46, 51, 0.35);
+    padding: 64px 72px 72px;
+  }
+
+  /* Hero */
+  .hero { margin-bottom: 56px; }
+
+  .hero h1 {
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 20ch;
+    margin-bottom: 14px;
+  }
+
+  .hero .lede {
+    max-width: 58ch;
+    color: var(--pencil);
+    margin-bottom: 36px;
+  }
+
+  .hero-sketch {
+    background:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 22px 22px;
+    border: 1px solid var(--silver);
+    padding: 8px;
+  }
+
+  .hero-sketch svg { display: block; width: 100%; height: auto; }
+
+  /* Steps */
+  .step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 20px;
+    padding: 36px 0;
+    border-top: 1px solid #DFE0E2;
+  }
+
+  .step-no {
+    font-family: "Caveat", cursive;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--rouge);
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .step h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .step p { max-width: 62ch; margin-bottom: 12px; }
+  .step p:last-child { margin-bottom: 0; }
+
+  .step ul {
+    max-width: 60ch;
+    margin: 0 0 12px 22px;
+  }
+  .step li { margin-bottom: 6px; }
+
+  .diagram {
+    background:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 22px 22px;
+    border: 1px solid var(--silver);
+    margin: 18px 0 6px;
+    padding: 6px;
+  }
+  .diagram svg { display: block; width: 100%; height: auto; }
+
+  .note {
+    border-left: 3px solid var(--rouge);
+    padding: 10px 16px;
+    margin: 16px 0 4px;
+    background: rgba(176, 72, 60, 0.06);
+    max-width: 60ch;
+  }
+
+  .formula {
+    font-size: 20px;
+    font-style: italic;
+    margin: 14px 0;
+  }
+
+  /* Step 4: model enters/exits sand animation */
+  .cast-anim .model { transform: translateY(-95px); }
+  .cast-anim .chunk, .cast-anim .ragged { opacity: 1; }
+  .cast-anim.play .model {
+    animation: dip 4.5s ease-in-out forwards;
+  }
+  .cast-anim.play .chunk {
+    animation: chunk-fall 4.5s ease-in forwards;
+  }
+  .cast-anim.play .ragged {
+    animation: reveal 4.5s linear forwards;
+  }
+  @keyframes dip {
+    0%   { transform: translateY(-95px); }
+    22%  { transform: translateY(0); }
+    55%  { transform: translateY(0); }
+    85%, 100% { transform: translateY(-95px); }
+  }
+  @keyframes chunk-fall {
+    0%, 62% { opacity: 0; transform: none; }
+    68%  { opacity: 1; transform: translateY(-26px); }
+    85%, 100% { opacity: 1; transform: translateY(4px) rotate(14deg); }
+  }
+  @keyframes reveal {
+    0%, 66% { opacity: 0; }
+    72%, 100% { opacity: 1; }
+  }
+  .replay {
+    font-family: "Caveat", cursive;
+    font-size: 20px;
+    color: var(--rouge);
+    background: none;
+    border: 1px solid var(--rouge);
+    border-radius: 3px;
+    padding: 3px 14px;
+    margin: 10px 0 4px;
+    cursor: pointer;
+  }
+  .replay:hover { background: rgba(176, 72, 60, 0.08); }
+  .replay:focus-visible { outline: 2px solid var(--rouge); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    .cast-anim.play .model,
+    .cast-anim.play .chunk,
+    .cast-anim.play .ragged { animation: none; }
+    .replay { display: none; }
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: 14px 0 6px;
+    font-size: 15.5px;
+  }
+  th, td {
+    border: 1px solid #D5D7D9;
+    padding: 7px 16px;
+    text-align: left;
+  }
+  th { font-weight: 600; background: #F0F0EE; }
+
+  .outro {
+    border-top: 1px solid #DFE0E2;
+    padding-top: 32px;
+    color: var(--pencil);
+    max-width: 62ch;
+  }
+  .outro .hand { font-size: 26px; color: var(--rouge); }
+
+  @media (max-width: 720px) {
+    .sheet { margin: 0; padding: 36px 22px 48px; border: none; }
+    .step { grid-template-columns: 40px 1fr; gap: 12px; }
+    .step-no { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<main class="sheet">
+
+  <header class="hero">
+    <h1>Скетч кільця зі срібла під лиття в пісок</h1>
+    <p class="lede">
+      Лиття в пісок (Delft clay, Petrobond) диктує форму: модель має
+      вийматися з піску, метал — усідатися, а литу поверхню доведеться
+      обпилювати. Тому скетч тут — не просто малюнок кільця, а малюнок
+      кільця плюс лінія розʼєму, ухили, літник і припуски. Нижче — шлях
+      від виміру пальця до ескіза, готового до формування.
+    </p>
+
+    <figure class="hero-sketch" aria-label="Ескіз: кільце в опоці з піском, лінія розʼєму, літник">
+      <svg viewBox="0 0 760 320" role="img">
+        <!-- two-part flask with sand -->
+        <g fill="var(--sand)" stroke="#2B2E33" stroke-width="2">
+          <rect x="70" y="60" width="300" height="100"/>
+          <rect x="70" y="164" width="300" height="100"/>
+        </g>
+        <g fill="none" stroke="#2B2E33" stroke-width="2" stroke-linecap="round">
+          <!-- ring cavity in flask (side view, split by parting line) -->
+          <path d="M220 92 a48 48 0 0 1 0 140" fill="#F8F8F6"/>
+          <path d="M220 92 a48 48 0 0 0 0 140" fill="#F8F8F6"/>
+          <circle cx="220" cy="162" r="30" fill="var(--sand)"/>
+          <!-- sprue channel -->
+          <path d="M220 60 v32 M212 60 h16" />
+        </g>
+        <!-- parting line -->
+        <line x1="56" y1="162" x2="384" y2="162" stroke="#B0483C" stroke-width="1.4" stroke-dasharray="10 6"/>
+        <!-- ring three views, small, right side -->
+        <g fill="none" stroke="#2B2E33" stroke-width="2">
+          <ellipse cx="520" cy="150" rx="52" ry="60"/>
+          <ellipse cx="520" cy="150" rx="36" ry="44"/>
+          <path d="M680 96 q-56 0 -56 56 q0 56 56 56"/>
+          <path d="M680 112 q-40 0 -40 40 q0 40 40 40"/>
+          <line x1="680" y1="96" x2="680" y2="112"/>
+          <line x1="680" y1="192" x2="680" y2="208"/>
+        </g>
+        <g stroke="#B0483C" stroke-width="1.2" fill="none">
+          <line x1="484" y1="150" x2="556" y2="150"/>
+          <line x1="484" y1="144" x2="484" y2="156"/>
+          <line x1="556" y1="144" x2="556" y2="156"/>
+        </g>
+        <g font-family="Caveat, cursive" font-size="23" fill="#55595F">
+          <text x="84" y="86">верхня опока</text>
+          <text x="84" y="250">нижня опока</text>
+          <text x="238" y="80">літник</text>
+          <text x="470" y="242">модель +2% на усадку</text>
+          <text x="612" y="86">вид збоку</text>
+        </g>
+        <g font-family="Caveat, cursive" font-size="23" fill="#B0483C">
+          <text x="392" y="156">лінія розʼєму</text>
+          <text x="494" y="138">⌀ 16.8</text>
+        </g>
+      </svg>
+    </figure>
+  </header>
+
+  <section class="step">
+    <div class="step-no">1</div>
+    <div>
+      <h2>Виміри — з поправкою на усадку й обробку</h2>
+      <p>
+        Виміряйте палець кільцеміром або смужкою паперу, у другій половині
+        дня. Але для лиття цільовий розмір — не розмір скетча: срібло при
+        застиганні всідається приблизно на 1.5–2%, а литу поверхню ви ще
+        зніматимете напилком і наждаком.
+      </p>
+      <ul>
+        <li>внутрішній діаметр моделі = потрібний ⌀ + ~2% (для 16.5 мм — малюйте 16.8 мм);</li>
+        <li>товщина стінки: мінімум 1.5–2 мм — тонше пісок може не пролити;</li>
+        <li>припуск на обпилювання литої кірки: +0.3–0.5 мм на всі зовнішні поверхні.</li>
+      </ul>
+      <table>
+        <tr><th>Потрібний розмір (EU)</th><th>⌀ готового кільця</th><th>⌀ моделі на скетчі</th></tr>
+        <tr><td>52</td><td>16.5 мм</td><td>≈ 16.8 мм</td></tr>
+        <tr><td>54</td><td>17.2 мм</td><td>≈ 17.5 мм</td></tr>
+        <tr><td>57</td><td>18.1 мм</td><td>≈ 18.5 мм</td></tr>
+      </table>
+      <p>
+        Внутрішній отвір усе одно доводять рівнялкою (ригелем) і шабером
+        після лиття, тож краще трохи менше, ніж більше.
+      </p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-no">2</div>
+    <div>
+      <h2>Мініатюри — тільки форми, які вийдуть з піску</h2>
+      <p>
+        Накидайте 10–15 маленьких силуетів, але з одним фільтром у голові:
+        модель треба буде витягти з половинки спресованого піску, не
+        зруйнувавши відбиток. Тому одразу відкидайте:
+      </p>
+      <ul>
+        <li>піднутрення — виступи, що нависають і замикають модель у піску;</li>
+        <li>наскрізні дрібні отвори й прорізи — пісок у них ламається;</li>
+        <li>гострі глибокі канавки — не проллються і не витягнуться.</li>
+      </ul>
+      <p>
+        Добре працюють у піску: масивні печатки, органічні «оплавлені»
+        форми, широкі шини зі скульптурним рельєфом назовні. Фактура самого
+        піску — теж дизайн: лита зерниста поверхня гарна, якщо лишити її
+        навмисно.
+      </p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-no">3</div>
+    <div>
+      <h2>Три проєкції + лінія розʼєму</h2>
+      <p>
+        Перемалюйте обрану мініатюру у масштабі 2:1 у трьох видах: спереду,
+        збоку, зверху. І головне, чого нема у звичайному скетчі кільця:
+        проведіть червоним пунктиром лінію розʼєму — площину, по якій
+        зімкнуться дві половини опоки. Зазвичай це площина симетрії кільця.
+      </p>
+      <p>
+        Перевірка на кожному виді: рухаючись від лінії розʼєму назовні,
+        контур може тільки звужуватись або йти рівно — ніколи не
+        розширюватись. Якщо десь розширюється — це піднутрення, і форму
+        треба правити ще на папері.
+      </p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-no">4</div>
+    <div>
+      <h2>Переріз: ухили замість прямих стінок</h2>
+      <p>
+        Промалюйте переріз шини у масштабі 4:1. Для лиття в пісок бічні
+        стінки не роблять строго вертикальними — дайте їм ухил 2–3°
+        від лінії розʼєму, щоб модель виходила з піску чисто:
+      </p>
+      <figure class="diagram cast-anim" id="castAnim"
+              aria-label="Анімація: модель з прямими стінками обвалює пісок при вийманні, модель з ухилом виходить чисто">
+        <svg viewBox="0 0 720 280" role="img">
+          <!-- sand blocks with cavities -->
+          <g fill="var(--sand)" stroke="#2B2E33" stroke-width="2">
+            <path d="M60 150 H145 V195 H215 V150 H300 V240 H60 Z"/>
+            <path d="M420 150 H495 L505 195 H575 L585 150 H660 V240 H420 Z"/>
+          </g>
+          <!-- broken sand at straight-wall cavity lips -->
+          <g class="ragged" fill="#F8F8F6" stroke="#2B2E33" stroke-width="1.5">
+            <path d="M145 150 l14 0 l-6 9 l-8 5 Z"/>
+            <path d="M215 150 l-14 0 l5 10 l9 4 Z"/>
+          </g>
+          <g class="chunk" fill="var(--sand)" stroke="#2B2E33" stroke-width="1.5">
+            <polygon points="132,196 148,190 144,204"/>
+            <polygon points="222,192 236,198 226,206"/>
+          </g>
+          <!-- models: straight and tapered, with handle stems -->
+          <g class="model" fill="rgba(154,162,173,0.45)" stroke="#2B2E33" stroke-width="2">
+            <rect x="145" y="150" width="70" height="45"/>
+            <rect x="171" y="118" width="18" height="32"/>
+          </g>
+          <g class="model" fill="rgba(154,162,173,0.45)" stroke="#2B2E33" stroke-width="2">
+            <polygon points="495,150 585,150 575,195 505,195"/>
+            <rect x="531" y="118" width="18" height="32"/>
+          </g>
+          <!-- parting line -->
+          <line x1="40" y1="150" x2="680" y2="150" stroke="#B0483C" stroke-width="1.2" stroke-dasharray="8 5"/>
+          <g font-family="Caveat, cursive" font-size="23" fill="#55595F" text-anchor="middle">
+            <text x="180" y="268">прямі стінки — рвуть пісок</text>
+            <text x="540" y="268">ухил 2–3° — виходить чисто</text>
+          </g>
+          <g font-family="Caveat, cursive" font-size="21" fill="#B0483C">
+            <text x="590" y="142">лінія розʼєму</text>
+          </g>
+        </svg>
+      </figure>
+      <button class="replay" id="castReplay" type="button">Показати ще раз</button>
+      <p>
+        Усі зовнішні ребра на перерізі трохи заокругліть (R ≥ 0.5 мм) —
+        гострий кут у піску осипається, а в металі стане місцем недоливу.
+      </p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-no">5</div>
+    <div>
+      <h2>Майстер-модель і літник</h2>
+      <p>
+        З цього скетча ви зробите не кільце, а майстер-модель — з воску,
+        дерева, полімерки чи надрукованої пластмаси (або візьмете готове
+        кільце-донор). Домалюйте на ескізі літникову систему:
+      </p>
+      <ul>
+        <li>літник ⌀ 3–5 мм, підведений до наймасивнішої частини кільця;</li>
+        <li>коротко і прямо: чим довший канал, тим холодніший метал у формі;</li>
+        <li>невеликий конус-лійка згори, куди ллється срібло.</li>
+      </ul>
+      <p>
+        Порахуйте метал по скетчу: обʼєм кільця × 10.4 г/см³ (густина
+        срібла 925), і множте на 1.5–2 — літник і лійка теж заповнюються.
+      </p>
+      <p class="formula">m ≈ V × 10.4 × 1.75</p>
+      <p>
+        Для середньої чоловічої шини 6×2 мм це приблизно 7 г кільце
+        і 12–14 г металу на плавку. Залишок з літника піде в наступну
+        плавку — на скетчі його не шкода.
+      </p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-no">6</div>
+    <div>
+      <h2>Фінальний скетч — паспорт виливка</h2>
+      <p>
+        Перемалюйте начисто: три проєкції з лінією розʼєму, переріз з
+        ухилами, літник, і червоним — усі розміри вже зі збільшенням на
+        усадку. Підпишіть: «срібло 925, лиття в Delft clay», цільовий
+        розмір готового кільця та наважку металу.
+      </p>
+      <div class="note">
+        Лите кільце — напівфабрикат: після вибивання з піску його чекає
+        відрізання літника, обпилювання, розкатка отвору до розміру,
+        шліфування і полірування. Скетч чесний тоді, коли модель на ньому
+        більша за готове кільце — на усадку і на всю цю обробку.
+      </div>
+    </div>
+  </section>
+
+  <footer class="outro">
+    <p>
+      Перевірка готовності скетча: чи вийме модель з піску хтось, хто її
+      не малював? Чи зрозуміло, де ллється метал і скільки його важити?
+      Якщо так — можна пресувати пісок.
+    </p>
+    <p class="hand" style="margin-top:12px;">Тепер — плавити.</p>
+  </footer>
+
+</main>
+
+<script>
+  (function () {
+    var fig = document.getElementById('castAnim');
+    var btn = document.getElementById('castReplay');
+    var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function play() {
+      fig.classList.remove('play');
+      void fig.getBoundingClientRect(); // force reflow so animation restarts
+      fig.classList.add('play');
+    }
+    btn.addEventListener('click', play);
+    if (!reduced) {
+      // play once when the diagram scrolls into view
+      new IntersectionObserver(function (entries, obs) {
+        if (entries[0].isIntersecting) { play(); obs.disconnect(); }
+      }, { threshold: 0.6 }).observe(fig);
+    }
+  })();
+</script>
+
+</body>
+</html>

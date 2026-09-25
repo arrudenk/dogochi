@@ -45,12 +45,13 @@ export {
 } from './achievements';
 export type { AchievementDef, AchievementContext, AchievementResult } from './achievements';
 export { compute, ageLabel, pluralUk } from './engine';
-export { heraldQueue, stageFor, numWord, daysWord } from './herald';
+export { heraldQueue, stageFor, numWord, daysWord, UNKNOWN_PRIORITY } from './herald';
 export type { HeraldInput, HeraldStage } from './herald';
 export {
   desiredNotifications,
   HOWL_TITLE,
   SILENCE_DAYS,
+  SILENCE_OFFSET_DAYS,
   MAX_SILENCE_NOTIFICATIONS,
   WARD_HORIZON_DAYS,
   DUTY_HORIZON_DAYS,

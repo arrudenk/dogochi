@@ -71,12 +71,56 @@ describe('обовʼязок', () => {
     expect(q.overdueDays).toBe(9);
   });
 
-  test('ніколи не виконаний обовʼязок прострочений від початку журналу', () => {
+  test('ніколи не виконаний обовʼязок — невідомо, а не прострочено', () => {
     const { events, push } = makeLog();
     push('feed', MON);
     const q = questOf(compute(input({ events, now: addDays(MON, 10) })), 'vaccine');
+    expect(q.status).toBe('unknown');
+    expect(q.overdueDays).toBeUndefined();
+    expect(q.dueAt).toBeUndefined();
+  });
+
+  test('давня подія в журналі не ретро-датує ніколи не виконаний обряд', () => {
+    const { events, push } = makeLog();
+    push('forest', addDays(MON, -365));
+    const q = questOf(compute(input({ events, now: MON })), 'vaccine');
+    expect(q.status).toBe('unknown');
+    expect(q.overdueDays).toBeUndefined();
+  });
+
+  test('у день терміну обовʼязок ще не прострочений', () => {
+    const { events, push } = makeLog();
+    push('claws', MON); // раз на місяць
+    const q = questOf(compute(input({ events, now: addDays(MON, 31) })), 'claws');
+    expect(q.status).toBe('dueSoon');
+    expect(q.overdueDays).toBeUndefined();
+  });
+
+  test('перший прострочений день дає рівно один день', () => {
+    const { events, push } = makeLog();
+    push('claws', MON);
+    const q = questOf(compute(input({ events, now: addDays(MON, 32) })), 'claws');
     expect(q.status).toBe('overdue');
-    expect(q.overdueDays).toBe(10);
+    expect(q.overdueDays).toBe(1);
+  });
+});
+
+describe('перший запуск', () => {
+  test('порожній журнал — жодного прострочення, Vitality 100', () => {
+    const state = compute(input({ events: [], now: MON }));
+    expect(state.quests.filter((q) => q.status === 'overdue')).toEqual([]);
+    expect(state.quests.filter((q) => q.status === 'expired')).toEqual([]);
+    expect(state.stats.vitality).toBe(100);
+  });
+
+  test('обряди й оберіги невідомі, без термінів і боргів', () => {
+    const state = compute(input({ events: [], now: MON }));
+    for (const id of ['healer', 'vaccine', 'weigh', 'claws', 'fleas', 'worms']) {
+      const q = questOf(state, id);
+      expect({ id, status: q.status }).toEqual({ id, status: 'unknown' });
+      expect({ id, due: q.dueAt }).toEqual({ id, due: undefined });
+      expect({ id, over: q.overdueDays }).toEqual({ id, over: undefined });
+    }
   });
 });
 

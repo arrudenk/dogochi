@@ -1,5 +1,10 @@
 import { compute } from '../engine';
-import { desiredNotifications, HOWL_TITLE } from '../notifications';
+import {
+  desiredNotifications,
+  HOWL_TITLE,
+  MAX_SILENCE_NOTIFICATIONS,
+  SILENCE_OFFSET_DAYS,
+} from '../notifications';
 import { addDays } from '../time';
 import { input, makeLog } from './fixtures';
 
@@ -80,6 +85,19 @@ describe('детектор тишини', () => {
       quests: stateWith(events, now).quests,
       lastOpenedAt: START,
     });
-    expect(req.length).toBeLessThanOrEqual(4);
+    // бюджет прив'язаний до самого розкладу зсувів, а не до довільного числа
+    expect(SILENCE_OFFSET_DAYS.length).toBe(MAX_SILENCE_NOTIFICATIONS);
+    expect(MAX_SILENCE_NOTIFICATIONS).toBeLessThanOrEqual(4);
+    expect(req.length).toBe(MAX_SILENCE_NOTIFICATIONS);
+  });
+
+  test('порожній журнал не виє: невідоме — не борг', () => {
+    const now = addDays(START, 30);
+    const req = desiredNotifications({
+      now,
+      quests: stateWith([], now).quests,
+      lastOpenedAt: START,
+    });
+    expect(req).toEqual([]);
   });
 });

@@ -7,9 +7,10 @@ import { daysWord } from './herald';
 export const SILENCE_DAYS = 3;
 export const WARD_HORIZON_DAYS = 7;
 export const DUTY_HORIZON_DAYS = 14;
-/** iOS тримає 64 запланованих; детектор тишини займає щонайбільше стільки. */
-export const MAX_SILENCE_NOTIFICATIONS = 4;
-const OFFSET_DAYS = [3, 6, 10];
+/** Розклад виття при тиші, у днях від «зараз». Спека §10. */
+export const SILENCE_OFFSET_DAYS: readonly number[] = [3, 6, 10];
+/** iOS тримає 64 запланованих; детектор тишини займає рівно стільки слотів, скільки має зсувів (≤4). */
+export const MAX_SILENCE_NOTIFICATIONS = SILENCE_OFFSET_DAYS.length;
 
 export const HOWL_TITLE = 'АУУУУУУ';
 
@@ -21,10 +22,9 @@ interface Pending {
 
 function pendingFor(q: QuestView, now: Millis): Pending | undefined {
   const title = `«${q.routine.title}»`;
+  if (q.status === 'unknown') return undefined; // невідоме не є боргом — вити нема про що
   if (q.routine.kind === 'ward') {
-    if (q.wardExpiresAt === undefined) {
-      return { quest: q, urgency: 999, subject: `Оберіг ${title} ще не викуваний` };
-    }
+    if (q.wardExpiresAt === undefined) return undefined;
     const left = diffDays(now, q.wardExpiresAt);
     if (left < 0) return { quest: q, urgency: 500 + Math.min(-left, 99), subject: `Оберіг ${title} згас` };
     if (left <= WARD_HORIZON_DAYS) {
@@ -76,7 +76,7 @@ export function desiredNotifications(input: NotificationInput): NotificationRequ
   const tail = rest > 0 ? ` І ще ${rest} у реєстрі.` : '';
   const body = `${driver.subject}. Я тебе гукаю.${tail}`;
 
-  return OFFSET_DAYS.slice(0, MAX_SILENCE_NOTIFICATIONS).map((d) => ({
+  return SILENCE_OFFSET_DAYS.map((d) => ({
     id: `howl-${d}d`,
     title: HOWL_TITLE,
     body,

@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import type { ComputedState, QuestView, RoutineGroup } from '@/core/types';
 import ChronicleFrame from '@/ui/components/ChronicleFrame';
 import DenScene from '@/ui/components/DenScene';
+import NoticeBar from '@/ui/components/NoticeBar';
 import Panel from '@/ui/components/Panel';
 import PixelText from '@/ui/components/PixelText';
 import QuestRow from '@/ui/components/QuestRow';
@@ -21,6 +22,12 @@ export interface DenScreenProps {
   onOpenSheet: () => void;
   /** довгий тап по квесту — дописування минулим числом */
   onLogPast?: (routineId: string) => void;
+  /** скасувати останній запис закритого квесту (§13) */
+  onUndo?: (routineId: string) => void;
+  /** відмова записати подію — контейнер каже, що правило не пустило */
+  notice?: string;
+  noticeTone?: 'rule' | 'fault';
+  onDismissNotice?: () => void;
 }
 
 interface Group {
@@ -78,6 +85,10 @@ function DenScreen({
   onComplete,
   onOpenSheet,
   onLogPast,
+  onUndo,
+  notice,
+  noticeTone,
+  onDismissNotice,
 }: DenScreenProps) {
   const groups = useMemo(() => buildGroups(state), [state]);
 
@@ -100,6 +111,12 @@ function DenScreen({
           ↑ ТАП ПО БАЛУ — ЛИСТ ПЕРСОНАЖА
         </PixelText>
 
+        {notice != null && notice.length > 0 ? (
+          <View style={s.block}>
+            <NoticeBar text={notice} tone={noticeTone} onDismiss={onDismissNotice} />
+          </View>
+        ) : null}
+
         {chronicleLine != null && chronicleLine.length > 0 ? (
           <View style={s.block}>
             <ChronicleFrame line={chronicleLine} />
@@ -116,14 +133,17 @@ function DenScreen({
                 last={i === g.quests.length - 1}
                 onComplete={onComplete}
                 onLogPast={onLogPast}
+                onUndo={onUndo}
               />
             ))}
           </Panel>
         ))}
 
-        <PixelText variant="tiny" align="center" style={s.footHint}>
-          ДОВГИЙ ТАП ПО КВЕСТУ — ЗАПИСАТИ МИНУЛИМ ЧИСЛОМ
-        </PixelText>
+        {onLogPast != null ? (
+          <PixelText variant="tiny" align="center" style={s.footHint}>
+            ДОВГИЙ ТАП ПО КВЕСТУ — ЗАПИСАТИ МИНУЛИМ ЧИСЛОМ
+          </PixelText>
+        ) : null}
       </ScrollView>
     </View>
   );

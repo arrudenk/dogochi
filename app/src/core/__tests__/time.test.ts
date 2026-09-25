@@ -41,9 +41,9 @@ describe('календарна арифметика', () => {
 describe('статі — ковзне вікно', () => {
   const START = new Date(2025, 7, 4, 9, 0, 0).getTime();
 
-  test('порожній журнал — усе на нулі', () => {
+  test('порожній журнал — вікна на нулі, Vitality нейтральна', () => {
     const s = compute(input({ now: START })).stats;
-    expect(s).toEqual({ vitality: 0, stamina: 0, coat: 0, bond: 0 });
+    expect(s).toEqual({ vitality: 100, stamina: 0, coat: 0, bond: 0 });
   });
 
   test('Stamina: 3 патрулі × 14 днів і 4 забіги = 100', () => {

@@ -30,7 +30,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 0.1 · Фото Балу</b><br><span style=\"font-size:0.62em\">силует при денному світлі + портрет</span>"
+      "content": "<b>⊘ 0.1 · Фото Балу</b><br><span style=\"font-size:0.62em\">силует при денному світлі + портрет</span>",
+      "color": "#939597"
     },
     {
       "id": "it-f0-1",
@@ -40,7 +41,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 0.2 · Прототип конвеєра</b><br><span style=\"font-size:0.62em\">маска Vision → розтягування тонів у масці → медіана → зменшення → квантування → обідок</span>"
+      "content": "<b>⊘ 0.2 · Прототип конвеєра</b><br><span style=\"font-size:0.62em\">маска Vision → розтягування тонів у масці → медіана → зменшення → квантування → обідок</span>",
+      "color": "#939597"
     },
     {
       "id": "it-f0-2",
@@ -50,7 +52,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 0.3 · Вердикт</b><br><span style=\"font-size:0.62em\">план А (фото) чи план Б (архетипний спрайт)</span>"
+      "content": "<b>⊘ 0.3 · Вердикт</b><br><span style=\"font-size:0.62em\">план А (фото) чи план Б (архетипний спрайт)</span>",
+      "color": "#939597"
     },
     {
       "id": "sec-f1",
@@ -61,7 +64,7 @@
       "height": 130,
       "style": "heading",
       "color": "#0F4C81",
-      "content": "<b>Ф1 · ЯДРО</b><br><span style=\"font-size:0.52em\">BaluCore — чистий двигун, без UI і без бази</span><br><span style=\"font-size:0.48em\">0 / 13</span>"
+      "content": "<b>Ф1 · ЯДРО</b><br><span style=\"font-size:0.52em\">BaluCore — чистий двигун, без UI і без бази</span><br><span style=\"font-size:0.48em\">13 / 13</span>"
     },
     {
       "id": "it-f1-0",
@@ -71,7 +74,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 1.1 · Доменні типи</b><br><span style=\"font-size:0.62em\">Dog, CareRoutine, CareEvent, UnlockedAchievement, HeraldShown, Place</span>"
+      "content": "<b>▣ 1.1 · Доменні типи</b><br><span style=\"font-size:0.62em\">Dog, CareRoutine, CareEvent, UnlockedAchievement, HeraldShown, Place</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f1-1",
@@ -81,7 +85,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 1.2 · Оберіги</b><br><span style=\"font-size:0.62em\">вікно [дата, дата+тривалість]; НЕ накопичуються при ранньому прийомі</span>"
+      "content": "<b>▣ 1.2 · Оберіги</b><br><span style=\"font-size:0.62em\">вікно [дата, дата+тривалість]; НЕ накопичуються при ранньому прийомі</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f1-2",
@@ -91,7 +96,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 1.3 · Слотові добові</b><br><span style=\"font-size:0.62em\">N за добу, скидання вночі, борг НЕ переноситься</span>"
+      "content": "<b>▣ 1.3 · Слотові добові</b><br><span style=\"font-size:0.62em\">N за добу, скидання вночі, борг НЕ переноситься</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f1-3",
@@ -101,7 +107,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 1.4 · Обовʼязки</b><br><span style=\"font-size:0.62em\">раз на N місяців, прострочення накопичується</span>"
+      "content": "<b>▣ 1.4 · Обовʼязки</b><br><span style=\"font-size:0.62em\">раз на N місяців, прострочення накопичується</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f1-4",
@@ -111,7 +118,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 1.5 · Квоти</b><br><span style=\"font-size:0.62em\">лічильник за період, нуль покарання</span>"
+      "content": "<b>▣ 1.5 · Квоти</b><br><span style=\"font-size:0.62em\">лічильник за період, нуль покарання</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f1-5",
@@ -121,7 +129,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 1.6 · Породжені квести</b><br><span style=\"font-size:0.62em\">похід → огляд на кліщів, дійсний 24 год</span>"
+      "content": "<b>▣ 1.6 · Породжені квести</b><br><span style=\"font-size:0.62em\">похід → огляд на кліщів, дійсний 24 год</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f1-6",
@@ -131,7 +140,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 1.7 · Статі</b><br><span style=\"font-size:0.62em\">Vitality / Stamina / Coat / Bond на ковзних вікнах</span>"
+      "content": "<b>▣ 1.7 · Статі</b><br><span style=\"font-size:0.62em\">Vitality / Stamina / Coat / Bond на ковзних вікнах</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f1-7",
@@ -141,7 +151,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 1.8 · XP і рівень</b><br><span style=\"font-size:0.62em\">150 XP/рівень, довічна стеля 999, вага обернено до частоти</span>"
+      "content": "<b>▣ 1.8 · XP і рівень</b><br><span style=\"font-size:0.62em\">150 XP/рівень, довічна стеля 999, вага обернено до частоти</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f1-8",
@@ -151,7 +162,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 1.9 · Тест: стеля сходиться</b><br><span style=\"font-size:0.62em\">ідеальний рік ≈ 147 000 XP = рівень 999</span>"
+      "content": "<b>▣ 1.9 · Тест: стеля сходиться</b><br><span style=\"font-size:0.62em\">ідеальний рік ≈ 147 000 XP = рівень 999</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f1-9",
@@ -161,7 +173,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 1.10 · Тест: сенс вбудований</b><br><span style=\"font-size:0.62em\">тільки щоденні тапи цілий рік → рівень ≤ 427</span>"
+      "content": "<b>▣ 1.10 · Тест: сенс вбудований</b><br><span style=\"font-size:0.62em\">тільки щоденні тапи цілий рік → рівень ≤ 427</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f1-10",
@@ -171,7 +184,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 1.11 · Трофеї</b><br><span style=\"font-size:0.62em\">запити до журналу, працюють ретроспективно</span>"
+      "content": "<b>▣ 1.11 · Трофеї</b><br><span style=\"font-size:0.62em\">запити до журналу, працюють ретроспективно</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f1-11",
@@ -181,7 +195,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 1.12 · Черга герольда</b><br><span style=\"font-size:0.62em\">стадії, HeraldShown, один на відкриття, приоритет</span>"
+      "content": "<b>▣ 1.12 · Черга герольда</b><br><span style=\"font-size:0.62em\">стадії, HeraldShown, один на відкриття, приоритет</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f1-12",
@@ -191,7 +206,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 1.13 · Планувальник нотифікацій</b><br><span style=\"font-size:0.62em\">desiredNotifications(state, now) → набір для diff</span>"
+      "content": "<b>▣ 1.13 · Планувальник нотифікацій</b><br><span style=\"font-size:0.62em\">desiredNotifications(state, now) → набір для diff</span>",
+      "color": "#88B04B"
     },
     {
       "id": "sec-f2",
@@ -202,7 +218,7 @@
       "height": 130,
       "style": "heading",
       "color": "#6667AB",
-      "content": "<b>Ф2 · СХОВИЩЕ</b><br><span style=\"font-size:0.52em\">BaluStore — SwiftData, готове до CloudKit</span><br><span style=\"font-size:0.48em\">0 / 4</span>"
+      "content": "<b>Ф2 · СХОВИЩЕ</b><br><span style=\"font-size:0.52em\">BaluStore — SwiftData, готове до CloudKit</span><br><span style=\"font-size:0.48em\">4 / 4</span>"
     },
     {
       "id": "it-f2-0",
@@ -212,7 +228,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 2.1 · SwiftData-моделі</b><br><span style=\"font-size:0.62em\">правила CloudKit з першого дня: дефолти, без unique, опційні звʼязки</span>"
+      "content": "<b>▣ 2.1 · Моделі SQLite</b><br><span style=\"font-size:0.62em\">правила CloudKit з першого дня: дефолти, без unique, опційні звʼязки</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f2-1",
@@ -222,7 +239,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 2.2 · Маппінг</b><br><span style=\"font-size:0.62em\">записи ↔ доменні типи-значення</span>"
+      "content": "<b>▣ 2.2 · Маппінг</b><br><span style=\"font-size:0.62em\">записи ↔ доменні типи-значення</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f2-2",
@@ -232,7 +250,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 2.3 · Запис події</b><br><span style=\"font-size:0.62em\">occurredAt окремо від recordedAt; майбутнє відхиляється</span>"
+      "content": "<b>▣ 2.3 · Запис події</b><br><span style=\"font-size:0.62em\">occurredAt окремо від recordedAt; майбутнє відхиляється</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f2-3",
@@ -242,7 +261,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 2.4 · Кешований стор</b><br><span style=\"font-size:0.62em\">@Observable, перерахунок на запуску / фоні / записі; нічого в тілі View</span>"
+      "content": "<b>▣ 2.4 · Кешований стор</b><br><span style=\"font-size:0.62em\">@Observable, перерахунок на запуску / фоні / записі; нічого в тілі View</span>",
+      "color": "#88B04B"
     },
     {
       "id": "sec-f3",
@@ -253,7 +273,7 @@
       "height": 130,
       "style": "heading",
       "color": "#5F4B8B",
-      "content": "<b>Ф3 · РИТУАЛ ВИКЛИКУ</b><br><span style=\"font-size:0.52em\">BaluPixel — 5 фото → спрайти</span><br><span style=\"font-size:0.48em\">0 / 5</span>"
+      "content": "<b>Ф3 · РИТУАЛ ВИКЛИКУ</b><br><span style=\"font-size:0.52em\">BaluPixel — 5 фото → спрайти</span><br><span style=\"font-size:0.48em\">5 / 5</span>"
     },
     {
       "id": "it-f3-0",
@@ -263,7 +283,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 3.1 · Захоплення 5 поз</b><br><span style=\"font-size:0.62em\">силуетні підказки, поради про світло й фон</span>"
+      "content": "<b>▣ 3.1 · Захоплення 5 поз</b><br><span style=\"font-size:0.62em\">силуетні підказки, поради про світло й фон</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f3-1",
@@ -273,7 +294,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 3.2 · Конвеєр у продакшн</b><br><span style=\"font-size:0.62em\">зі спайку; 64×64 пози, 96×96 портрет; фон, памʼять відпускається</span>"
+      "content": "<b>▣ 3.2 · Конвеєр у продакшн</b><br><span style=\"font-size:0.62em\">зі спайку; 64×64 пози, 96×96 портрет; фон, памʼять відпускається</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f3-2",
@@ -283,7 +305,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 3.3 · Акцентна палітра</b><br><span style=\"font-size:0.62em\">2-3 домінантні кольори Балу → акцент інтерфейсу</span>"
+      "content": "<b>▣ 3.3 · Акцентна палітра</b><br><span style=\"font-size:0.62em\">2-3 домінантні кольори Балу → акцент інтерфейсу</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f3-3",
@@ -293,7 +316,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 3.4 · Редактор доопрацювання</b><br><span style=\"font-size:0.62em\">сітка 64×64, тап, піпетка, undo. Свідомо без шарів</span>"
+      "content": "<b>▣ 3.4 · Редактор доопрацювання</b><br><span style=\"font-size:0.62em\">сітка 64×64, тап, піпетка, undo. Свідомо без шарів</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f3-4",
@@ -303,7 +327,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 3.5 · Відкат на архетип</b><br><span style=\"font-size:0.62em\">силуетний сайтхаунд у палітрі Балу, якщо файл побитий або спайк провалився</span>"
+      "content": "<b>▣ 3.5 · Відкат на архетип</b><br><span style=\"font-size:0.62em\">силуетний сайтхаунд у палітрі Балу, якщо файл побитий або спайк провалився</span>",
+      "color": "#88B04B"
     },
     {
       "id": "sec-f4",
@@ -314,7 +339,7 @@
       "height": 130,
       "style": "heading",
       "color": "#009B77",
-      "content": "<b>Ф4 · ІНТЕРФЕЙС</b><br><span style=\"font-size:0.52em\">BaluUI — лігво, дошка, лист, герольд</span><br><span style=\"font-size:0.48em\">0 / 8</span>"
+      "content": "<b>Ф4 · ІНТЕРФЕЙС</b><br><span style=\"font-size:0.52em\">BaluUI — лігво, дошка, лист, герольд</span><br><span style=\"font-size:0.48em\">8 / 8</span>"
     },
     {
       "id": "it-f4-0",
@@ -324,7 +349,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 4.1 · Тема</b><br><span style=\"font-size:0.62em\">палітра, рамки з CC0-паків за абстракцією, рендер спрайтів без згладжування</span>"
+      "content": "<b>▣ 4.1 · Тема</b><br><span style=\"font-size:0.62em\">палітра, рамки з CC0-паків за абстракцією, рендер спрайтів без згладжування</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f4-1",
@@ -334,7 +360,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 4.2 · Лігво</b><br><span style=\"font-size:0.62em\">сцена у верхній третині, рівень і XP над головою Балу</span>"
+      "content": "<b>▣ 4.2 · Лігво</b><br><span style=\"font-size:0.62em\">сцена у верхній третині, рівень і XP над головою Балу</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f4-2",
@@ -344,7 +371,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 4.3 · Дошка квестів</b><br><span style=\"font-size:0.62em\">Щоденні / Обряди / Походи, один скрол під сценою</span>"
+      "content": "<b>▣ 4.3 · Дошка квестів</b><br><span style=\"font-size:0.62em\">Щоденні / Обряди / Походи, один скрол під сценою</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f4-3",
@@ -354,7 +382,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 4.4 · Лист персонажа</b><br><span style=\"font-size:0.62em\">тап по Балу: статі, оберіги, блок «Звір»</span>"
+      "content": "<b>▣ 4.4 · Лист персонажа</b><br><span style=\"font-size:0.62em\">тап по Балу: статі, оберіги, блок «Звір»</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f4-4",
@@ -364,7 +393,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 4.5 · Герольд</b><br><span style=\"font-size:0.62em\">рамка хроніки, три різні рішення, кнопки після появи тексту</span>"
+      "content": "<b>▣ 4.5 · Герольд</b><br><span style=\"font-size:0.62em\">рамка хроніки, три різні рішення, кнопки після появи тексту</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f4-5",
@@ -374,7 +404,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 4.6 · Обряд звершено</b><br><span style=\"font-size:0.62em\">коло мага, іскри, стрибок рівня — єдина анімація в апці</span>"
+      "content": "<b>▣ 4.6 · Обряд звершено</b><br><span style=\"font-size:0.62em\">коло мага, іскри, стрибок рівня — єдина анімація в апці</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f4-6",
@@ -384,7 +415,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 4.7 · Дописування минулим числом</b><br><span style=\"font-size:0.62em\">вибір дати з листа й з герольда</span>"
+      "content": "<b>▣ 4.7 · Дописування минулим числом</b><br><span style=\"font-size:0.62em\">вибір дати з листа й з герольда</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f4-7",
@@ -394,7 +426,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 4.8 · Редагування каталогу</b><br><span style=\"font-size:0.62em\">періодичність, тривалість оберега, увімкнено</span>"
+      "content": "<b>▣ 4.8 · Редагування каталогу</b><br><span style=\"font-size:0.62em\">періодичність, тривалість оберега, увімкнено</span>",
+      "color": "#88B04B"
     },
     {
       "id": "sec-f5",
@@ -405,7 +438,7 @@
       "height": 130,
       "style": "heading",
       "color": "#955251",
-      "content": "<b>Ф5 · НАГАДУВАННЯ</b><br><span style=\"font-size:0.52em\">детектор тишини, не пуш-спам</span><br><span style=\"font-size:0.48em\">0 / 4</span>"
+      "content": "<b>Ф5 · НАГАДУВАННЯ</b><br><span style=\"font-size:0.52em\">детектор тишини, не пуш-спам</span><br><span style=\"font-size:0.48em\">4 / 4</span>"
     },
     {
       "id": "it-f5-0",
@@ -415,7 +448,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 5.1 · Детектор тишини</b><br><span style=\"font-size:0.62em\">на фоні скасувати й перепланувати now+3/6/10д; відкриття скасовує</span>"
+      "content": "<b>▣ 5.1 · Детектор тишини</b><br><span style=\"font-size:0.62em\">на фоні скасувати й перепланувати now+3/6/10д; відкриття скасовує</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f5-1",
@@ -425,7 +459,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 5.2 · АУУУУУУ</b><br><span style=\"font-size:0.62em\">виття + підзаголовок що потребує уваги + дія «Звершено» з локскріна</span>"
+      "content": "<b>▣ 5.2 · АУУУУУУ</b><br><span style=\"font-size:0.62em\">виття + підзаголовок що потребує уваги + дія «Звершено» з локскріна</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f5-2",
@@ -435,7 +470,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 5.3 · Календарна страховка</b><br><span style=\"font-size:0.62em\">EventKit для огляду й вакцини, ідентифікатор на розкладі щоб не дублювати</span>"
+      "content": "<b>▣ 5.3 · Календарна страховка</b><br><span style=\"font-size:0.62em\">EventKit для огляду й вакцини, ідентифікатор на розкладі щоб не дублювати</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f5-3",
@@ -445,7 +481,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 5.4 · Дозволи</b><br><span style=\"font-size:0.62em\">просимо після Ритуалу; будь-яка відмова нічого не ламає</span>"
+      "content": "<b>▣ 5.4 · Дозволи</b><br><span style=\"font-size:0.62em\">просимо після Ритуалу; будь-яка відмова нічого не ламає</span>",
+      "color": "#88B04B"
     },
     {
       "id": "sec-f6",
@@ -456,7 +493,7 @@
       "height": 130,
       "style": "heading",
       "color": "#A47864",
-      "content": "<b>Ф6 · ХРОНІКА</b><br><span style=\"font-size:0.52em\">хроніка, трофеї, місця</span><br><span style=\"font-size:0.48em\">0 / 4</span>"
+      "content": "<b>Ф6 · ХРОНІКА</b><br><span style=\"font-size:0.52em\">хроніка, трофеї, місця</span><br><span style=\"font-size:0.48em\">3 / 4</span>"
     },
     {
       "id": "it-f6-0",
@@ -466,7 +503,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 6.1 · Хроніка</b><br><span style=\"font-size:0.62em\">таймлайн подій, голос світу</span>"
+      "content": "<b>▣ 6.1 · Хроніка</b><br><span style=\"font-size:0.62em\">таймлайн подій, голос світу</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f6-1",
@@ -476,7 +514,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 6.2 · Трофеї</b><br><span style=\"font-size:0.62em\">список зі стартовим набором з §8.4</span>"
+      "content": "<b>▣ 6.2 · Трофеї</b><br><span style=\"font-size:0.62em\">список зі стартовим набором з §8.4</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f6-2",
@@ -486,7 +525,8 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 6.3 · Місця</b><br><span style=\"font-size:0.62em\">простий список, назви руками; координати про запас</span>"
+      "content": "<b>▣ 6.3 · Місця</b><br><span style=\"font-size:0.62em\">простий список, назви руками; координати про запас</span>",
+      "color": "#88B04B"
     },
     {
       "id": "it-f6-3",
@@ -517,7 +557,7 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 7.1 · Xcode-проєкт</b><br><span style=\"font-size:0.62em\">таргети, capabilities, межі модулів</span>"
+      "content": "<b>▢ 7.1 · Збірка EAS (iOS+Android)</b><br><span style=\"font-size:0.62em\">таргети, capabilities, межі модулів</span>"
     },
     {
       "id": "it-f7-1",
@@ -527,7 +567,7 @@
       "height": 190,
       "type": "text",
       "style": "body",
-      "content": "<b>▢ 7.2 · Установка на iPhone</b><br><span style=\"font-size:0.62em\">безкоштовний провіженинг, перевстановлення раз на 7 днів</span>"
+      "content": "<b>▢ 7.2 · Установка на телефон</b><br><span style=\"font-size:0.62em\">безкоштовний провіженинг, перевстановлення раз на 7 днів</span>"
     },
     {
       "id": "it-f7-2",
@@ -543,7 +583,7 @@
       "id": "progress",
       "style": "subheading",
       "height": 150,
-      "content": "<b>ВИКОНАНО 0 / 44</b><br><span style=\"font-size:0.44em\">Ф0 0/3 · Ф1 0/13 · Ф2 0/4 · Ф3 0/5 · Ф4 0/8 · Ф5 0/4 · Ф6 0/4 · Ф7 0/3</span>",
+      "content": "<b>ВИКОНАНО 37 / 44</b><br><span style=\"font-size:0.44em\">Ф0 0/3 · Ф1 13/13 · Ф2 4/4 · Ф3 5/5 · Ф4 8/8 · Ф5 4/4 · Ф6 3/4 · Ф7 0/3</span>",
       "type": "text",
       "x": 1060,
       "y": -420,
