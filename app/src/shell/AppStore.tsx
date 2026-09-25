@@ -103,6 +103,15 @@ const SPECTACLE_ROUTINES = new Set(['fleas', 'worms', 'healer', 'vaccine', 'fore
 /** Нижче цього порогу повернення в апку — це системний діалог, а не новий вхід. */
 const RETURN_THRESHOLD_MS = 2 * 60 * 1000;
 
+const STARTUP_TIMEOUT_MS = 10_000;
+
+function withWatchdog<T>(p: Promise<T>, message: string): Promise<T> {
+  return Promise.race([
+    p,
+    new Promise<T>((_, reject) => setTimeout(() => reject(new Error(message)), STARTUP_TIMEOUT_MS)),
+  ]);
+}
+
 /** Відмова має бути видимою й механічною — мовчазний тап читається як поломка. */
 const REJECTION_TEXT: Record<string, string> = {
   slotFull: 'Слоти на сьогодні закриті.',
@@ -180,7 +189,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     (async () => {
       try {
         const now = Date.now();
-        await store.initStore();
+        // Зависла міграція чи побита база дали б вічний спінер — try/catch ловить
+        // тільки відмову, не зупинку. Сторож перетворює зависання на видиму помилку.
+        await withWatchdog(store.initStore(), 'Сховище не відповідає.');
         await prepareNotificationChannel();
         const done = await store.isOnboardingComplete();
         lastOpenedRef.current = (await store.getLastOpenedAt()) ?? now;
@@ -253,9 +264,13 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     };
     const sub = Notifications.addNotificationResponseReceivedListener(handle);
     // Відповідь могла прийти до того, як JS піднявся — емітер її не переграє.
-    void Notifications.getLastNotificationResponseAsync().then((last) => {
-      if (last) handle(last);
-    });
+    Notifications.getLastNotificationResponseAsync()
+      .then((last) => {
+        if (last) handle(last);
+      })
+      .catch(() => {
+        // платформа не вміє — нотифікація не носій правди, апка цього не помічає
+      });
     return () => sub.remove();
   }, []);
 
