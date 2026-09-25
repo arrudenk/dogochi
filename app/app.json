@@ -1,0 +1,70 @@
+{
+  "expo": {
+    "name": "dogochi",
+    "slug": "dogochi",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "dogochi",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0d0f14",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#0d0f14",
+      "resizeMode": "contain",
+      "image": "./assets/splash-icon.png"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.arrudenk.dogochi",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Фото пса потрібні для Ритуалу виклику — з них створюється піксельний спрайт. Оригінали не зберігаються.",
+        "NSCameraUsageDescription": "Зйомка пса для Ритуалу виклику.",
+        "NSCalendarsUsageDescription": "Страховка для огляду Цілителя й вакцинації: подія в системному календарі переживає перевстановлення апки."
+      }
+    },
+    "android": {
+      "package": "com.arrudenk.dogochi",
+      "adaptiveIcon": {
+        "backgroundColor": "#0d0f14",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.READ_CALENDAR",
+        "android.permission.WRITE_CALENDAR",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.SCHEDULE_EXACT_ALARM"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-sqlite",
+      "expo-font",
+      [
+        "expo-notifications",
+        {
+          "color": "#d9a54a"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Фото пса потрібні для Ритуалу виклику.",
+          "cameraPermission": "Зйомка пса для Ритуалу виклику."
+        }
+      ],
+      [
+        "expo-calendar",
+        {
+          "calendarPermission": "Страховка для рідкісних обрядів — огляду Цілителя й вакцинації."
+        }
+      ]
+    ]
+  }
+}

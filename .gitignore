@@ -3,3 +3,11 @@
 # рантайм браузерного компаньйона — макети лишаємо, стан і токени ні
 .superpowers/brainstorm/*/state/
 .superpowers/brainstorm/.last-*
+
+# Expo / RN
+app/node_modules/
+app/.expo/
+app/dist/
+app/ios/
+app/android/
+app/*.log
