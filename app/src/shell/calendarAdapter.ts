@@ -6,13 +6,25 @@ import { Platform } from 'react-native';
  * перевстановлення апки й потрапляє в те, як власник реально планує тиждень.
  */
 
+/**
+ * Календар — бонус, не носій правди (§13). Якщо модуля немає взагалі (Expo Go,
+ * інша платформа), це має виглядати як «дозволу немає», а не як помилка апки.
+ */
 export async function requestCalendarPermission(): Promise<boolean> {
-  const res = await Calendar.requestCalendarPermissions(true);
-  return res.granted;
+  try {
+    const res = await Calendar.requestCalendarPermissions(true);
+    return res.granted;
+  } catch {
+    return false;
+  }
 }
 
 export async function hasCalendarPermission(): Promise<boolean> {
-  return (await Calendar.getCalendarPermissions(true)).granted;
+  try {
+    return (await Calendar.getCalendarPermissions(true)).granted;
+  } catch {
+    return false;
+  }
 }
 
 async function writableCalendar(): Promise<Calendar.ExpoCalendar | null> {
@@ -56,20 +68,24 @@ export async function upsertCalendarBackup(input: CalendarBackupInput): Promise<
     alarms: [{ relativeOffset: -7 * 24 * 60 }],
   };
 
-  if (input.existingEventId) {
-    try {
-      const existing = await Calendar.ExpoCalendarEvent.get(input.existingEventId);
-      await existing.update(details);
-      return input.existingEventId;
-    } catch {
-      // подію видалили в календарі — створюємо заново
+  try {
+    if (input.existingEventId) {
+      try {
+        const existing = await Calendar.ExpoCalendarEvent.get(input.existingEventId);
+        await existing.update(details);
+        return input.existingEventId;
+      } catch {
+        // подію видалили в календарі — створюємо заново
+      }
     }
-  }
 
-  const cal = await writableCalendar();
-  if (!cal) return null;
-  const created = await cal.createEvent(details);
-  return created.id;
+    const cal = await writableCalendar();
+    if (!cal) return null;
+    const created = await cal.createEvent(details);
+    return created.id;
+  } catch {
+    return null; // календар недоступний — страховка тихо вимикається
+  }
 }
 
 export async function removeCalendarBackup(eventId: string): Promise<void> {

@@ -322,7 +322,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
           });
         }
         if (herald?.routineId === routineId) setHerald(null);
-        void syncCalendarBackups(loaded.computed, loaded.snap.routines);
+        // Страховка ніколи не має піднімати помилку поверх успішного запису події.
+        syncCalendarBackups(loaded.computed, loaded.snap.routines).catch(() => {});
       } catch (e) {
         setNotice(e instanceof Error ? e.message : 'Записати не вийшло.');
       } finally {
