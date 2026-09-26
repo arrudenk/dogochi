@@ -1,7 +1,7 @@
 import { compute } from '../engine';
 import { heraldQueue } from '../herald';
-import type { HeraldShown } from '../types';
-import { addDays } from '../time';
+import type { HeraldShown, QuestView } from '../types';
+import { addDays, DAY_MS } from '../time';
 import { input, makeLog } from './fixtures';
 
 const START = new Date(2025, 7, 4, 9, 0, 0, 0).getTime();
@@ -81,14 +81,24 @@ describe('герольд', () => {
 
   test('стадії обовʼязку: −30, −14, −3, день, далі кожні 14', () => {
     const { events, push } = makeLog();
-    push('claws', START); // раз на місяць
+    push('healer', START); // раз на пів року — всі стадії мають сенс
+    const stage = (d: number) =>
+      heraldQueue(compute(input({ events, now: addDays(START, d) })), []).find((i) => i.routineId === 'healer')?.stage;
+    expect(stage(160)).toBe('duty:pre30');
+    expect(stage(175)).toBe('duty:pre14');
+    expect(stage(182)).toBe('duty:pre3');
+    expect(stage(184)).toBe('duty:day0');
+    expect(stage(198)).toBe('duty:over:14');
+  });
+
+  test('щомісячний обовʼязок не попереджає за 30 днів — це мить виконання', () => {
+    const { events, push } = makeLog();
+    push('claws', START);
     const stage = (d: number) =>
       heraldQueue(compute(input({ events, now: addDays(START, d) })), []).find((i) => i.routineId === 'claws')?.stage;
-    expect(stage(5)).toBe('duty:pre30');
-    expect(stage(25)).toBe('duty:pre14');
+    expect(stage(5)).toBeUndefined();
     expect(stage(29)).toBe('duty:pre3');
     expect(stage(31)).toBe('duty:day0');
-    expect(stage(45)).toBe('duty:over:14');
   });
 
   test('квота — один раз за період, за 5 днів до кінця, якщо нуль', () => {
@@ -151,5 +161,34 @@ describe('герольд', () => {
     const kinds = q.map((i) => i.routineId);
     expect(kinds.indexOf('worms')).toBeLessThan(kinds.indexOf('fleas'));
     expect(kinds.indexOf('fleas')).toBeLessThan(kinds.indexOf('run'));
+  });
+});
+
+describe('попередження пропорційне періоду', () => {
+  const NOW = START;
+  const base = { id: 'weigh', title: 'Зважування', kind: 'duty' as const, group: 'rite' as const, xp: 600, enabled: true, icon: 'scale' };
+
+  function quest(everyMonths: number, daysUntilDue: number): QuestView {
+    return {
+      routine: { ...base, everyMonths },
+      status: 'dueSoon',
+      dueAt: NOW + daysUntilDue * DAY_MS,
+      xp: 600,
+    };
+  }
+
+  it('щомісячний обовʼязок не кричить «через 30 днів» одразу після виконання', () => {
+    const q = heraldQueue({ now: NOW, quests: [quest(1, 30)] }, []);
+    expect(q).toHaveLength(0);
+  });
+
+  it('щомісячний обовʼязок попереджає за три дні', () => {
+    const q = heraldQueue({ now: NOW, quests: [quest(1, 3)] }, []);
+    expect(q[0]?.stage).toBe('duty:pre3');
+  });
+
+  it('піврічний обовʼязок попереджає за 30 днів — часу записатись', () => {
+    const q = heraldQueue({ now: NOW, quests: [quest(6, 30)] }, []);
+    expect(q[0]?.stage).toBe('duty:pre30');
   });
 });

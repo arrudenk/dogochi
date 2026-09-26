@@ -66,9 +66,13 @@ function dutyStage(q: QuestView, now: Millis): HeraldStage | undefined {
   const until = diffDays(now, q.dueAt);
   if (until > 0) {
     const body = `Термін обряду ${title} настане через ${daysWord(until)}.`;
-    if (until <= 3) return { stage: 'duty:pre3', priority: 150 + (31 - until), body };
-    if (until <= 14) return { stage: 'duty:pre14', priority: 150 + (31 - until), body };
-    if (until <= 30) return { stage: 'duty:pre30', priority: 150 + (31 - until), body };
+    // Попередження мусить бути коротшим за пів періоду, інакше щомісячний обовʼязок
+    // піднімає герольда «через 30 днів» у мить, коли його щойно звершили.
+    const periodDays = (q.routine.everyMonths ?? 0) * 30;
+    const lead = (d: number) => periodDays === 0 || d < periodDays / 2;
+    if (until <= 3 && lead(3)) return { stage: 'duty:pre3', priority: 150 + (31 - until), body };
+    if (until <= 14 && lead(14)) return { stage: 'duty:pre14', priority: 150 + (31 - until), body };
+    if (until <= 30 && lead(30)) return { stage: 'duty:pre30', priority: 150 + (31 - until), body };
     return undefined;
   }
   const over = -until;

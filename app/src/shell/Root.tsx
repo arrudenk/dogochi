@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import { ActivityIndicator, StatusBar, View } from 'react-native';
+import { ActivityIndicator, StatusBar, StyleSheet, View } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { C } from '@/ui/theme';
@@ -229,29 +229,34 @@ function Shell() {
         bottomInset={insets.bottom}
       />
 
+      {/* Повноекранні екрани — поверх лігва, інакше вони лягають під нього в колонку. */}
       {sheetOpen && (
-        <CharacterSheetScreen
-          state={state}
-          dog={dog}
-          sprites={sprites}
-          yearXp={yearXp}
-          onOpenRoutines={() => setRoutinesOpen(true)}
-          onLogWeight={() => setWeighFor('weigh')}
-          onClose={() => setSheetOpen(false)}
-        />
+        <View style={[styles.overlay, { paddingTop: insets.top }]}>
+          <CharacterSheetScreen
+            state={state}
+            dog={dog}
+            sprites={sprites}
+            yearXp={yearXp}
+            onOpenRoutines={() => setRoutinesOpen(true)}
+            onLogWeight={() => setWeighFor('weigh')}
+            onClose={() => setSheetOpen(false)}
+          />
+        </View>
       )}
 
       {routinesOpen && (
-        <RoutineSettingsScreen
-          routines={app.routines}
-          onSave={(routine) => void app.saveRoutine(routine)}
-          onRerunRitual={() => {
-            setRoutinesOpen(false);
-            setSheetOpen(false);
-            app.rerunRitual();
-          }}
-          onClose={() => setRoutinesOpen(false)}
-        />
+        <View style={[styles.overlay, { paddingTop: insets.top }]}>
+          <RoutineSettingsScreen
+            routines={app.routines}
+            onSave={(routine) => void app.saveRoutine(routine)}
+            onRerunRitual={() => {
+              setRoutinesOpen(false);
+              setSheetOpen(false);
+              app.rerunRitual();
+            }}
+            onClose={() => setRoutinesOpen(false)}
+          />
+        </View>
       )}
 
       <HeraldModal
@@ -304,6 +309,10 @@ function Shell() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  overlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: C.bg },
+});
 
 export default function Root() {
   return (
