@@ -1,0 +1,718 @@
+{
+  "nodes": [
+    {
+      "id": "root",
+      "type": "text",
+      "x": 2190,
+      "y": -420,
+      "width": 620,
+      "height": 150,
+      "style": "heading",
+      "color": "#BB2649",
+      "content": "<b>TEA BETWEEN US — ВІДЕОБРИФ</b><br><span style=\"font-size:0.5em\">brand film · State Map · 2026-09-29</span>"
+    },
+    {
+      "id": "sec-brand",
+      "type": "text",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#BB2649",
+      "content": "<b>БРЕНД</b><br><span style=\"font-size:0.52em\">tea between us</span>"
+    },
+    {
+      "id": "it-brand-0",
+      "x": 30,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Про бренд</b><br><span style=\"font-size:0.62em\">переосмислює чай як спосіб змінювати стан і проживати повсякденність уважніше · чайна культура + сучасний дизайн + посуд + ритуали + події</span>"
+    },
+    {
+      "id": "it-brand-1",
+      "x": 30,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Місія</b><br><span style=\"font-size:0.62em\">Make tea a part of everyday culture, simplifying the attitude towards it</span>"
+    },
+    {
+      "id": "it-brand-2",
+      "x": 30,
+      "y": 690,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Основна ідея</b><br><span style=\"font-size:0.62em\">Tea is a state — людина обирає чай не за сортом чи смаком, а відповідно до того, як хоче почуватися зараз</span>"
+    },
+    {
+      "id": "it-brand-3",
+      "x": 30,
+      "y": 910,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Слоган</b><br><span style=\"font-size:0.62em\">Whatever you feel, there's a tea for that</span>"
+    },
+    {
+      "id": "sec-task",
+      "type": "text",
+      "x": 460,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#0F4C81",
+      "content": "<b>ЗАДАЧА ВІДЕО</b><br><span style=\"font-size:0.52em\">brand film / lifestyle</span>"
+    },
+    {
+      "id": "it-task-0",
+      "x": 490,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Тип</b><br><span style=\"font-size:0.62em\">іміджеве відео, brand film, lifestyle film</span>"
+    },
+    {
+      "id": "it-task-1",
+      "x": 490,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Головна задача</b><br><span style=\"font-size:0.62em\">показати, що один і той самий чайний досвід буває різним залежно від стану людини й контексту її життя</span>"
+    },
+    {
+      "id": "it-task-2",
+      "x": 490,
+      "y": 690,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Що зрозуміє глядач</b><br><span style=\"font-size:0.62em\">чай — не складна закрита культура, а проста частина сучасного життя</span>"
+    },
+    {
+      "id": "it-task-3",
+      "x": 490,
+      "y": 910,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Головне повідомлення</b><br><span style=\"font-size:0.62em\">Tea can meet you where you are — є чай на різні моменти життя</span>"
+    },
+    {
+      "id": "sec-audience",
+      "type": "text",
+      "x": 920,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#5F4B8B",
+      "content": "<b>АУДИТОРІЯ</b><br><span style=\"font-size:0.52em\">20–45, міста Європи</span>"
+    },
+    {
+      "id": "it-audience-0",
+      "x": 950,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Хто</b><br><span style=\"font-size:0.62em\">творчі підприємці, дизайнери, артдиректори, музиканти, IT, культурні менеджери, wellness-практики, експати — живуть між work / rest / social life</span>"
+    },
+    {
+      "id": "it-audience-1",
+      "x": 950,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Що для них важливо</b><br><span style=\"font-size:0.62em\">естетика · якість деталей · самовираження · нові формати соціалізації · здорові альтернативи · відчуття «бути на своєму місці»</span>"
+    },
+    {
+      "id": "sec-states",
+      "type": "text",
+      "x": 1380,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#009B77",
+      "content": "<b>STATE MAP</b><br><span style=\"font-size:0.52em\">шість станів одного дня</span>"
+    },
+    {
+      "id": "it-states-0",
+      "x": 1410,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>01 Full Power</b><br><span style=\"font-size:0.62em\">energy · grounding · momentum · readiness — робота, ранковий/денний старт, ноутбук, місто, швидший темп, чисте світло</span>"
+    },
+    {
+      "id": "it-states-1",
+      "x": 1410,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>02 Clear Focus</b><br><span style=\"font-size:0.62em\">clarity · concentration · presence — глибока концентрація, стіл, книга або ноутбук, мінімум предметів, повільні точні рухи</span>"
+    },
+    {
+      "id": "it-states-2",
+      "x": 1410,
+      "y": 690,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>03 Social Butterfly</b><br><span style=\"font-size:0.62em\">connection · playfulness · warmth — вечір, друзі, чай природно займає місце алкоголю чи кави, передача піали з рук у руки</span>"
+    },
+    {
+      "id": "it-states-3",
+      "x": 1410,
+      "y": 910,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>04 Deep Exhale</b><br><span style=\"font-size:0.62em\">release · softness · pause — після напруженого дня, повернення додому, приглушене світло, пара від чашки, тривалі кадри</span>"
+    },
+    {
+      "id": "it-states-4",
+      "x": 1410,
+      "y": 1130,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>05 Coming Home</b><br><span style=\"font-size:0.62em\">home · warmth · intimacy · belonging — найінтимніший стан: свічки, кераміка, плед, книга, коти</span>"
+    },
+    {
+      "id": "it-states-5",
+      "x": 1410,
+      "y": 1350,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>06 Creative Act</b><br><span style=\"font-size:0.62em\">imagination · curiosity · play · flow — письмо, малювання, музика, руки, які щось збирають</span>"
+    },
+    {
+      "id": "sec-structure",
+      "type": "text",
+      "x": 1840,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#955251",
+      "content": "<b>СЦЕНАРНА ЛОГІКА</b><br><span style=\"font-size:0.52em\">один потік, не шість сцен</span>"
+    },
+    {
+      "id": "it-structure-0",
+      "x": 1870,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Початок</b><br><span style=\"font-size:0.62em\">деталі чаю: листя, вода, рука відкриває упаковку, піала, чайник, пара, перший ковток</span>"
+    },
+    {
+      "id": "it-structure-1",
+      "x": 1870,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Перетікання станів</b><br><span style=\"font-size:0.62em\">match cuts, рух, звук чи предмет — напр. рука наливає чай → та сама рука ставить чашку на стіл → перехід у вечірню сцену</span>"
+    },
+    {
+      "id": "it-structure-2",
+      "x": 1870,
+      "y": 690,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Фінал</b><br><span style=\"font-size:0.62em\">TEA BETWEEN US · Whatever you feel, there's a tea for that</span>"
+    },
+    {
+      "id": "sec-visual",
+      "type": "text",
+      "x": 2300,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#6667AB",
+      "content": "<b>ВІЗУАЛЬНИЙ СТИЛЬ</b><br><span style=\"font-size:0.52em\">sensory calm + lifestyle</span>"
+    },
+    {
+      "id": "it-visual-0",
+      "x": 2330,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Загальне відчуття</b><br><span style=\"font-size:0.62em\">природне, естетичне, тактильне, трохи кінематографічне · НЕ wellness-реклама, НЕ класична чайна реклама</span>"
+    },
+    {
+      "id": "it-visual-1",
+      "x": 2330,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Матеріали</b><br><span style=\"font-size:0.62em\">кераміка · дерево · льон · папір · камінь · чайне листя · вода · скло · натуральний текстиль · свічки</span>"
+    },
+    {
+      "id": "it-visual-2",
+      "x": 2330,
+      "y": 690,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Кольори</b><br><span style=\"font-size:0.62em\">база: глина, чайні коричневі, шавлія, природні нейтральні, молочні, приглушений блакитний · точкові акценти жовтий/блакитний/помаранчевий/рожевий — без неону</span>"
+    },
+    {
+      "id": "it-visual-3",
+      "x": 2330,
+      "y": 910,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Кадри</b><br><span style=\"font-size:0.62em\">wide + medium + дуже близькі macro/detail shots рук, текстур, пари, води, чайного листя, поглядів, маленьких жестів</span>"
+    },
+    {
+      "id": "sec-people",
+      "type": "text",
+      "x": 2760,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#DD4124",
+      "content": "<b>ЛЮДИ</b><br><span style=\"font-size:0.52em\">реальна аудиторія, не моделі</span>"
+    },
+    {
+      "id": "it-people-0",
+      "x": 2790,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Типажі</b><br><span style=\"font-size:0.62em\">creative urban people · friends · artists · freelancers · couples — різні типажі, єдина естетика, не fashion models у стерильному сетингу</span>"
+    },
+    {
+      "id": "it-people-1",
+      "x": 2790,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Одяг</b><br><span style=\"font-size:0.62em\">натуральні тканини, relaxed silhouettes, contemporary minimalism, трохи urban — без очевидного «yoga / wellness uniform»</span>"
+    },
+    {
+      "id": "sec-sound",
+      "type": "text",
+      "x": 3220,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#B565A7",
+      "content": "<b>ЗВУК</b><br><span style=\"font-size:0.52em\">«тиша з ритмом»</span>"
+    },
+    {
+      "id": "it-sound-0",
+      "x": 3250,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Характер</b><br><span style=\"font-size:0.62em\">вдень — ambient, природні звуки, дихання, дзвін піали · ближче до вечора — organic downtempo, голоси, ритм і життя, без шуму</span>"
+    },
+    {
+      "id": "it-sound-1",
+      "x": 3250,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Прогресія</b><br><span style=\"font-size:0.62em\">початок майже тиша → поступове нарощення → Social Butterfly найживіший момент → спад → фінал на звуку чашки/чайника/води</span>"
+    },
+    {
+      "id": "sec-avoid",
+      "type": "text",
+      "x": 3680,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#939597",
+      "content": "<b>ЧОГО УНИКАТИ</b><br><span style=\"font-size:0.52em\">межі бренду</span>"
+    },
+    {
+      "id": "it-avoid-0",
+      "x": 3710,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Стереотипний wellness</b><br><span style=\"font-size:0.62em\">йога-студія, медитація із заплющеними очима як головний образ, healing/spiritual clichés, надто luxury tea advertising</span>"
+    },
+    {
+      "id": "it-avoid-1",
+      "x": 3710,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Візуальні й монтажні пастки</b><br><span style=\"font-size:0.62em\">традиційна китайська чайна стилізація як основна естетика, стерильний мінімалізм, надмірний boho, постановочна усмішка, TikTok-темп монтажу</span>"
+    },
+    {
+      "id": "it-avoid-2",
+      "x": 3710,
+      "y": 690,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Змістові пастки</b><br><span style=\"font-size:0.62em\">буквальне пояснення кожного стану, перенасичення текстом у кадрі</span>"
+    },
+    {
+      "id": "sec-formats",
+      "type": "text",
+      "x": 4140,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#88B04B",
+      "content": "<b>ФОРМАТИ Й ДЕЛІВЕРАБЛС</b><br><span style=\"font-size:0.52em\">одна зйомка → бібліотека</span>"
+    },
+    {
+      "id": "it-formats-0",
+      "x": 4170,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Hero brand film</b><br><span style=\"font-size:0.62em\">16:9 · ~40–45 сек · website · без потреби дивитися зі звуком, працює як silent autoplay</span>"
+    },
+    {
+      "id": "it-formats-1",
+      "x": 4170,
+      "y": 470,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Вертикальні адаптації</b><br><span style=\"font-size:0.62em\">9:16 Reels/Stories · 4:5 feed · 1:1 за потреби — знімати одразу так, щоб ключове лишалось у safe zone під вертикальний кроп</span>"
+    },
+    {
+      "id": "it-formats-2",
+      "x": 4170,
+      "y": 690,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>6 коротких кліпів станів</b><br><span style=\"font-size:0.62em\">по одному на кожен стан State Map, 5–8 сек кожен — бібліотека brand assets для Instagram та інших каналів</span>"
+    },
+    {
+      "id": "it-formats-3",
+      "x": 4170,
+      "y": 910,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Дві версії монтажу</b><br><span style=\"font-size:0.62em\">Clean — без тексту · Text — з назвами State Map і фінальним brand message</span>"
+    },
+    {
+      "id": "sec-criterion",
+      "type": "text",
+      "x": 4600,
+      "y": 0,
+      "width": 400,
+      "height": 130,
+      "style": "heading",
+      "color": "#C9A227",
+      "content": "<b>КЛЮЧОВИЙ КРИТЕРІЙ</b><br><span style=\"font-size:0.52em\">що насправді продає відео</span>"
+    },
+    {
+      "id": "it-criterion-0",
+      "x": 4630,
+      "y": 250,
+      "width": 340,
+      "height": 190,
+      "type": "text",
+      "style": "body",
+      "content": "<b>Не чай, а ставлення</b><br><span style=\"font-size:0.62em\">відео продає не чай і не конкретний продукт, а ставлення до чаю й можливість обрати свій стан — показує, як чай природно входить у різні моменти життя, щоразу створюючи інший стан</span>"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-root-sec-brand",
+      "from": "root",
+      "to": "sec-brand"
+    },
+    {
+      "id": "e-sec-brand-it-brand-0",
+      "from": "sec-brand",
+      "to": "it-brand-0"
+    },
+    {
+      "id": "e-sec-brand-it-brand-1",
+      "from": "sec-brand",
+      "to": "it-brand-1"
+    },
+    {
+      "id": "e-sec-brand-it-brand-2",
+      "from": "sec-brand",
+      "to": "it-brand-2"
+    },
+    {
+      "id": "e-sec-brand-it-brand-3",
+      "from": "sec-brand",
+      "to": "it-brand-3"
+    },
+    {
+      "id": "e-root-sec-task",
+      "from": "root",
+      "to": "sec-task"
+    },
+    {
+      "id": "e-sec-task-it-task-0",
+      "from": "sec-task",
+      "to": "it-task-0"
+    },
+    {
+      "id": "e-sec-task-it-task-1",
+      "from": "sec-task",
+      "to": "it-task-1"
+    },
+    {
+      "id": "e-sec-task-it-task-2",
+      "from": "sec-task",
+      "to": "it-task-2"
+    },
+    {
+      "id": "e-sec-task-it-task-3",
+      "from": "sec-task",
+      "to": "it-task-3"
+    },
+    {
+      "id": "e-root-sec-audience",
+      "from": "root",
+      "to": "sec-audience"
+    },
+    {
+      "id": "e-sec-audience-it-audience-0",
+      "from": "sec-audience",
+      "to": "it-audience-0"
+    },
+    {
+      "id": "e-sec-audience-it-audience-1",
+      "from": "sec-audience",
+      "to": "it-audience-1"
+    },
+    {
+      "id": "e-root-sec-states",
+      "from": "root",
+      "to": "sec-states"
+    },
+    {
+      "id": "e-sec-states-it-states-0",
+      "from": "sec-states",
+      "to": "it-states-0"
+    },
+    {
+      "id": "e-sec-states-it-states-1",
+      "from": "sec-states",
+      "to": "it-states-1"
+    },
+    {
+      "id": "e-sec-states-it-states-2",
+      "from": "sec-states",
+      "to": "it-states-2"
+    },
+    {
+      "id": "e-sec-states-it-states-3",
+      "from": "sec-states",
+      "to": "it-states-3"
+    },
+    {
+      "id": "e-sec-states-it-states-4",
+      "from": "sec-states",
+      "to": "it-states-4"
+    },
+    {
+      "id": "e-sec-states-it-states-5",
+      "from": "sec-states",
+      "to": "it-states-5"
+    },
+    {
+      "id": "e-root-sec-structure",
+      "from": "root",
+      "to": "sec-structure"
+    },
+    {
+      "id": "e-sec-structure-it-structure-0",
+      "from": "sec-structure",
+      "to": "it-structure-0"
+    },
+    {
+      "id": "e-sec-structure-it-structure-1",
+      "from": "sec-structure",
+      "to": "it-structure-1"
+    },
+    {
+      "id": "e-sec-structure-it-structure-2",
+      "from": "sec-structure",
+      "to": "it-structure-2"
+    },
+    {
+      "id": "e-root-sec-visual",
+      "from": "root",
+      "to": "sec-visual"
+    },
+    {
+      "id": "e-sec-visual-it-visual-0",
+      "from": "sec-visual",
+      "to": "it-visual-0"
+    },
+    {
+      "id": "e-sec-visual-it-visual-1",
+      "from": "sec-visual",
+      "to": "it-visual-1"
+    },
+    {
+      "id": "e-sec-visual-it-visual-2",
+      "from": "sec-visual",
+      "to": "it-visual-2"
+    },
+    {
+      "id": "e-sec-visual-it-visual-3",
+      "from": "sec-visual",
+      "to": "it-visual-3"
+    },
+    {
+      "id": "e-root-sec-people",
+      "from": "root",
+      "to": "sec-people"
+    },
+    {
+      "id": "e-sec-people-it-people-0",
+      "from": "sec-people",
+      "to": "it-people-0"
+    },
+    {
+      "id": "e-sec-people-it-people-1",
+      "from": "sec-people",
+      "to": "it-people-1"
+    },
+    {
+      "id": "e-root-sec-sound",
+      "from": "root",
+      "to": "sec-sound"
+    },
+    {
+      "id": "e-sec-sound-it-sound-0",
+      "from": "sec-sound",
+      "to": "it-sound-0"
+    },
+    {
+      "id": "e-sec-sound-it-sound-1",
+      "from": "sec-sound",
+      "to": "it-sound-1"
+    },
+    {
+      "id": "e-root-sec-avoid",
+      "from": "root",
+      "to": "sec-avoid"
+    },
+    {
+      "id": "e-sec-avoid-it-avoid-0",
+      "from": "sec-avoid",
+      "to": "it-avoid-0"
+    },
+    {
+      "id": "e-sec-avoid-it-avoid-1",
+      "from": "sec-avoid",
+      "to": "it-avoid-1"
+    },
+    {
+      "id": "e-sec-avoid-it-avoid-2",
+      "from": "sec-avoid",
+      "to": "it-avoid-2"
+    },
+    {
+      "id": "e-root-sec-formats",
+      "from": "root",
+      "to": "sec-formats"
+    },
+    {
+      "id": "e-sec-formats-it-formats-0",
+      "from": "sec-formats",
+      "to": "it-formats-0"
+    },
+    {
+      "id": "e-sec-formats-it-formats-1",
+      "from": "sec-formats",
+      "to": "it-formats-1"
+    },
+    {
+      "id": "e-sec-formats-it-formats-2",
+      "from": "sec-formats",
+      "to": "it-formats-2"
+    },
+    {
+      "id": "e-sec-formats-it-formats-3",
+      "from": "sec-formats",
+      "to": "it-formats-3"
+    },
+    {
+      "id": "e-root-sec-criterion",
+      "from": "root",
+      "to": "sec-criterion"
+    },
+    {
+      "id": "e-sec-criterion-it-criterion-0",
+      "from": "sec-criterion",
+      "to": "it-criterion-0"
+    }
+  ]
+}

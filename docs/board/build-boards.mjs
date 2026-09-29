@@ -2,10 +2,11 @@
 // Джерела правди -> борди для freedomOfThought / freeboard.
 // Запуск: node docs/board/build-boards.mjs
 //
-// Три борди, одна функція розкладки:
+// Борди, одна функція розкладки:
 //   balu-tasks.json     -> balu-board.json            (задачі, статуси міняються часто)
 //   balu-refs.json      -> balu-refs-board.json       (рішення й референси)
 //   balu-mechanics.json -> balu-mechanics-board.json  (механіки)
+//   tea-video.json      -> tea-video-board.json       (відеобриф tea between us)
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -147,3 +148,6 @@ const write = (file, data, label) => {
 // ---------- 2. рішення й референси, 3. механіки ----------
 write('balu-refs-board.json', layout(read('balu-refs.json')), '');
 write('balu-mechanics-board.json', layout(read('balu-mechanics.json')), '');
+
+// ---------- 4. tea between us — відеобриф ----------
+write('tea-video-board.json', layout(read('tea-video.json')), '');
